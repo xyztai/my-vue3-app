@@ -22,3 +22,14 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### 步骤
+npm config get registry
+npm cache clean --force
+npm config set registry https://registry.npmmirror.com
+npm install -g @vue/cli
+vue create my-vue3-app
+cd my-vue3-app
+npm install
+npm run serve
