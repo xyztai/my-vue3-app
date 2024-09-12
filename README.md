@@ -33,3 +33,5 @@ vue create my-vue3-app
 cd my-vue3-app
 npm install
 npm run serve
+npm install -g axios
+npm install --save axios
