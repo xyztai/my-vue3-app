@@ -61,8 +61,8 @@ export default {
 </script>
 
 <style>
-.basic th.el-table__header-cell !important {
+.basic th.el-table__header-cell {
   background-color: #409EFF; /* 北京蓝色 */
-  color:brown !important;
+  color:brown
 }
 </style>
