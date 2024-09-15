@@ -7,21 +7,21 @@
   </div>
   -->
   <diev id="app">
-    <AgComponent />
+    <AgComponentEl />
   </diev>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 // import MyComponent from './components/MyComponent.vue'
-import AgComponent from './components/AgComponent.vue'
+import AgComponentEl from './components/AgComponentEl.vue'
 
 export default {
   name: 'App',
   components: {
     // HelloWorld,
     // MyComponent,
-    AgComponent
+    AgComponentEl
   }
 }
 </script>

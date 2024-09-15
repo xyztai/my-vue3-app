@@ -36,3 +36,4 @@ npm run serve
 npm install -g axios
 npm install --save axios
 npm run build
+npm install element-plus --save // 使用 element-plus
