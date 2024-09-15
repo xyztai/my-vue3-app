@@ -22,6 +22,7 @@ export default {
 
     const fetchCnts = async() => {
       try {
+        cnts.value = []
         const response = await axios.get('/ag/data/cnt')
         cnts.value = response.data.data
         console.log(cnts)

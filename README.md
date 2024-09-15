@@ -35,3 +35,4 @@ npm install
 npm run serve
 npm install -g axios
 npm install --save axios
+npm run build
