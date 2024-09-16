@@ -7,21 +7,23 @@
   </div>
   -->
   <div id="app">
-    <AgComponentEl />
+    <TabA />
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 // import MyComponent from './components/MyComponent.vue'
-import AgComponentEl from './components/AgComponentEl.vue'
+// import AgComponentEl from './components/AgComponentEl.vue'
+import TabA from './components/TabA'
 
 export default {
   name: 'App',
   components: {
     // HelloWorld,
     // MyComponent,
-    AgComponentEl
+    // AgComponentEl
+    TabA
   }
 }
 </script>
