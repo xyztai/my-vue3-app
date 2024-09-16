@@ -1,15 +1,17 @@
 <template>
   <div>
-    <el-select v-model="selectedValue" placeholder="请选择">
-      <el-option
-        v-for="item in options"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value"
-      />
-    </el-select>
-    <el-input v-model="inputValue" placeholder="0" />
-    <el-button @click="fetchCnts">算算看</el-button>
+    <div class="search-bolck">
+      <el-select v-model="selectedValue" placeholder="请选择" class="search-select">
+        <el-option
+          v-for="item in options"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+        />
+      </el-select>
+      <el-input v-model="inputValue" placeholder="0" class="search-input" />
+      <el-button class="search-button" type="primary" @click="fetchCnts">算算看</el-button>
+    </div>
     <el-table
       :data="tableData"
       :cell-style="{padding: '0', height: '20px'}"
@@ -117,6 +119,26 @@ export default {
 </script>
 
 <style scoped>
+.search-bolck {
+  margin-bottom: 10px; /* 留出50px的底部距离 */
+}
+
+.search-select {
+  display: inline-block;
+  width: 120px;
+}
+
+.search-input {
+  margin-left: 10px;
+  display: inline-block;
+  width: 120px;
+}
+
+.search-button {
+  margin-left: 10px;
+  display: inline-block;
+}
+
 :deep(.basic) {
   background: #40f2ffbd !important; /* 浅蓝色 */
   color:rgb(6, 6, 6);
