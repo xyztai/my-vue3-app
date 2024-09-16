@@ -18,12 +18,12 @@
       border
       :row-class-name="handleRowClassName"
     >
-      <el-table-column prop="time" label="日期" align="center" width="100" sortable label-class-name="time" />
+      <el-table-column fixed prop="time" label="日期" align="center" width="100" sortable label-class-name="time" />
       <el-table-column prop="name" label="名称" align="center" width="120" />
-      <el-table-column prop="operDir" label="操作" align="center" width="80" />
+      <el-table-column prop="operDir" label="操作" align="center" width="60" />
       <el-table-column prop="ratioC" label="比例" align="center" width="80" />
-      <el-table-column prop="sellOper" label="卖" align="center" width="180" />
-      <el-table-column prop="buyOper" label="买" align="center" />
+      <el-table-column prop="sellOper" label="卖" align="center" width="170" />
+      <el-table-column prop="buyOper" label="买" align="center" width="170" />
     </el-table>
   </div>
 </template>
