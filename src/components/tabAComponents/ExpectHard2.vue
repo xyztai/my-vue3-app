@@ -99,6 +99,11 @@ export default {
     },
     handleRowClassName(row) {
       console.log('handleRowClassName, ', row, row.rowIndex)
+      console.log('row.row ====', row.row)
+      console.log('row.row.time ====', row.row.time)
+      if (row.row.time === '预期操作') {
+        return 'row-expect'
+      }
       if (row.rowIndex % 2 === 1) {
         console.log(row.rowIndex, 'odd')
         return 'row-odd'
@@ -117,6 +122,13 @@ export default {
   color:rgb(6, 6, 6);
   font-size: 16px;
   height: auto;
+}
+
+:deep(.row-expect) {
+  background: #FAFAD2 !important;
+  color:rgb(253, 3, 3);
+  font-size: 12px;
+  font-weight: bold;
 }
 
 :deep(.row-odd) {
