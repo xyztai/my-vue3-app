@@ -10,7 +10,7 @@
         />
       </el-select>
       <el-input v-model="inputValue" placeholder="0" class="search-input" />
-      <el-button class="search-button" type="primary" @mousedown="e => e.preventDefault()" @click="fetchCnts">算算看</el-button>
+      <el-button class="search-button" round style="background: #67a3d7" type="primary" @click="fetchCnts">算算看</el-button>
     </div>
     <el-table
       empty-text="暂无数据"
@@ -144,7 +144,7 @@ export default {
 }
 
 :deep(.basic) {
-  background: #40f2ffbd !important; /* 浅蓝色 */
+  background: #d5f1fd !important;
   color:rgb(6, 6, 6);
   font-size: 16px;
   height: auto;
@@ -169,7 +169,7 @@ export default {
 }
 
 :deep(.time) {
-  background: #409EFF !important; /* 深蓝色 */
+  background: #d5f1fd !important;
   color:brown;
   font-size: 16px;
 }

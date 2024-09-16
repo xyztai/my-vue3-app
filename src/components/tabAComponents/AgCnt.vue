@@ -74,7 +74,7 @@ export default {
 
 <style scoped>
 :deep(.basic) {
-  background: #40f2ffbd !important; /* 浅蓝色 */
+  background: #d5f1fd !important;
   color:rgb(6, 6, 6);
   font-size: 16px;
   height: auto;
@@ -92,7 +92,7 @@ export default {
 }
 
 :deep(.time) {
-  background: #409EFF !important; /* 深蓝色 */
+  background: #d5f1fd !important;
   color:brown;
   font-size: 16px;
 }
