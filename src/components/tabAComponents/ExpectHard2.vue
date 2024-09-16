@@ -18,7 +18,7 @@
       border
       :row-class-name="handleRowClassName"
     >
-      <el-table-column fixed prop="time" label="日期" align="center" width="100" sortable label-class-name="time" />
+      <el-table-column prop="time" label="日期" align="center" width="100" sortable label-class-name="time" fixed />
       <el-table-column prop="name" label="名称" align="center" width="120" />
       <el-table-column prop="operDir" label="操作" align="center" width="60" />
       <el-table-column prop="ratioC" label="比例" align="center" width="80" />
@@ -134,5 +134,9 @@ export default {
   background: #409EFF !important; /* 深蓝色 */
   color:brown;
   font-size: 16px;
+}
+
+.el-table--scrollable-x .el-table__body-wrapper {
+    z-index: 1;
 }
 </style>
