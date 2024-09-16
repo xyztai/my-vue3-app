@@ -6,9 +6,9 @@
     <MyComponent />
   </div>
   -->
-  <diev id="app">
+  <div id="app">
     <AgComponentEl />
-  </diev>
+  </div>
 </template>
 
 <script>

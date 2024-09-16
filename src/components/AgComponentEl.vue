@@ -1,9 +1,9 @@
 <template>
-  <el-table :data="tableData" :header-cell-class-name="handlemyclass" style="width: 100%" border>
-    <el-table-column prop="time" label="日期" align="center" width="100" sortable />
-    <el-table-column prop="cntGap" label="缺失数量" align="center" width="100" />
-    <el-table-column prop="cntCalc" label="expma数量" align="center" width="100" />
-    <el-table-column prop="cntCp" label="cp数量" align="center" width="100" />
+  <el-table :data="tableData" :cell-style="{padding: '0', height: '20px'}" :header-cell-class-name="handleHeaderCellClassName" style="width: 100%" border :row-class-name="handleRowClassName">
+    <el-table-column prop="time" label="日期" align="center" width="100" sortable label-class-name="time" />
+    <el-table-column prop="cntGap" label="gap" align="center" width="60" />
+    <el-table-column prop="cntCalc" label="calc" align="center" width="60" />
+    <el-table-column prop="cntCp" label="cp" align="center" width="60" />
     <el-table-column prop="namesMiss" label="缺失明细" align="left" />
   </el-table>
 </template>
@@ -20,13 +20,7 @@ export default {
     ElTableColumn
   },
   setup() {
-    const tableData = ref([
-      {
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }
-    ])
+    const tableData = ref([])
     const error = ref(null)
 
     const fetchCnts = async() => {
@@ -48,11 +42,21 @@ export default {
     }
   },
   methods: {
-    handlemyclass(obj) {
+    handleHeaderCellClassName(obj) {
       console.log('column.label-1=', obj)
-      if (obj.column.label === '日期') {
+      if (obj.column.label !== '日期') {
         console.log('column.label-2=', obj.column.label)
         return 'basic'
+      }
+    },
+    handleRowClassName(row) {
+      console.log('handleRowClassName, ', row, row.rowIndex)
+      if (row.rowIndex % 2 === 1) {
+        console.log(row.rowIndex, 'odd')
+        return 'row-odd'
+      } else {
+        console.log(row.rowIndex, 'even')
+        return 'row-even'
       }
     }
 
@@ -60,9 +64,28 @@ export default {
 }
 </script>
 
-<style>
-.basic th.el-table__header-cell {
-  background-color: #409EFF; /* 北京蓝色 */
-  color:brown
+<style scoped>
+:deep(.basic) {
+  background: #40f2ffbd !important; /* 浅蓝色 */
+  color:rgb(6, 6, 6);
+  font-size: 16px;
+  height: auto;
+}
+
+:deep(.row-odd) {
+  background: #DFEAF5 !important;
+  color:rgb(6, 6, 6);
+  font-size: 12px;
+}
+
+:deep(.row-even) {
+  color:rgb(6, 6, 6);
+  font-size: 12px;
+}
+
+:deep(.time) {
+  background: #409EFF !important; /* 深蓝色 */
+  color:brown;
+  font-size: 16px;
 }
 </style>

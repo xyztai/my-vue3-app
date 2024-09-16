@@ -37,3 +37,8 @@ npm install -g axios
 npm install --save axios
 npm run build
 npm install element-plus --save // 使用 element-plus
+
+## 使用 yarn
+npm install -g yarn
+yarn run dev
+yarn install
