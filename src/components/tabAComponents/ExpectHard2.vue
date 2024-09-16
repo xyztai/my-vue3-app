@@ -10,7 +10,7 @@
         />
       </el-select>
       <el-input v-model="inputValue" placeholder="0" class="search-input" />
-      <el-button class="search-button" round style="background: #67a3d7" type="primary" @click="fetchCnts">算算看</el-button>
+      <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchCnts">算算看</el-button>
     </div>
     <el-table
       empty-text="暂无数据"
