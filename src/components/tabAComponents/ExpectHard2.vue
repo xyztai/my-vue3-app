@@ -120,6 +120,8 @@ export default {
 
 <style scoped>
 .search-bolck {
+  display: flex;
+  justify-content: space-between; /* 水平间隔 */
   margin-bottom: 10px; /* 留出50px的底部距离 */
 }
 
@@ -137,6 +139,7 @@ export default {
 .search-button {
   margin-left: 10px;
   display: inline-block;
+  width: 120px;
 }
 
 :deep(.basic) {
