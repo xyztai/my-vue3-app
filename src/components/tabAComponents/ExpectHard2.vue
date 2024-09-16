@@ -22,8 +22,8 @@
       <el-table-column prop="name" label="名称" align="center" width="120" />
       <el-table-column prop="operDir" label="操作" align="center" width="60" />
       <el-table-column prop="ratioC" label="比例" align="center" width="80" />
-      <el-table-column prop="sellOper" label="卖" align="center" width="170" />
-      <el-table-column prop="buyOper" label="买" align="center" width="170" />
+      <el-table-column prop="sellOper" label="卖" align="center" width="165" />
+      <el-table-column prop="buyOper" label="买" align="center" width="165" />
     </el-table>
   </div>
 </template>
