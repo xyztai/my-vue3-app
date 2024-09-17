@@ -7,8 +7,9 @@
         type="date"
         placeholder="选择日期"
         :default-value="new Date()"
+        @change="fetchData"
       />
-      <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchCnts">搜索</el-button>
+      <!-- <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">搜索</el-button> -->
     </div>
     <el-table
       empty-text="暂无数据"
@@ -31,14 +32,17 @@
 <script>
 import { ref } from 'vue'
 import axios from 'axios'
-import { ElTable, ElTableColumn, ElButton, elDatePicker } from 'element-plus'
+import { ElTable } from 'element-plus'
+import { ElTableColumn } from 'element-plus'
+// import { ElButton } from 'element-plus'
+import { elDatePicker } from 'element-plus'
 import 'element-plus/dist/index.css'
 
 export default {
   components: {
     ElTable,
     ElTableColumn,
-    ElButton,
+    // ElButton,
     elDatePicker
   },
   setup() {
@@ -46,7 +50,7 @@ export default {
     const error = ref(null)
     const date = ref(new Date())
 
-    const fetchCnts = async() => {
+    const fetchData = async() => {
       try {
         tableData.value = []
         console.log('date.value, ', date.value)
@@ -66,10 +70,10 @@ export default {
       }
     }
 
-    fetchCnts()
+    fetchData()
 
     return {
-      error, fetchCnts, tableData, date
+      error, fetchData, tableData, date
     }
   },
   methods: {
