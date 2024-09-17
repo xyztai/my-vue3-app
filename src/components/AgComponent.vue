@@ -6,7 +6,7 @@
     </ul>
     <p v-else-if="error">{{ error }}</p>
     <p v-else>Loading data...</p>
-    <button @click="fetchCnts">Refresh Data</button>
+    <button @click="fetchData">Refresh Data</button>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
     const cnts = ref([])
     const error = ref(null)
 
-    const fetchCnts = async() => {
+    const fetchData = async() => {
       try {
         cnts.value = []
         const response = await axios.get('/ag/data/cnt')
@@ -32,10 +32,10 @@ export default {
       }
     }
 
-    fetchCnts()
+    fetchData()
 
     return {
-      cnts, error, fetchCnts
+      cnts, error, fetchData
     }
   }
 }

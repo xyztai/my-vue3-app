@@ -10,7 +10,7 @@
         />
       </el-select>
       <el-input v-model="inputValue" placeholder="0" class="search-input" />
-      <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchCnts">算算看</el-button>
+      <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">算算看</el-button>
     </div>
     <el-table
       empty-text="暂无数据"
@@ -72,7 +72,7 @@ export default {
       { value: '隆基绿能', label: '隆基绿能' }
     ])
 
-    const fetchCnts = async() => {
+    const fetchData = async() => {
       try {
         tableData.value = []
         console.log('inputValue.value, ', inputValue.value)
@@ -86,10 +86,10 @@ export default {
       }
     }
 
-    fetchCnts()
+    fetchData()
 
     return {
-      error, fetchCnts, tableData, inputValue, selectedValue, options
+      error, fetchData, tableData, inputValue, selectedValue, options
     }
   },
   methods: {

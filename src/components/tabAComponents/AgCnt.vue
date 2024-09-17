@@ -31,7 +31,7 @@ export default {
     const tableData = ref([])
     const error = ref(null)
 
-    const fetchCnts = async() => {
+    const fetchData = async() => {
       try {
         tableData.value = []
         const response = await axios.get('/ag/data/cnt')
@@ -43,10 +43,10 @@ export default {
       }
     }
 
-    fetchCnts()
+    fetchData()
 
     return {
-      error, fetchCnts, tableData
+      error, fetchData, tableData
     }
   },
   methods: {
