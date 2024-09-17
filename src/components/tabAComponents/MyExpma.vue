@@ -1,16 +1,14 @@
 <template>
   <div>
     <div class="search-bolck">
-      <el-select v-model="selectedValue" placeholder="请选择" class="search-select">
-        <el-option
-          v-for="item in options"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-        />
-      </el-select>
-      <el-input v-model="inputValue" placeholder="0" class="search-input" />
-      <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchCnts">算算看</el-button>
+      <el-date-picker
+        v-model="date"
+        class="search-select"
+        type="date"
+        placeholder="选择日期"
+        :default-value="new Date()"
+      />
+      <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchCnts">搜索</el-button>
     </div>
     <el-table
       empty-text="暂无数据"
@@ -23,10 +21,9 @@
     >
       <el-table-column prop="time" label="日期" align="center" width="100" sortable label-class-name="time" fixed />
       <el-table-column prop="name" label="名称" align="center" width="100" fixed />
-      <el-table-column prop="operDir" label="操作" align="center" width="60" />
-      <el-table-column prop="ratioC" label="比例" align="center" width="80" />
-      <el-table-column prop="sellOper" label="卖" align="center" width="165" />
-      <el-table-column prop="buyOper" label="买" align="center" width="165" />
+      <el-table-column prop="closePrice" label="cp" align="center" width="90" :formatter="formatAmount" />
+      <el-table-column prop="expma5" label="expma5" align="center" class="last-2-cols" :formatter="formatAmount" />
+      <el-table-column prop="expma37" label="expma37" align="center" class="last-2-cols" :formatter="formatAmount" />
     </el-table>
   </div>
 </template>
@@ -34,7 +31,7 @@
 <script>
 import { ref } from 'vue'
 import axios from 'axios'
-import { ElTable, ElTableColumn, ElButton, ElInput } from 'element-plus'
+import { ElTable, ElTableColumn, ElButton, elDatePicker } from 'element-plus'
 import 'element-plus/dist/index.css'
 
 export default {
@@ -42,41 +39,24 @@ export default {
     ElTable,
     ElTableColumn,
     ElButton,
-    ElInput
+    elDatePicker
   },
   setup() {
     const tableData = ref([])
     const error = ref(null)
-    const inputValue = ref('0')
-    const selectedValue = ref('全部') // 下拉框选中的值
-    const options = ref([ // 下拉框选项数据
-      { value: '全部', label: '全部' },
-      { value: '上证50', label: '上证50' },
-      { value: '上证指数', label: '上证指数' },
-      { value: '沪深300', label: '沪深300' },
-      { value: '深证成指', label: '深证成指' },
-      { value: '科创50', label: '科创50' },
-      { value: '中证1000', label: '中证1000' },
-      { value: '中证2000', label: '中证2000' },
-      { value: '北证50', label: '北证50' },
-      { value: '恒生科技', label: '恒生科技' },
-      { value: '纳斯达克100', label: '纳斯达克100' },
-      { value: '证券', label: '证券' },
-      { value: '有色金属', label: '有色金属' },
-      { value: '光伏产业', label: '光伏产业' },
-      { value: '空天军工', label: '空天军工' },
-      { value: '软件指数', label: '软件指数' },
-      { value: '天齐锂业', label: '天齐锂业' },
-      { value: '宁德时代', label: '宁德时代' },
-      { value: '药明康德', label: '药明康德' },
-      { value: '隆基绿能', label: '隆基绿能' }
-    ])
+    const date = ref(new Date())
 
     const fetchCnts = async() => {
       try {
         tableData.value = []
-        console.log('inputValue.value, ', inputValue.value)
-        const response = await axios.get('/ag/expect/hard2/' + selectedValue.value + '/' + inputValue.value)
+        console.log('date.value, ', date.value)
+        var tmpDate = date.value
+        var year = tmpDate.getFullYear()
+        var month = (tmpDate.getMonth() + 1).toString().padStart(2, '0')
+        var day = tmpDate.getDate().toString().padStart(2, '0')
+        var formatDate = year.toString() + '-' + month + '-' + day
+        console.log('formatDate, ', formatDate)
+        const response = await axios.get('/ag/data/expma/' + formatDate)
         console.log('response.data.data========', response.data.data)
         tableData.value = response.data.data
         console.log('tableData.value========', tableData.value)
@@ -89,7 +69,7 @@ export default {
     fetchCnts()
 
     return {
-      error, fetchCnts, tableData, inputValue, selectedValue, options
+      error, fetchCnts, tableData, date
     }
   },
   methods: {
@@ -114,12 +94,20 @@ export default {
         console.log(row.rowIndex, 'even')
         return 'row-even'
       }
+    },
+    formatAmount(row, column, cellValue, index) {
+      return cellValue.toFixed(4)
     }
   }
 }
 </script>
 
 <style scoped>
+.last-2-cols {
+  display: block; /* 让列并排显示 */
+  width: 50%; /* 列宽度均分 */
+}
+
 .search-bolck {
   display: flex;
   justify-content: space-between; /* 水平间隔 */
@@ -127,12 +115,6 @@ export default {
 }
 
 .search-select {
-  display: inline-block;
-  width: 120px;
-}
-
-.search-input {
-  margin-left: 10px;
   display: inline-block;
   width: 120px;
 }
