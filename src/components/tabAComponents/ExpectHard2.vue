@@ -17,7 +17,7 @@
       :data="tableData"
       :cell-style="{padding: '0', height: '20px'}"
       :header-cell-class-name="handleHeaderCellClassName"
-      style="width: 100%"
+      style="width: 770"
       border
       :row-class-name="handleRowClassName"
     >
@@ -26,7 +26,7 @@
       <el-table-column prop="operDir" label="操作" align="center" width="60" />
       <el-table-column prop="ratioC" label="比例" align="center" width="80" />
       <el-table-column prop="sellOper" label="卖" align="center" width="165" />
-      <el-table-column prop="buyOper" label="买" align="center" />
+      <el-table-column prop="buyOper" label="买" align="center" width="165" />
     </el-table>
   </div>
 </template>
