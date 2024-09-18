@@ -24,7 +24,7 @@
       <el-table-column prop="name" label="名称" align="center" width="100" fixed />
       <el-table-column prop="closePrice" label="cp" align="center" width="120" :formatter="formatAmount" />
       <el-table-column prop="expma5" label="expma5" align="center" width="120" :formatter="formatAmount" />
-      <el-table-column prop="expma37" label="expma37" align="center" width="120" :formatter="formatAmount" />
+      <el-table-column prop="expma37" label="expma37" align="center" :formatter="formatAmount" />
     </el-table>
   </div>
 </template>
