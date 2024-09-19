@@ -8,6 +8,7 @@
     border
     :row-class-name="handleRowClassName"
   >
+    <el-table-column type="index" label="序号" width="60" align="center" fixed />
     <el-table-column prop="time" label="日期" align="center" width="100" sortable label-class-name="time" />
     <el-table-column prop="cntGap" label="gap" align="center" width="60" />
     <el-table-column prop="cntCalc" label="calc" align="center" width="60" />

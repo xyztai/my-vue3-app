@@ -21,6 +21,8 @@
       border
       :row-class-name="handleRowClassName"
     >
+      <!-- 自定义索引列 -->
+      <el-table-column type="index" label="序号" width="60" align="center" fixed />
       <el-table-column prop="time" label="日期" align="center" width="100" sortable label-class-name="time" fixed />
       <el-table-column prop="name" label="名称" align="center" width="100" fixed />
       <el-table-column prop="operDir" label="操作" align="center" width="60" />
