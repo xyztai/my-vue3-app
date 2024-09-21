@@ -22,13 +22,13 @@
       :row-class-name="handleRowClassName"
     >
       <!-- 自定义索引列 -->
-      <el-table-column type="index" label="序号" width="60" align="center" fixed />
+      <el-table-column type="index" label="No" align="center" width="60" fixed />
       <el-table-column prop="time" label="日期" align="center" width="100" sortable label-class-name="time" fixed />
       <el-table-column prop="name" label="名称" align="center" width="100" fixed />
       <el-table-column prop="operDir" label="操作" align="center" width="60" />
       <el-table-column prop="ratioC" label="比例" align="center" width="80" />
-      <el-table-column prop="sellOper" label="卖" align="center" width="165" />
-      <el-table-column prop="buyOper" label="买" align="center" width="165" />
+      <el-table-column prop="sellOper" label="卖" align="center" min-width="165" width="auto" />
+      <el-table-column prop="buyOper" label="买" align="center" min-width="165" width="auto" />
     </el-table>
   </div>
 </template>
