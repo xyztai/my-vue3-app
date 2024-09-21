@@ -13,7 +13,7 @@
     <el-table-column prop="cntGap" label="gap" align="center" width="55" />
     <el-table-column prop="cntCalc" label="calc" align="center" width="60" />
     <el-table-column prop="cntCp" label="cp" align="center" width="50" />
-    <el-table-column prop="namesMiss" label="缺失明细" align="left" min-width="200" width="auto" />
+    <el-table-column prop="namesMiss" label="明细" align="left" min-width="200" width="auto" />
   </el-table>
 </template>
 
