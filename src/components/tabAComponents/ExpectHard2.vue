@@ -23,7 +23,7 @@
     >
       <!-- 自定义索引列 -->
       <el-table-column type="index" label="No" align="center" width="50" fixed />
-      <el-table-column prop="time" label="日期" align="center" width="90" sortable label-class-name="time" fixed />
+      <el-table-column prop="time" label="日期" align="center" width="100" sortable label-class-name="time" fixed />
       <el-table-column prop="name" label="名称" align="center" width="100" fixed />
       <el-table-column prop="operDir" label="操作" align="center" width="60" />
       <el-table-column prop="ratioC" label="比例" align="center" width="80" />

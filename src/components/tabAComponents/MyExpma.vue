@@ -21,7 +21,7 @@
       :row-class-name="handleRowClassName"
     >
       <el-table-column type="index" label="No" align="center" width="50" fixed />
-      <el-table-column prop="time" label="日期" align="center" width="90" sortable label-class-name="time" fixed />
+      <el-table-column prop="time" label="日期" align="center" width="100" sortable label-class-name="time" fixed />
       <el-table-column prop="name" label="名称" align="center" width="100" fixed />
       <el-table-column prop="closePrice" label="cp" align="center" min-width="120" width="auto" :formatter="formatAmount" />
       <el-table-column prop="expma5" label="expma5" align="center" min-width="120" width="auto" :formatter="formatAmount" />
