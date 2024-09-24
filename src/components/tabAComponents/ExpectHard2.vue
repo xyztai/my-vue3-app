@@ -9,7 +9,9 @@
           :value="item.value"
         />
       </el-select>
-      <el-input v-model="inputValue" placeholder="0" class="search-input" />
+      <el-input v-model="inputValue" placeholder="T+1,0" class="search-input" />
+      <el-input v-model="inputValue2" placeholder="T+2,0" class="search-input" />
+      <el-input v-model="inputValue3" placeholder="T+3,0" class="search-input" />
       <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">算算看</el-button>
     </div>
     <el-table
@@ -50,6 +52,8 @@ export default {
     const tableData = ref([])
     const error = ref(null)
     const inputValue = ref('0')
+    const inputValue2 = ref('0')
+    const inputValue3 = ref('0')
     const selectedValue = ref('全部') // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
       { value: '全部', label: '全部' },
@@ -77,8 +81,8 @@ export default {
     const fetchData = async() => {
       try {
         tableData.value = []
-        console.log('inputValue.value, ', inputValue.value)
-        const response = await axios.get('/ag/expect/hard2/' + selectedValue.value + '/' + inputValue.value)
+        console.log('inputValue.value, ', inputValue.value, inputValue2.value, inputValue3.value)
+        const response = await axios.get('/ag/expect/hard2/' + selectedValue.value + '/' + inputValue.value + '/' + inputValue2.value + '/' + inputValue3.value)
         console.log('response.data.data========', response.data.data)
         tableData.value = response.data.data
         console.log('tableData.value========', tableData.value)
@@ -91,7 +95,7 @@ export default {
     fetchData()
 
     return {
-      error, fetchData, tableData, inputValue, selectedValue, options
+      error, fetchData, tableData, inputValue, inputValue2, inputValue3, selectedValue, options
     }
   },
   methods: {
@@ -130,19 +134,19 @@ export default {
 
 .search-select {
   display: inline-block;
-  width: 120px;
+  width: 100px;
 }
 
 .search-input {
-  margin-left: 10px;
+  margin-left: 5px;
   display: inline-block;
-  width: 120px;
+  width: 60px;
 }
 
 .search-button {
-  margin-left: 10px;
+  margin-left: 5px;
   display: inline-block;
-  width: 120px;
+  width: 80px;
 }
 
 :deep(.basic) {
