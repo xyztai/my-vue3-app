@@ -9,9 +9,15 @@
           :value="item.value"
         />
       </el-select>
-      <el-input v-model="inputValue" placeholder="T+1,0" class="search-input" />
-      <el-input v-model="inputValue2" placeholder="T+2,0" class="search-input" />
-      <el-input v-model="inputValue3" placeholder="T+3,0" class="search-input" />
+      <el-tooltip content="T+1" placement="top" effect="light">
+        <el-input v-model="inputValue" placeholder="T+1" class="search-input" />
+      </el-tooltip>
+      <el-tooltip content="T+2" placement="top" effect="light">
+        <el-input v-model="inputValue2" placeholder="T+2" class="search-input" />
+      </el-tooltip>
+      <el-tooltip content="T+3" placement="top" effect="light">
+        <el-input v-model="inputValue3" placeholder="T+3" class="search-input" />
+      </el-tooltip>
       <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">算算看</el-button>
     </div>
     <el-table
