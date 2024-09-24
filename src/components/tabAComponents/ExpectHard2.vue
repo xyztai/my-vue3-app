@@ -106,7 +106,7 @@ export default {
       console.log('handleRowClassName, ', row, row.rowIndex)
       console.log('row.row ====', row.row)
       console.log('row.row.time ====', row.row.time)
-      if (row.row.time === '预期操作') {
+      if (row.row.time.startsWith('T+')) {
         return 'row-expect'
       }
       if (row.rowIndex % 2 === 1) {
