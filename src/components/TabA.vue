@@ -1,10 +1,10 @@
 <template>
   <div class="tabA">
     <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane :key="'0'" label="data-cnt" name="first">
+      <el-tab-pane :key="'0'" label="expect-hard2" name="first">
         <child1 v-if="isChildUpdate1" />
       </el-tab-pane>
-      <el-tab-pane :key="'1'" label="expect-hard2" name="second">
+      <el-tab-pane :key="'1'" label="data-cnt" name="second">
         <child2 v-if="isChildUpdate2" />
       </el-tab-pane>
       <el-tab-pane :key="'2'" label="expma" name="third">
