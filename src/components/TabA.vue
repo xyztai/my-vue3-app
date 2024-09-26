@@ -16,13 +16,13 @@
 
 <script>
 import { ref } from 'vue'
-import AgCnt from './tabAComponents/AgCnt'
 import ExpectHard2 from './tabAComponents/ExpectHard2'
+import AgCnt from './tabAComponents/AgCnt'
 import MyExpma from './tabAComponents/MyExpma.vue'
 export default {
   components: {
-    child1: AgCnt,
-    child2: ExpectHard2,
+    child1: ExpectHard2,
+    child2: AgCnt,
     child3: MyExpma
   },
   setup() {
