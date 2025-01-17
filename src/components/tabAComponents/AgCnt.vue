@@ -8,12 +8,12 @@
     border
     :row-class-name="handleRowClassName"
   >
-    <el-table-column type="index" label="序号" width="60" align="center" fixed />
-    <el-table-column prop="time" label="日期" align="center" width="100" sortable label-class-name="time" />
-    <el-table-column prop="cntGap" label="gap" align="center" width="60" />
+    <el-table-column type="index" label="No" align="center" width="50" fixed />
+    <el-table-column prop="time" label="日期" align="center" width="100" sortable label-class-name="time" fixed />
+    <el-table-column prop="cntGap" label="gap" align="center" width="55" />
     <el-table-column prop="cntCalc" label="calc" align="center" width="60" />
-    <el-table-column prop="cntCp" label="cp" align="center" width="60" />
-    <el-table-column prop="namesMiss" label="缺失明细" align="left" />
+    <el-table-column prop="cntCp" label="cp" align="center" width="50" />
+    <el-table-column prop="namesMiss" label="明细" align="left" min-width="200" width="auto" />
   </el-table>
 </template>
 

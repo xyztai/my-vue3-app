@@ -9,7 +9,15 @@
           :value="item.value"
         />
       </el-select>
-      <el-input v-model="inputValue" placeholder="0" class="search-input" />
+      <el-tooltip content="T+1" placement="top" effect="light">
+        <el-input v-model="inputValue" placeholder="T+1" class="search-input" />
+      </el-tooltip>
+      <el-tooltip content="T+2" placement="top" effect="light">
+        <el-input v-model="inputValue2" placeholder="T+2" class="search-input" />
+      </el-tooltip>
+      <el-tooltip content="T+3" placement="top" effect="light">
+        <el-input v-model="inputValue3" placeholder="T+3" class="search-input" />
+      </el-tooltip>
       <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">算算看</el-button>
     </div>
     <el-table
@@ -22,13 +30,13 @@
       :row-class-name="handleRowClassName"
     >
       <!-- 自定义索引列 -->
-      <el-table-column type="index" label="序号" width="60" align="center" fixed />
+      <el-table-column type="index" label="No" align="center" width="50" fixed />
       <el-table-column prop="time" label="日期" align="center" width="100" sortable label-class-name="time" fixed />
       <el-table-column prop="name" label="名称" align="center" width="100" fixed />
       <el-table-column prop="operDir" label="操作" align="center" width="60" />
       <el-table-column prop="ratioC" label="比例" align="center" width="80" />
-      <el-table-column prop="sellOper" label="卖" align="center" width="165" />
-      <el-table-column prop="buyOper" label="买" align="center" width="165" />
+      <el-table-column prop="sellOper" label="卖" align="center" min-width="165" width="auto" />
+      <el-table-column prop="buyOper" label="买" align="center" min-width="165" width="auto" />
     </el-table>
   </div>
 </template>
@@ -50,6 +58,8 @@ export default {
     const tableData = ref([])
     const error = ref(null)
     const inputValue = ref('0')
+    const inputValue2 = ref('0')
+    const inputValue3 = ref('0')
     const selectedValue = ref('全部') // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
       { value: '全部', label: '全部' },
@@ -78,8 +88,8 @@ export default {
     const fetchData = async() => {
       try {
         tableData.value = []
-        console.log('inputValue.value, ', inputValue.value)
-        const response = await axios.get('/ag/expect/hard2/' + selectedValue.value + '/' + inputValue.value)
+        console.log('inputValue.value, ', inputValue.value, inputValue2.value, inputValue3.value)
+        const response = await axios.get('/ag/expect/hard2/' + selectedValue.value + '/' + inputValue.value + '/' + inputValue2.value + '/' + inputValue3.value)
         console.log('response.data.data========', response.data.data)
         tableData.value = response.data.data
         console.log('tableData.value========', tableData.value)
@@ -92,7 +102,7 @@ export default {
     fetchData()
 
     return {
-      error, fetchData, tableData, inputValue, selectedValue, options
+      error, fetchData, tableData, inputValue, inputValue2, inputValue3, selectedValue, options
     }
   },
   methods: {
@@ -107,7 +117,7 @@ export default {
       console.log('handleRowClassName, ', row, row.rowIndex)
       console.log('row.row ====', row.row)
       console.log('row.row.time ====', row.row.time)
-      if (row.row.time === '预期操作') {
+      if (row.row.time.startsWith('T+')) {
         return 'row-expect'
       }
       if (row.rowIndex % 2 === 1) {
@@ -131,19 +141,19 @@ export default {
 
 .search-select {
   display: inline-block;
-  width: 120px;
+  width: 100px;
 }
 
 .search-input {
-  margin-left: 10px;
+  margin-left: 5px;
   display: inline-block;
-  width: 120px;
+  width: 60px;
 }
 
 .search-button {
-  margin-left: 10px;
+  margin-left: 5px;
   display: inline-block;
-  width: 120px;
+  width: 80px;
 }
 
 :deep(.basic) {
