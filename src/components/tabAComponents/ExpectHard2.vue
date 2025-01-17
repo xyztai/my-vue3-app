@@ -63,15 +63,16 @@ export default {
       { value: '北证50', label: '北证50' },
       { value: '恒生科技', label: '恒生科技' },
       { value: '纳斯达克100', label: '纳斯达克100' },
+      { value: '华宝油气C', label: '华宝油气C' },
       { value: '证券', label: '证券' },
       { value: '有色金属', label: '有色金属' },
       { value: '光伏产业', label: '光伏产业' },
       { value: '空天军工', label: '空天军工' },
-      { value: '软件指数', label: '软件指数' },
-      { value: '天齐锂业', label: '天齐锂业' },
-      { value: '宁德时代', label: '宁德时代' },
-      { value: '药明康德', label: '药明康德' },
-      { value: '隆基绿能', label: '隆基绿能' }
+      { value: '软件指数', label: '软件指数' }
+      //      { value: '天齐锂业', label: '天齐锂业' },
+      //      { value: '宁德时代', label: '宁德时代' },
+      //      { value: '药明康德', label: '药明康德' },
+      //      { value: '隆基绿能', label: '隆基绿能' }
     ])
 
     const fetchData = async() => {
