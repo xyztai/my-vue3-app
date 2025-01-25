@@ -89,7 +89,10 @@ export default {
       try {
         tableData.value = []
         console.log('inputValue.value, ', inputValue.value, inputValue2.value, inputValue3.value)
-        const response = await axios.get('/ag/expect/hard2/' + selectedValue.value + '/' + (inputValue.value ?? '0')+ '/' + (inputValue2.value ?? '0')  + '/' + (inputValue3.value ?? '0') )
+        const response = await axios.get('/ag/expect/hard2/' + selectedValue.value + '/' + 
+              (inputValue.value === null || inputValue.value === undefined ? '0' : inputValue.value)+ '/' + 
+              (inputValue2.value === null || inputValue2.value === undefined ? '0' : inputValue2.value)+ '/' + 
+              (inputValue3.value === null || inputValue3.value === undefined ? '0' : inputValue3.value) )
         console.log('response.data.data========', response.data.data)
         tableData.value = response.data.data
         console.log('tableData.value========', tableData.value)
