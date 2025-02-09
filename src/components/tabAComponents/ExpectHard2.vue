@@ -63,6 +63,8 @@ export default {
     const selectedValue = ref('全部') // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
       { value: '全部', label: '全部' },
+      { value: 'A', label: 'A' },
+      { value: 'AH', label: 'AH' },
       { value: '上证50', label: '上证50' },
       { value: '上证指数', label: '上证指数' },
       { value: '沪深300', label: '沪深300' },
