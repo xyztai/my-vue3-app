@@ -60,8 +60,8 @@ export default {
         console.log('buyFactor.value, ', buyFactor.value)
         console.log('sellFactor.value, ', sellFactor.value)
         const response = await axios.get('/ag/update-factor/' + 
-              (buyFactor.value === null || buyFactor.value === undefined || Object.keys(buyFactor.value).length === 0 ? '1' : buyFactor.value.trim)+ '/' +
-              (sellFactor.value === null || sellFactor.value === undefined || Object.keys(sellFactor.value).length === 0 ? '1' : sellFactor.value.trim) )
+              (buyFactor.value === null || buyFactor.value === undefined || Object.keys(buyFactor.value).length === 0 ? '1' : buyFactor.value)+ '/' +
+              (sellFactor.value === null || sellFactor.value === undefined || Object.keys(sellFactor.value).length === 0 ? '1' : sellFactor.value) )
         console.log('response.data.data========', response.data.data)
       } catch (err) {
         error.value = 'Error Fetching cnts: ' + err.message
