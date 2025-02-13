@@ -36,11 +36,13 @@ export default {
   },
   setup() {
     const error = ref(null)
-    const buyFactor = ref('1')
-    const sellFactor = ref('1')
+    const buyFactor = ref('')
+    const sellFactor = ref('')
 
     const fetchData = async() => {
       try {
+        buyFactor.value = ''
+        sellFactor.value = ''
         console.log('buyFactor.value, ', buyFactor.value)
         console.log('sellFactor.value, ', sellFactor.value)
         const response = await axios.get('/ag/get-factor')
