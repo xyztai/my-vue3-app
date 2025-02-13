@@ -1,7 +1,7 @@
 <template>
   <div class="tabA">
     <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane :key="'0'" label="expect-hard2" name="first">
+      <el-tab-pane :key="'0'" label="expect" name="first">
         <child1 v-if="isChildUpdate1" />
       </el-tab-pane>
       <el-tab-pane :key="'1'" label="data-cnt" name="second">
@@ -10,7 +10,7 @@
       <el-tab-pane :key="'2'" label="expma" name="third">
         <child3 v-if="isChildUpdate3" />
       </el-tab-pane>
-      <el-tab-pane :key="'3'" label="para" name="th_4">
+      <el-tab-pane :key="'3'" label="factor" name="th_4">
         <child4 v-if="isChildUpdate4" />
       </el-tab-pane>
     </el-tabs>
