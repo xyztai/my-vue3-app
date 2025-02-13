@@ -45,8 +45,8 @@ export default {
         console.log('sellFactor.value, ', sellFactor.value)
         const response = await axios.get('/ag/get-factor')
         console.log('response.data.data========', response.data.data)
-        buyFactor.value = response.data.data.get(0)
-        sellFactor.value = response.data.data.get(1)
+        buyFactor.value = response.data.data[0]
+        sellFactor.value = response.data.data[1]
         console.log('buyFactor.value========', buyFactor)
         console.log('sellFactor.value========', sellFactor)
       } catch (err) {
