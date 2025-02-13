@@ -109,12 +109,12 @@ export default {
 .search-button {
   margin-left: 5px;
   display: inline-block;
-  width: 80px;
+  width: 100px;
 }
 
 .modify-button {
   margin-left: 20px;
   display: inline-block;
-  width: 120px;
+  width: 100px;
 }
 </style>
