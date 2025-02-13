@@ -8,13 +8,13 @@
     <div class="para-block">
       <el-text class="search-text">buy-factor:</el-text>
       <el-tooltip content="默认值1" placement="top" effect="light">
-        <el-input v-model="buyFactor" placeholder="1" class="search-input" />
+        <el-input v-model="buyFactor" placeholder="" class="search-input" />
       </el-tooltip>
     </div>
     <div class="para-block">
       <el-text class="search-text">sell-factor:</el-text>
       <el-tooltip content="默认值1" placement="top" effect="light">
-        <el-input v-model="sellFactor" placeholder="1" class="search-input" />
+        <el-input v-model="sellFactor" placeholder="" class="search-input" />
       </el-tooltip>
     </div>
   </div>
@@ -65,6 +65,7 @@ export default {
               (buyFactor.value === null || buyFactor.value === undefined || Object.keys(buyFactor.value).length === 0 ? '1' : buyFactor.value)+ '/' +
               (sellFactor.value === null || sellFactor.value === undefined || Object.keys(sellFactor.value).length === 0 ? '1' : sellFactor.value) )
         console.log('response.data.data========', response.data.data)
+        fetchData()
       } catch (err) {
         error.value = 'Error Fetching cnts: ' + err.message
         console.error('Axios error:', err)
