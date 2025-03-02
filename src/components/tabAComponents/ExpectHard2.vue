@@ -80,7 +80,10 @@ export default {
       { value: '有色金属', label: '有色金属' },
       { value: '光伏产业', label: '光伏产业' },
       { value: '空天军工', label: '空天军工' },
-      { value: '软件指数', label: '软件指数' }
+      { value: '软件指数', label: '软件指数' },
+      { value: '中证白酒', label: '中证白酒' },
+      { value: '中证煤炭', label: '中证煤炭' },
+      { value: '医药创新', label: '医药创新' }
       //      { value: '天齐锂业', label: '天齐锂业' },
       //      { value: '宁德时代', label: '宁德时代' },
       //      { value: '药明康德', label: '药明康德' },
