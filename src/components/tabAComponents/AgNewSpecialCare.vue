@@ -1,4 +1,15 @@
 <template>
+  <div class="search-bolck">
+    <el-date-picker
+      v-model="date"
+      class="search-select"
+      type="date"
+      placeholder="选择日期"
+      :default-value="new Date()"
+      @change="fetchData"
+    />
+    <!-- <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">搜索</el-button> -->
+  </div>
   <el-table
     empty-text="暂无数据"
     :data="tableData"
@@ -21,23 +32,34 @@
 import { ref } from 'vue'
 import axios from 'axios'
 import { ElTable, ElTableColumn } from 'element-plus'
+import { elDatePicker } from 'element-plus'
 import 'element-plus/dist/index.css'
 
 export default {
   components: {
     ElTable,
-    ElTableColumn
+    ElTableColumn,
+    elDatePicker
   },
   setup() {
     const tableData = ref([])
     const error = ref(null)
+    const date = ref(new Date())
 
     const fetchData = async() => {
       try {
         tableData.value = []
-        const response = await axios.get('/ag-new/special-care')
+        console.log('date.value, ', date.value)
+        var tmpDate = date.value
+        var year = tmpDate.getFullYear()
+        var month = (tmpDate.getMonth() + 1).toString().padStart(2, '0')
+        var day = tmpDate.getDate().toString().padStart(2, '0')
+        var formatDate = year.toString() + '-' + month + '-' + day
+        console.log('formatDate, ', formatDate)
+        const response = await axios.get('/ag-new/special-care/' + formatDate)
+        console.log('response.data.data========', response.data.data)
         tableData.value = response.data.data
-        console.log(tableData.value)
+        console.log('tableData.value========', tableData.value)
       } catch (err) {
         error.value = 'Error Fetching cnts: ' + err.message
         console.error('Axios error:', err)
