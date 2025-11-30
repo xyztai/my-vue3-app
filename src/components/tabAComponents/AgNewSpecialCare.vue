@@ -1,31 +1,33 @@
 <template>
-  <div class="search-bolck">
-    <el-date-picker
-      v-model="date"
-      class="search-select"
-      type="date"
-      placeholder="选择日期"
-      :default-value="new Date()"
-      @change="fetchData"
-    />
-    <!-- <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">搜索</el-button> -->
+  <div>
+    <div class="search-bolck">
+      <el-date-picker
+        v-model="date"
+        class="search-select"
+        type="date"
+        placeholder="选择日期"
+        :default-value="new Date()"
+        @change="fetchData"
+      />
+      <!-- <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">搜索</el-button> -->
+    </div>
+    <el-table
+      empty-text="暂无数据"
+      :data="tableData"
+      :cell-style="{padding: '0', height: '20px'}"
+      :header-cell-class-name="handleHeaderCellClassName"
+      style="width: 100%"
+      border
+      :row-class-name="handleRowClassName"
+    >
+      <el-table-column type="index" label="No" align="center" width="50" fixed />
+      <el-table-column prop="date" label="日期" align="center" width="100" sortable label-class-name="time" fixed />
+      <el-table-column prop="stockCode" label="名称" align="left" width="120" fixed />
+      <el-table-column prop="last" label="cp" align="center" min-width="80" width="auto" :formatter="formatAmount" />
+      <el-table-column prop="ratioB" label="买(越小越买)" align="center" sortable min-width="120" width="auto" :formatter="formatAmount" />
+      <el-table-column prop="ratioS" label="卖(越小越卖)" align="center" sortable min-width="120" width="auto" :formatter="formatAmount" />
+    </el-table>
   </div>
-  <el-table
-    empty-text="暂无数据"
-    :data="tableData"
-    :cell-style="{padding: '0', height: '20px'}"
-    :header-cell-class-name="handleHeaderCellClassName"
-    style="width: 100%"
-    border
-    :row-class-name="handleRowClassName"
-  >
-    <el-table-column type="index" label="No" align="center" width="50" fixed />
-    <el-table-column prop="date" label="日期" align="center" width="100" sortable label-class-name="time" fixed />
-    <el-table-column prop="stockCode" label="名称" align="left" width="120" fixed />
-    <el-table-column prop="last" label="cp" align="center" min-width="80" width="auto" :formatter="formatAmount" />
-    <el-table-column prop="ratioB" label="买(越小越买)" align="center" sortable min-width="120" width="auto" :formatter="formatAmount" />
-    <el-table-column prop="ratioS" label="卖(越小越卖)" align="center" sortable min-width="120" width="auto" :formatter="formatAmount" />
-  </el-table>
 </template>
 
 <script>
@@ -96,6 +98,23 @@ export default {
 </script>
 
 <style scoped>
+.search-bolck {
+  display: flex;
+  justify-content: space-between; /* 水平间隔 */
+  margin-bottom: 10px; /* 留出50px的底部距离 */
+}
+
+.search-select {
+  display: inline-block;
+  width: 120px;
+}
+
+.search-button {
+  margin-left: 10px;
+  display: inline-block;
+  width: 120px;
+}
+
 :deep(.basic) {
   background: #d5f1fd !important;
   color:rgb(6, 6, 6);
