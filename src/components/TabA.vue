@@ -14,7 +14,7 @@
         <child4 v-if="isChildUpdate4" />
       </el-tab-pane>
       <el-tab-pane :key="'4'" label="special-care" name="th_5">
-        <child4 v-if="isChildUpdate5" />
+        <child5 v-if="isChildUpdate5" />
       </el-tab-pane>
     </el-tabs>
   </div>
