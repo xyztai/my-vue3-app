@@ -71,7 +71,7 @@ export default {
     fetchData()
 
     return {
-      error, fetchData, tableData
+      error, fetchData, tableData, date
     }
   },
   methods: {
