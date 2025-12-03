@@ -17,7 +17,7 @@
         <child5 v-if="isChildUpdate5" />
       </el-tab-pane>
       <el-tab-pane :key="'5'" label="special-care2" name="th_6">
-        <child5 v-if="isChildUpdate6" />
+        <child6 v-if="isChildUpdate6" />
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -30,7 +30,7 @@ import AgCnt from './tabAComponents/AgCnt'
 import MyExpma from './tabAComponents/MyExpma.vue'
 import MyPara from './tabAComponents/MyPara.vue'
 import AgNewSpecialCare from './tabAComponents/AgNewSpecialCare.vue'
-import AgNewSpecialCare2 from './tabAComponents/AgNewSpecialCare2.vue'
+import AgNewSpecialCareDays from './tabAComponents/AgNewSpecialCareDays.vue'
 export default {
   components: {
     child1: ExpectHard2,
@@ -38,7 +38,7 @@ export default {
     child3: MyExpma,
     child4: MyPara,
     child5: AgNewSpecialCare,
-    child6: AgNewSpecialCare2
+    child6: AgNewSpecialCareDays
   },
   setup() {
     const activeName = ref('first')
