@@ -1,6 +1,9 @@
 <template>
   <div>
     <div class="search-bolck">
+      <el-tooltip content="当天涨幅" placement="top" effect="light">
+        <el-input v-model="inputValue2" placeholder="-1" class="search-input" />
+      </el-tooltip>
       <el-tooltip content="测算天数" placement="top" effect="light">
         <el-input v-model="inputValue3" placeholder="30" class="search-input" />
       </el-tooltip>
@@ -44,13 +47,15 @@ export default {
     const tableData = ref([])
     const error = ref(null)
     const date = ref(new Date())
+    const inputValue2 = ref('-1')
     const inputValue3 = ref('30')
 
     const fetchData = async() => {
       try {
         tableData.value = []
-        const response = await axios.get('/ag-new/special-care-days/' + 
-          (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '0' : inputValue3.value) 
+        const response = await axios.get('/ag-new/special-care-days/'
+          + (inputValue2.value === null || inputValue2.value === undefined || Object.keys(inputValue2.value).length === 0 ? '-1' : inputValue2.value) 
+          + (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '0' : inputValue3.value) 
         )
         console.log('response.data.data========', response.data.data)
         tableData.value = response.data.data
@@ -64,7 +69,7 @@ export default {
     fetchData()
 
     return {
-      error, fetchData, tableData, inputValue3
+      error, fetchData, tableData, inputValue2, inputValue3
     }
   },
   methods: {
