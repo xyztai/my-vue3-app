@@ -36,7 +36,9 @@ export default {
   components: {
     ElTable,
     ElTableColumn,
-    elDatePicker
+    elDatePicker,
+    ElButton,
+    ElInput
   },
   setup() {
     const tableData = ref([])
