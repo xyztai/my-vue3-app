@@ -47,7 +47,7 @@ export default {
     const fetchData = async() => {
       try {
         tableData.value = []
-        const response = await axios.get('/ag-new/special-care/' + 
+        const response = await axios.get('/ag-new/special-care-days/' + 
           (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '0' : inputValue3.value) 
         )
         console.log('response.data.data========', response.data.data)
