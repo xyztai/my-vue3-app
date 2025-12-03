@@ -82,7 +82,7 @@ export default {
     },
     handleRowClassName(row) {
       console.log('handleRowClassName, ', row, row.rowIndex)
-      if (row.row.time.startsWith('T+')) {
+      if (row.row.date.startsWith('T+')) {
         return 'row-expect'
       }
       if (row.rowIndex % 2 === 1) {
