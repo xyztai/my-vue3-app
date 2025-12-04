@@ -1,22 +1,22 @@
 <template>
   <div class="tabA">
     <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane :key="'0'" label="expect" name="first">
+      <el-tab-pane :key="'0'" label="special-care" name="first">
         <child1 v-if="isChildUpdate1" />
       </el-tab-pane>
-      <el-tab-pane :key="'1'" label="data-cnt" name="second">
+      <el-tab-pane :key="'1'" label="special-care2" name="second">
         <child2 v-if="isChildUpdate2" />
       </el-tab-pane>
-      <el-tab-pane :key="'2'" label="expma" name="third">
+      <el-tab-pane :key="'2'" label="expect" name="third">
         <child3 v-if="isChildUpdate3" />
       </el-tab-pane>
       <el-tab-pane :key="'3'" label="factor" name="th_4">
         <child4 v-if="isChildUpdate4" />
       </el-tab-pane>
-      <el-tab-pane :key="'4'" label="special-care" name="th_5">
+      <el-tab-pane :key="'4'" label="expma" name="th_5">
         <child5 v-if="isChildUpdate5" />
       </el-tab-pane>
-      <el-tab-pane :key="'5'" label="special-care2" name="th_6">
+      <el-tab-pane :key="'5'" label="data-cnt" name="th_6">
         <child6 v-if="isChildUpdate6" />
       </el-tab-pane>
     </el-tabs>
@@ -33,12 +33,12 @@ import AgNewSpecialCare from './tabAComponents/AgNewSpecialCare.vue'
 import AgNewSpecialCareDays from './tabAComponents/AgNewSpecialCareDays.vue'
 export default {
   components: {
-    child1: ExpectHard2,
-    child2: AgCnt,
-    child3: MyExpma,
+    child1: AgNewSpecialCare,
+    child2: AgNewSpecialCareDays,
+    child3: ExpectHard2,
     child4: MyPara,
-    child5: AgNewSpecialCare,
-    child6: AgNewSpecialCareDays
+    child5: MyExpma,
+    child6: AgCnt
   },
   setup() {
     const activeName = ref('first')
