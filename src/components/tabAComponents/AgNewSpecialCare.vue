@@ -24,7 +24,7 @@
       <el-table-column prop="date" label="日期" align="center" width="100" sortable label-class-name="time" fixed />
       <el-table-column prop="stockCode" label="名称" align="left" width="120" fixed />
       <el-table-column prop="last" label="cp" align="center" min-width="80" width="auto" :formatter="formatAmount" />
-      <el-table-column prop="ratioB" label="买-ratioB" align="center" sortable min-width="120" width="auto" :formatter="formatAmount" />
+      <el-table-column prop="ratioB" label="买-ratioB" align="center" sortable min-width="80" width="auto" :formatter="formatAmount" />
       <!-- <el-table-column prop="ratioS" label="卖" align="center" sortable min-width="120" width="auto" :formatter="formatAmount" /> -->
     </el-table>
   </div>
