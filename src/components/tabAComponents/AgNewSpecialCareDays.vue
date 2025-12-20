@@ -5,7 +5,7 @@
         <el-input v-model="inputValue2" placeholder="-1" class="search-input" />
       </el-tooltip>
       <el-tooltip content="测算天数" placement="top" effect="light">
-        <el-input v-model="inputValue3" placeholder="30" class="search-input" />
+        <el-input v-model="inputValue3" placeholder="300" class="search-input" />
       </el-tooltip>
       <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">算算看</el-button>
     </div>
