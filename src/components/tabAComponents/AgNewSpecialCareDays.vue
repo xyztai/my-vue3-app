@@ -48,7 +48,7 @@ export default {
     const error = ref(null)
     const date = ref(new Date())
     const inputValue2 = ref('-1')
-    const inputValue3 = ref('30')
+    const inputValue3 = ref('300')
 
     const fetchData = async() => {
       try {
