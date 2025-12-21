@@ -97,7 +97,7 @@ export default {
     },
     handleRowClassName(row) {
       console.log('handleRowClassName, ', row, row.rowIndex)
-      if (row.row.date.startsWith('T+')) {
+      if (row.row.date.startsWith('T+') || row.row.date.startsWith('9999')) {
         return 'row-expect'
       }
       if (row.rowIndex % 2 === 1) {
