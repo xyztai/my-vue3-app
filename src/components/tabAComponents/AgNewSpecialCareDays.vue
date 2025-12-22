@@ -37,7 +37,13 @@
       <!-- <el-table-column prop="ratioS" label="卖(<0.25)" align="center" sortable min-width="120" width="auto" :formatter="formatAmount" /> -->
     </el-table>
     <div>
-      <el-link type="primary">我是底线</el-link>
+      <el-link type="primary">===== 我是底线 =====</el-link>
+    </div>
+    <div>
+      <el-link type="primary">===== 我是底线 =====</el-link>
+    </div>
+    <div>
+      <el-link type="primary">===== 我是底线 =====</el-link>
     </div>
   </div>
 </template>
