@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="search-bolck">
-      <el-select v-model="selectedValue" placeholder="请选择" class="search-select">
+      <el-select v-model="selectedValue" placeholder="请选择" class="search-select" @change="fetchData">
         <el-option
           v-for="item in options"
           :key="item.value"
