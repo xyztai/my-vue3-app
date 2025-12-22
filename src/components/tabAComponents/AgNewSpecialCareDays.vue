@@ -26,7 +26,6 @@
       :cell-style="{padding: '0', height: '20px'}"
       :header-cell-class-name="handleHeaderCellClassName"
       style="width: 100%"
-      element-loading-text="正在加载..."
       border
       :row-class-name="handleRowClassName"
     >
@@ -37,13 +36,16 @@
       <el-table-column prop="ratioB" label="买(止损5%)" align="center" min-width="65" width="auto" :formatter="formatAmount" />
       <!-- <el-table-column prop="ratioS" label="卖(<0.25)" align="center" sortable min-width="120" width="auto" :formatter="formatAmount" /> -->
     </el-table>
+    <div>
+      <el-link type="primary">我是底线</el-link>
+    </div>
   </div>
 </template>
 
 <script>
 import { ref } from 'vue'
 import axios from 'axios'
-import { ElTable, ElTableColumn, ElButton, ElInput } from 'element-plus'
+import { ElTable, ElTableColumn, ElButton, ElInput, ElLink } from 'element-plus'
 import { elDatePicker } from 'element-plus'
 import 'element-plus/dist/index.css'
 
@@ -53,7 +55,8 @@ export default {
     ElTableColumn,
     elDatePicker,
     ElButton,
-    ElInput
+    ElInput,
+    ElLink
   },
   setup() {
     const tableData = ref([])
