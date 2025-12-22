@@ -1,15 +1,23 @@
 <template>
   <div>
     <div class="search-bolck">
+      <el-select v-model="selectedValue" placeholder="请选择" class="search-select">
+        <el-option
+          v-for="item in options"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+        />
+      </el-select>
+      <el-tooltip content="测算天数" placement="top" effect="light">
+        <el-input v-model="inputValue3" placeholder="200" class="search-input" />
+      </el-tooltip>
       <el-tooltip content="当天涨幅" placement="top" effect="light">
         <el-input v-model="inputValue2" placeholder="-1" class="search-input" />
       </el-tooltip>
-      <el-tooltip content="测算天数" placement="top" effect="light">
-        <el-input v-model="inputValue3" placeholder="300" class="search-input" />
-      </el-tooltip>
-      <el-tooltip content="数据来源" placement="top" effect="light">
+      <!-- <el-tooltip content="数据来源" placement="top" effect="light">
         <el-input v-model="inputValue4" placeholder="1-QQ;2-东财" class="search-input" />
-      </el-tooltip>
+      </el-tooltip> -->
       <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">算算看</el-button>
     </div>
     <el-table
@@ -52,21 +60,18 @@ export default {
     const date = ref(new Date())
     const inputValue2 = ref('-1')
     const inputValue3 = ref('300')
-    const inputValue4 = ref(2)
+    // const inputValue4 = ref(2)
+    const selectedValue = ref('全部') // 下拉框选中的值
+    const options = ref([ // 下拉框选项数据
+      { value: 1, label: '2020至今' },
+      { value: 2, label: '过去一年' },
+      { value: 3, label: 'QQ的数据' }
+    ])
 
     const fetchData = async() => {
       try {
         tableData.value = []
-        if(inputValue4.value == 1) {
-          const response = await axios.get('/ag-new/special-care-days/'
-            + (inputValue2.value === null || inputValue2.value === undefined || Object.keys(inputValue2.value).length === 0 ? '-1' : inputValue2.value) 
-            + '/' + (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '300' : inputValue3.value) 
-          )
-          console.log('response.data.data========', response.data.data)
-          tableData.value = response.data.data
-          console.log('tableData.value========', tableData.value)
-        }
-        if(inputValue4.value == 2) {
+        if(selectedValue.value == 1) {
           const response = await axios.get('/ag-new/special-care-days-eastmoney/'
             + (inputValue2.value === null || inputValue2.value === undefined || Object.keys(inputValue2.value).length === 0 ? '-1' : inputValue2.value) 
             + '/' + (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '300' : inputValue3.value) 
@@ -75,8 +80,17 @@ export default {
           tableData.value = response.data.data
           console.log('tableData.value========', tableData.value)
         }
-        if(inputValue4.value == 3) {
+        if(selectedValue.value == 2) {
           const response = await axios.get('/ag-new/special-care-days-eastmoney-365/'
+            + (inputValue2.value === null || inputValue2.value === undefined || Object.keys(inputValue2.value).length === 0 ? '-1' : inputValue2.value) 
+            + '/' + (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '300' : inputValue3.value) 
+          )
+          console.log('response.data.data========', response.data.data)
+          tableData.value = response.data.data
+          console.log('tableData.value========', tableData.value)
+        }
+        if(selectedValue.value == 3) {
+          const response = await axios.get('/ag-new/special-care-days/'
             + (inputValue2.value === null || inputValue2.value === undefined || Object.keys(inputValue2.value).length === 0 ? '-1' : inputValue2.value) 
             + '/' + (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '300' : inputValue3.value) 
           )
@@ -93,7 +107,7 @@ export default {
     fetchData()
 
     return {
-      error, fetchData, tableData, inputValue2, inputValue3, inputValue4
+      error, fetchData, tableData, inputValue2, inputValue3, selectedValue, options
     }
   },
   methods: {

@@ -1,10 +1,10 @@
 <template>
   <div class="tabA">
     <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane :key="'0'" label="special-care" name="first">
+      <el-tab-pane :key="'0'" label="top" name="first">
         <child1 v-if="isChildUpdate1" />
       </el-tab-pane>
-      <el-tab-pane :key="'1'" label="special-care2" name="second">
+      <el-tab-pane :key="'1'" label="top-t" name="second">
         <child2 v-if="isChildUpdate2" />
       </el-tab-pane>
       <el-tab-pane :key="'2'" label="expect" name="third">
@@ -33,8 +33,8 @@ import AgNewSpecialCare from './tabAComponents/AgNewSpecialCare.vue'
 import AgNewSpecialCareDays from './tabAComponents/AgNewSpecialCareDays.vue'
 export default {
   components: {
-    child1: AgNewSpecialCare,
-    child2: AgNewSpecialCareDays,
+    child1: AgNewSpecialCareDays,
+    child2: AgNewSpecialCare,
     child3: ExpectHard2,
     child4: MyPara,
     child5: MyExpma,
