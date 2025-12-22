@@ -61,7 +61,7 @@ export default {
     const inputValue2 = ref('-1')
     const inputValue3 = ref('300')
     // const inputValue4 = ref(2)
-    const selectedValue = ref('全部') // 下拉框选中的值
+    const selectedValue = ref(1) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
       { value: 1, label: '2020至今' },
       { value: 2, label: '过去一年' },
