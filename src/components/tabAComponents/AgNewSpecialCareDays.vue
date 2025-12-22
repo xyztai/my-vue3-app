@@ -75,7 +75,8 @@ export default {
     const options = ref([ // 下拉框选项数据
       { value: 1, label: '2020至今' },
       { value: 2, label: '过去一年' },
-      { value: 3, label: 'QQ的数据' }
+      { value: 3, label: '过去30天' },
+      { value: 4, label: 'QQ的数据' }
     ])
 
     const fetchData = async() => {
@@ -100,6 +101,15 @@ export default {
           console.log('tableData.value========', tableData.value)
         }
         if(selectedValue.value == 3) {
+          const response = await axios.get('/ag-new/special-care-days-eastmoney-30/'
+            + (inputValue2.value === null || inputValue2.value === undefined || Object.keys(inputValue2.value).length === 0 ? '-1' : inputValue2.value) 
+            + '/' + (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '300' : inputValue3.value) 
+          )
+          console.log('response.data.data========', response.data.data)
+          tableData.value = response.data.data
+          console.log('tableData.value========', tableData.value)
+        }
+        if(selectedValue.value == 4) {
           const response = await axios.get('/ag-new/special-care-days/'
             + (inputValue2.value === null || inputValue2.value === undefined || Object.keys(inputValue2.value).length === 0 ? '-1' : inputValue2.value) 
             + '/' + (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '300' : inputValue3.value) 
