@@ -26,6 +26,7 @@
       :cell-style="{padding: '0', height: '20px'}"
       :header-cell-class-name="handleHeaderCellClassName"
       style="width: 100%"
+      element-loading-text="正在加载..."
       border
       :row-class-name="handleRowClassName"
     >
