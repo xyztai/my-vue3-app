@@ -165,7 +165,7 @@ export default {
 
 .search-select {
   display: inline-block;
-  width: 120px;
+  width: 150px;
 }
 
 .search-input {
