@@ -73,10 +73,10 @@ export default {
     // const inputValue4 = ref(2)
     const selectedValue = ref(1) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
-      { value: 1, label: '2020至今' },
-      { value: 2, label: '过去一年' },
-      { value: 3, label: '过去30天' },
-      { value: 4, label: 'QQ的数据' }
+      { value: 1, label: '2020-1.5%' },
+      { value: 2, label: '365-top5' },
+      { value: 3, label: '365-top3' },
+      { value: 4, label: '2024919-1.5%-QQ' }
     ])
 
     const fetchData = async() => {
