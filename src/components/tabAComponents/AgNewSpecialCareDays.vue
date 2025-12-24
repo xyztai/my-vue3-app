@@ -75,7 +75,7 @@ export default {
     const options = ref([ // 下拉框选项数据
       { value: 1, label: '2020-1.5%' },
       { value: 2, label: '365-top5' },
-      { value: 3, label: '365-top3' },
+      { value: 3, label: '30-365-top3' },
       { value: 4, label: '2024919-1.5%-QQ' }
     ])
 
