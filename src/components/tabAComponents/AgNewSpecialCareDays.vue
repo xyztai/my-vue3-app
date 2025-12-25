@@ -15,6 +15,12 @@
       <el-tooltip content="当天涨幅" placement="top" effect="light">
         <el-input v-model="inputValue2" placeholder="-1" class="search-input" />
       </el-tooltip>
+      <el-switch
+        v-model="value5"
+        inline-prompt
+        active-text="缓存2H"
+        inactive-text="清除缓存"
+      />
       <!-- <el-tooltip content="数据来源" placement="top" effect="light">
         <el-input v-model="inputValue4" placeholder="1-QQ;2-东财" class="search-input" />
       </el-tooltip> -->
@@ -62,6 +68,7 @@ export default {
     elDatePicker,
     ElButton,
     ElInput,
+    ElSwitch,
     ElLink
   },
   setup() {
@@ -82,6 +89,9 @@ export default {
     const fetchData = async() => {
       try {
         tableData.value = []
+        if(value5.value == '清除缓存') {
+          const responseFirstApi = await axios.get('/ag-new/invalidateAll');
+        }
         if(selectedValue.value == 1) {
           const response = await axios.get('/ag-new/special-care-days-eastmoney/'
             + (inputValue2.value === null || inputValue2.value === undefined || Object.keys(inputValue2.value).length === 0 ? '-1' : inputValue2.value) 
@@ -127,7 +137,7 @@ export default {
     fetchData()
 
     return {
-      error, fetchData, tableData, inputValue2, inputValue3, selectedValue, options
+      error, fetchData, tableData, inputValue2, inputValue3, selectedValue, options, value5
     }
   },
   methods: {
