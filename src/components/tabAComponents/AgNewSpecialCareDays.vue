@@ -79,10 +79,10 @@ export default {
     // const inputValue4 = ref(2)
     const selectedValue = ref(1) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
-      { value: 1, label: '2020-1.5%' },
-      { value: 2, label: '365-top5' },
-      { value: 3, label: '30-365-top3' },
-      { value: 4, label: '2024919-1.5%-QQ' }
+      { value: 1, label: '1.5%-2020' },
+      { value: 2, label: 'top5-365' },
+      { value: 3, label: 'top3-30-365' },
+      { value: 4, label: 'QQ-1.5%-2024919' }
     ])
     const value5 = ref(true)
 
@@ -177,7 +177,7 @@ export default {
 
 .search-select {
   display: inline-block;
-  width: 150px;
+  width: 120px;
 }
 
 .search-input {
