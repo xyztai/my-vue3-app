@@ -89,7 +89,8 @@ export default {
     const fetchData = async() => {
       try {
         tableData.value = []
-        if(!value5) {
+        console.log('value5', value5.value)
+        if(value5.value == false) {
           console.log('call invalidateAll...')
           const responseFirstApi = await axios.get('/ag-new/invalidateAll');
         }
@@ -143,22 +144,22 @@ export default {
   },
   methods: {
     handleHeaderCellClassName(obj) {
-      console.log('column.label-1=', obj)
+      // console.log('column.label-1=', obj)
       if (obj.column.label !== '日期') {
-        console.log('column.label-2=', obj.column.label)
+        // console.log('column.label-2=', obj.column.label)
         return 'basic'
       }
     },
     handleRowClassName(row) {
-      console.log('handleRowClassName, ', row, row.rowIndex)
+      // console.log('handleRowClassName, ', row, row.rowIndex)
       if (row.row.date.startsWith('T+') || row.row.date.startsWith('9999')) {
         return 'row-expect'
       }
       if (row.rowIndex % 2 === 1) {
-        console.log(row.rowIndex, 'odd')
+        // console.log(row.rowIndex, 'odd')
         return 'row-odd'
       } else {
-        console.log(row.rowIndex, 'even')
+        // console.log(row.rowIndex, 'even')
         return 'row-even'
       }
     }
