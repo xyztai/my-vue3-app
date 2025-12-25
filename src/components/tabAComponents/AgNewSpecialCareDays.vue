@@ -89,7 +89,8 @@ export default {
     const fetchData = async() => {
       try {
         tableData.value = []
-        if(value5.value == '清除缓存') {
+        if(!value5) {
+          console.log('call invalidateAll...')
           const responseFirstApi = await axios.get('/ag-new/invalidateAll');
         }
         if(selectedValue.value == 1) {
