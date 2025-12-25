@@ -84,6 +84,7 @@ export default {
       { value: 3, label: '30-365-top3' },
       { value: 4, label: '2024919-1.5%-QQ' }
     ])
+    const value2 = ref(true)
 
     const fetchData = async() => {
       try {
