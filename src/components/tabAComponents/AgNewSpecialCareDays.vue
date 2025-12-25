@@ -68,7 +68,6 @@ export default {
     elDatePicker,
     ElButton,
     ElInput,
-    ElSwitch,
     ElLink
   },
   setup() {
