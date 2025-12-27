@@ -82,7 +82,8 @@ export default {
       { value: 1, label: '1.5%-2020' },
       { value: 2, label: 'top5-365' },
       { value: 3, label: 'top3-30-365' },
-      { value: 4, label: 'QQ-1.5%-2024919' }
+      { value: 4, label: 'volume-triple' },
+      { value: 5, label: 'QQ-1.5%-2024919' }
     ])
     const value5 = ref(true)
 
@@ -122,6 +123,15 @@ export default {
           console.log('tableData.value========', tableData.value)
         }
         if(selectedValue.value == 4) {
+          const response = await axios.get('/ag-new/selectVolumnRise/'
+            + (inputValue2.value === null || inputValue2.value === undefined || Object.keys(inputValue2.value).length === 0 ? '-1' : inputValue2.value) 
+            + '/' + (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '300' : inputValue3.value) 
+          )
+          console.log('response.data.data========', response.data.data)
+          tableData.value = response.data.data
+          console.log('tableData.value========', tableData.value)
+        }
+        if(selectedValue.value == 5) {
           const response = await axios.get('/ag-new/special-care-days/'
             + (inputValue2.value === null || inputValue2.value === undefined || Object.keys(inputValue2.value).length === 0 ? '-1' : inputValue2.value) 
             + '/' + (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '300' : inputValue3.value) 
