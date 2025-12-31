@@ -96,28 +96,22 @@ export default {
           const responseFirstApi = await axios.get('/ag-new/invalidateAll');
         }
         if(selectedValue.value == 1) {
-          const response = await axios.get('/ag-new/special-care-days-eastmoney/'
-            + (inputValue2.value === null || inputValue2.value === undefined || Object.keys(inputValue2.value).length === 0 ? '-1' : inputValue2.value) 
-            + '/' + (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '300' : inputValue3.value) 
+          const response = await axios.get('/ag-new/special-care-days-eastmoney'
           )
           console.log('response.data.data========', response.data.data)
           tableData.value = response.data.data
           console.log('tableData.value========', tableData.value)
         }
         if(selectedValue.value == 2) {
-          const response = await axios.get('/ag-new/special-care-days-eastmoney-365/'
-            + (inputValue2.value === null || inputValue2.value === undefined || Object.keys(inputValue2.value).length === 0 ? '-1' : inputValue2.value) 
-            + '/' + (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '300' : inputValue3.value) 
-          )
+          const response = await axios.get('/ag-new/special-care-days-eastmoney-365-top5'
+         )
           console.log('response.data.data========', response.data.data)
           tableData.value = response.data.data
           console.log('tableData.value========', tableData.value)
         }
         if(selectedValue.value == 3) {
-          const response = await axios.get('/ag-new/special-care-days-eastmoney-30/'
-            + (inputValue2.value === null || inputValue2.value === undefined || Object.keys(inputValue2.value).length === 0 ? '-1' : inputValue2.value) 
-            + '/' + (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '300' : inputValue3.value) 
-          )
+          const response = await axios.get('/ag-new/special-care-days-eastmoney-30-top3'
+         )
           console.log('response.data.data========', response.data.data)
           tableData.value = response.data.data
           console.log('tableData.value========', tableData.value)
