@@ -1,7 +1,7 @@
 <template>
   <div class="tabA">
     <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane :key="'0'" label="top" name="first">
+      <el-tab-pane :key="'0'" label="dc-stock" name="first">
         <child1 v-if="isChildUpdate1" />
       </el-tab-pane>
       <el-tab-pane :key="'1'" label="top-t" name="second">
