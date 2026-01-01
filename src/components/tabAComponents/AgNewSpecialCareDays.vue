@@ -80,7 +80,7 @@ export default {
     const selectedValue = ref(1) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
       { value: 1, label: '1.5%-2020' },
-      { value: 2, label: 'top3-1' },
+      { value: 2, label: 'top3-next' },
       { value: 3, label: 'top3-30' },
       { value: 4, label: 'volume*3' },
       { value: 5, label: 'QQ-1.5%-2024919' }
