@@ -117,9 +117,7 @@ export default {
           console.log('tableData.value========', tableData.value)
         }
         if(selectedValue.value == 4) {
-          const response = await axios.get('/ag-new/selectVolumnRise/'
-            + (inputValue2.value === null || inputValue2.value === undefined || Object.keys(inputValue2.value).length === 0 ? '-1' : inputValue2.value) 
-            + '/' + (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '300' : inputValue3.value) 
+          const response = await axios.get('/ag-new/volumn-suddenly-rised'
           )
           console.log('response.data.data========', response.data.data)
           tableData.value = response.data.data
