@@ -4,7 +4,7 @@
       <el-tab-pane :key="'0'" label="dc-stock" name="first">
         <child1 v-if="isChildUpdate1" />
       </el-tab-pane>
-      <el-tab-pane :key="'1'" label="top-t" name="second">
+      <el-tab-pane :key="'1'" label="dc-etf" name="second">
         <child2 v-if="isChildUpdate2" />
       </el-tab-pane>
     </el-tabs>

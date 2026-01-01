@@ -97,28 +97,28 @@ export default {
           const responseFirstApi = await axios.get('/ag-new/invalidateAll');
         }
         if(selectedValue.value == 1) {
-          const response = await axios.get('/ag-eastmoney-stock/special-care-days-eastmoney-1-top3'
+          const response = await axios.get('/ag-eastmoney-etf/special-care-days-eastmoney-1-top3'
          )
           console.log('response.data.data========', response.data.data)
           tableData.value = response.data.data
           console.log('tableData.value========', tableData.value)
         }
         if(selectedValue.value == 2) {
-          const response = await axios.get('/ag-eastmoney-stock/special-care-days-eastmoney-30-top3'
+          const response = await axios.get('/ag-eastmoney-etf/special-care-days-eastmoney-30-top3'
          )
           console.log('response.data.data========', response.data.data)
           tableData.value = response.data.data
           console.log('tableData.value========', tableData.value)
         }
         if(selectedValue.value == 3) {
-          const response = await axios.get('/ag-eastmoney-stock/volumn-suddenly-rised'
+          const response = await axios.get('/ag-eastmoney-etf/volumn-suddenly-rised'
           )
           console.log('response.data.data========', response.data.data)
           tableData.value = response.data.data
           console.log('tableData.value========', tableData.value)
         }
         if(selectedValue.value == 4) {
-          const response = await axios.get('/ag-eastmoney-stock/eastmoney-latest-info'
+          const response = await axios.get('/ag-eastmoney-etf/eastmoney-latest-info'
           )
           console.log('response.data.data========', response.data.data)
           tableData.value = response.data.data
