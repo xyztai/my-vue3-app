@@ -82,6 +82,7 @@ export default {
       { value: 1, label: 'top3-next' },
       { value: 2, label: 'top3-30' },
       { value: 3, label: 'volume*3' },
+      { value: 4, label: '今日数据' },
       // { value: 4, label: '1.5%-2020' },
       // { value: 5, label: 'QQ-1.5%-2024919' }
     ])
@@ -111,6 +112,13 @@ export default {
         }
         if(selectedValue.value == 3) {
           const response = await axios.get('/ag-eastmoney-stock/volumn-suddenly-rised'
+          )
+          console.log('response.data.data========', response.data.data)
+          tableData.value = response.data.data
+          console.log('tableData.value========', tableData.value)
+        }
+        if(selectedValue.value == 4) {
+          const response = await axios.get('/ag-eastmoney-stock/eastmoney-latest-info'
           )
           console.log('response.data.data========', response.data.data)
           tableData.value = response.data.data
