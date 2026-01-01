@@ -79,9 +79,9 @@ export default {
     // const inputValue4 = ref(2)
     const selectedValue = ref(1) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
-      { value: 1, label: 'top3-next' },
-      { value: 2, label: 'top3-30' },
-      { value: 3, label: 'volume*3' },
+      { value: 1, label: 'top10-next' },
+      { value: 2, label: 'top10-30' },
+      { value: 3, label: 'volume*2' },
       { value: 4, label: '今日数据' },
       // { value: 4, label: '1.5%-2020' },
       // { value: 5, label: 'QQ-1.5%-2024919' }
