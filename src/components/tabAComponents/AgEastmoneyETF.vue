@@ -97,14 +97,14 @@ export default {
           const responseFirstApi = await axios.get('/ag-new/invalidateAll');
         }
         if(selectedValue.value == 1) {
-          const response = await axios.get('/ag-eastmoney-etf/special-care-days-eastmoney-1-top3'
+          const response = await axios.get('/ag-eastmoney-etf/special-care-days-eastmoney-1-top10'
          )
           console.log('response.data.data========', response.data.data)
           tableData.value = response.data.data
           console.log('tableData.value========', tableData.value)
         }
         if(selectedValue.value == 2) {
-          const response = await axios.get('/ag-eastmoney-etf/special-care-days-eastmoney-30-top3'
+          const response = await axios.get('/ag-eastmoney-etf/special-care-days-eastmoney-60-top10'
          )
           console.log('response.data.data========', response.data.data)
           tableData.value = response.data.data
