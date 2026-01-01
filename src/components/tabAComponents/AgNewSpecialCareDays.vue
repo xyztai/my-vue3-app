@@ -80,9 +80,9 @@ export default {
     const selectedValue = ref(1) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
       { value: 1, label: '1.5%-2020' },
-      { value: 2, label: 'top5-365' },
-      { value: 3, label: 'top3-30-365' },
-      { value: 4, label: 'volume-triple' },
+      { value: 2, label: 'top3-1' },
+      { value: 3, label: 'top3-30' },
+      { value: 4, label: 'volume*3' },
       { value: 5, label: 'QQ-1.5%-2024919' }
     ])
     const value5 = ref(true)
@@ -103,7 +103,7 @@ export default {
           console.log('tableData.value========', tableData.value)
         }
         if(selectedValue.value == 2) {
-          const response = await axios.get('/ag-new/special-care-days-eastmoney-365-top5'
+          const response = await axios.get('/ag-new/special-care-days-eastmoney-1-top3'
          )
           console.log('response.data.data========', response.data.data)
           tableData.value = response.data.data
