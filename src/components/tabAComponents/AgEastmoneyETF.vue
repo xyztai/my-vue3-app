@@ -9,10 +9,10 @@
           :value="item.value"
         />
       </el-select>
-      <el-tooltip content="测算天数" placement="top" effect="light">
+      <el-tooltip v-if="false" content="测算天数" placement="top" effect="light">
         <el-input v-model="inputValue3" placeholder="200" class="search-input" />
       </el-tooltip>
-      <el-tooltip content="当天涨幅" placement="top" effect="light">
+      <el-tooltip v-if="false" content="当天涨幅" placement="top" effect="light">
         <el-input v-model="inputValue2" placeholder="-1" class="search-input" />
       </el-tooltip>
       <el-switch
@@ -80,7 +80,7 @@ export default {
     const selectedValue = ref(1) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
       { value: 1, label: 'top10-next' },
-      { value: 2, label: 'top10-30' },
+      { value: 2, label: 'top10-60' },
       { value: 3, label: 'volume*2' },
       { value: 4, label: '今日数据' },
       // { value: 4, label: '1.5%-2020' },

@@ -9,10 +9,10 @@
           :value="item.value"
         />
       </el-select>
-      <el-tooltip content="测算天数" placement="top" effect="light">
+      <el-tooltip v-if="false" content="测算天数" placement="top" effect="light">
         <el-input v-model="inputValue3" placeholder="200" class="search-input" />
       </el-tooltip>
-      <el-tooltip content="当天涨幅" placement="top" effect="light">
+      <el-tooltip v-if="false" content="当天涨幅" placement="top" effect="light">
         <el-input v-model="inputValue2" placeholder="-1" class="search-input" />
       </el-tooltip>
       <el-switch
