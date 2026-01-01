@@ -31,9 +31,11 @@ import MyExpma from './tabAComponents/MyExpma.vue'
 import MyPara from './tabAComponents/MyPara.vue'
 import AgNewSpecialCare from './tabAComponents/AgNewSpecialCare.vue'
 import AgNewSpecialCareDays from './tabAComponents/AgNewSpecialCareDays.vue'
+import AgEastmoneyStock from './tabAComponents/AgEastmoneyStock.vue'
 export default {
   components: {
-    child1: AgNewSpecialCareDays,
+    child1: AgEastmoneyStock,
+    // child1: AgNewSpecialCareDays,
     child2: AgNewSpecialCare,
     child3: ExpectHard2,
     child4: MyPara,
