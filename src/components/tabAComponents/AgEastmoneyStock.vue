@@ -18,7 +18,7 @@
       <el-switch
         v-model="value5"
         inline-prompt
-        active-text="缓存2H"
+        active-text="缓存1D"
         inactive-text="清除缓存"
       />
       <!-- <el-tooltip content="数据来源" placement="top" effect="light">
