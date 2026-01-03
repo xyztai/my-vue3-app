@@ -18,8 +18,14 @@
       <el-switch
         v-model="value5"
         inline-prompt
-        active-text="缓存1D"
-        inactive-text="清除缓存"
+        active-text="前-缓存15m"
+        inactive-text="前-清除缓存"
+      />
+      <el-switch
+        v-model="value6"
+        inline-prompt
+        active-text="后-缓存1d"
+        inactive-text="后-清除缓存"
       />
       <!-- <el-tooltip content="数据来源" placement="top" effect="light">
         <el-input v-model="inputValue4" placeholder="1-QQ;2-东财" class="search-input" />
@@ -87,43 +93,95 @@ export default {
       // { value: 5, label: 'QQ-1.5%-2024919' }
     ])
     const value5 = ref(true)
+    const value6 = ref(true)
 
     const fetchData = async() => {
       try {
         tableData.value = []
         console.log('value5', value5.value)
         if(value5.value == false) {
+          // 清空 localStorage 中的所有数据
+          localStorage.clear();
+        }
+
+        console.log('value6', value6.value)
+        if(value6.value == false) {
           console.log('call invalidateAll...')
           const responseFirstApi = await axios.get('/ag-new/invalidateAll');
         }
+
         if(selectedValue.value == 1) {
-          const response = await axios.get('/ag-eastmoney-etf/special-care-days-eastmoney-1-top10'
-         )
-          console.log('response.data.data========', response.data.data)
-          tableData.value = response.data.data
-          console.log('tableData.value========', tableData.value)
+          const method = 'special-care-days-eastmoney-1-top10';
+          const key = 'etf-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-etf/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }          
         }
+
         if(selectedValue.value == 2) {
-          const response = await axios.get('/ag-eastmoney-etf/special-care-days-eastmoney-60-top10'
-         )
-          console.log('response.data.data========', response.data.data)
-          tableData.value = response.data.data
-          console.log('tableData.value========', tableData.value)
+          const method = 'special-care-days-eastmoney-60-top10';
+          const key = 'etf-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-etf/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
         }
+
         if(selectedValue.value == 3) {
-          const response = await axios.get('/ag-eastmoney-etf/volumn-suddenly-rised'
-          )
-          console.log('response.data.data========', response.data.data)
-          tableData.value = response.data.data
-          console.log('tableData.value========', tableData.value)
+          const method = 'volumn-suddenly-rised';
+          const key = 'etf-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-etf/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
         }
+
         if(selectedValue.value == 4) {
-          const response = await axios.get('/ag-eastmoney-etf/eastmoney-latest-info'
-          )
-          console.log('response.data.data========', response.data.data)
-          tableData.value = response.data.data
-          console.log('tableData.value========', tableData.value)
+          const method = 'eastmoney-latest-info';
+          const key = 'etf-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-etf/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
         }
+
         // if(selectedValue.value == 4) {
         //   const response = await axios.get('/ag-new/special-care-days-eastmoney'
         //   )
@@ -146,10 +204,33 @@ export default {
       }
     }
 
+    function cacheData(key, data, ttl = 900000) { // ttl为缓存时间，单位毫秒，这里设置为15分钟
+      const item = {
+        value: data,
+        expiry: Date.now() + ttl,
+      };
+      localStorage.setItem(key, JSON.stringify(item));
+    }
+
+    function getCachedData(key) {
+      const data = localStorage.getItem(key);
+      if (data) {
+        const item = JSON.parse(data);
+        if (Date.now() < item.expiry) {
+          return item.value;
+        } else {
+          // 过期，移除缓存
+          localStorage.removeItem(key);
+          return null;
+        }
+      }
+      return null;
+    }
+
     fetchData()
 
     return {
-      error, fetchData, tableData, inputValue2, inputValue3, selectedValue, options, value5
+      error, fetchData, tableData, inputValue2, inputValue3, selectedValue, options, value5, value6
     }
   },
   methods: {
