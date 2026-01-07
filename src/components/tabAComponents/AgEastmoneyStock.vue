@@ -185,7 +185,7 @@ export default {
         }
 
         if(selectedValue.value == 5) {
-          const method = 'quer9Zhuan';
+          const method = 'query9Zhuan';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
