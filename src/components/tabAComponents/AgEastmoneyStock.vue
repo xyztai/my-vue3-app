@@ -85,13 +85,13 @@ export default {
     // const inputValue4 = ref(2)
     const selectedValue = ref(5) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
-      { value: 5, label: '*1.9_zhuan_B' },
-      { value: 2, label: '*2.top3-30' },
-      { value: 1, label: '3.top3-next' },
-      { value: 4, label: '4.today-volume*3' },
-      { value: 3, label: '5.volume*3' },
-      { value: 6, label: '6.9_zhuan_S' },
-      { value: 7, label: '7.今日数据' },
+      { value: 5, label: '*9_zhuan_B' },
+      { value: 6, label: '*9_zhuan_S' },
+      { value: 2, label: '*top3-30' },
+      { value: 1, label: 'top3-next' },
+      { value: 4, label: 'today-volume*3' },
+      { value: 3, label: 'volume*3' },
+      { value: 7, label: '今日数据' },
       // { value: 4, label: '1.5%-2020' },
       // { value: 5, label: 'QQ-1.5%-2024919' }
     ])
