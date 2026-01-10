@@ -45,7 +45,7 @@
       <el-table-column prop="date" label="日期" align="center" width="100" sortable label-class-name="time" fixed />
       <el-table-column prop="stockCode" label="名称" align="left" width="115" sortable fixed />
       <el-table-column prop="last" :label="'cp\nchg'" align="center" min-width="65" width="auto" :formatter="formatAmount" />
-      <el-table-column prop="ratioB" :label="'e5\ne10'" align="center" min-width="65" width="auto" :formatter="formatAmount" style="font-size: 2px;" />
+      <el-table-column prop="ratioB" :label="'e5\ne10'" align="center" min-width="65" width="auto" :formatter="formatAmount" />
       <!-- <el-table-column prop="ratioS" label="卖(<0.25)" align="center" sortable min-width="120" width="auto" :formatter="formatAmount" /> -->
     </el-table>
     <div>
@@ -369,19 +369,19 @@ export default {
 :deep(.row-expect) {
   background: #FAFAD2 !important;
   color:rgb(253, 3, 3);
-  font-size: 12px;
+  font-size: 8px;
   font-weight: bold;
 }
 
 :deep(.row-odd) {
   background: #DFEAF5 !important;
   color:rgb(6, 6, 6);
-  font-size: 12px;
+  font-size: 8px;
 }
 
 :deep(.row-even) {
   color:rgb(6, 6, 6);
-  font-size: 12px;
+  font-size: 8px;
 }
 
 :deep(.time) {
