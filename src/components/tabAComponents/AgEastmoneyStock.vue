@@ -369,19 +369,19 @@ export default {
 :deep(.row-expect) {
   background: #FAFAD2 !important;
   color:rgb(253, 3, 3);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: bold;
 }
 
 :deep(.row-odd) {
   background: #DFEAF5 !important;
   color:rgb(6, 6, 6);
-  font-size: 8px;
+  font-size: 10px;
 }
 
 :deep(.row-even) {
   color:rgb(6, 6, 6);
-  font-size: 8px;
+  font-size: 10px;
 }
 
 :deep(.time) {
