@@ -300,7 +300,7 @@ export default {
     },
     handleRowClassName(row) {
       // console.log('handleRowClassName, ', row, row.rowIndex)
-      if (row.row.date.startsWith('T+') || row.row.date.startsWith('9999') || row.row.ratioB.startsWith('B_09')) {
+      if (row.row.date.startsWith('T+') || row.row.date.startsWith('9999') || row.row.ratioB.startsWith('B_09U') || row.row.ratioB.startsWith('S_07U')) {
         return 'row-expect'
       }
       if (row.rowIndex % 2 === 1) {
