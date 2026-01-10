@@ -91,7 +91,8 @@ export default {
       { value: 1, label: 'top3-next' },
       { value: 4, label: 'today-volume*3' },
       { value: 3, label: 'volume*3' },
-      { value: 7, label: '今日数据' },
+      { value: 7, label: 'loss-ratio' },
+      { value: 8, label: '今日数据' },
       // { value: 4, label: '1.5%-2020' },
       // { value: 5, label: 'QQ-1.5%-2024919' }
     ])
@@ -222,6 +223,24 @@ export default {
         }
 
         if(selectedValue.value == 7) {
+          const method = 'queryWinRatios';
+          const key = 'stock-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-stock/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
+        }
+
+        if(selectedValue.value == 8) {
           const method = 'eastmoney-latest-info';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
