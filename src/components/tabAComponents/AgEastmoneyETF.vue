@@ -91,7 +91,7 @@ export default {
       { value: 1, label: 'top10-next' },
       { value: 4, label: 'today-volume*2' },
       { value: 3, label: 'volume*2' },
-      { value: 7, label: 'loss-ratio' },
+      { value: 7, label: 'risk-ratio' },
       { value: 8, label: '今日数据' },
       // { value: 4, label: '1.5%-2020' },
       // { value: 5, label: 'QQ-1.5%-2024919' }

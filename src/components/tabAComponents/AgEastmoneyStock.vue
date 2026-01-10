@@ -45,7 +45,7 @@
       <el-table-column prop="date" label="日期" align="center" width="100" sortable label-class-name="time" fixed />
       <el-table-column prop="stockCode" label="名称" align="left" width="115" sortable fixed />
       <el-table-column prop="last" :label="'cp\nchg'" align="center" min-width="65" width="auto" :formatter="formatAmount" />
-      <el-table-column prop="ratioB" :label="'e5\ne10'" align="center" min-width="65" width="auto" :formatter="formatAmount" />
+      <el-table-column class-name="table-small-font" prop="ratioB" :label="'e5\ne10'" align="center" min-width="65" width="auto" :formatter="formatAmount" />
       <!-- <el-table-column prop="ratioS" label="卖(<0.25)" align="center" sortable min-width="120" width="auto" :formatter="formatAmount" /> -->
     </el-table>
     <div>
@@ -91,7 +91,7 @@ export default {
       { value: 1, label: 'top3-next' },
       { value: 4, label: 'today-volume*3' },
       { value: 3, label: 'volume*3' },
-      { value: 7, label: 'loss-ratio' },
+      { value: 7, label: 'risk-ratio' },
       { value: 8, label: '今日数据' },
       // { value: 4, label: '1.5%-2020' },
       // { value: 5, label: 'QQ-1.5%-2024919' }
@@ -389,4 +389,9 @@ export default {
   color:brown;
   font-size: 16px;
 }
+
+.el-table .table-small-font .cell {
+  font-size: 8px; /* 设置字体大小 */
+}
+
 </style>
