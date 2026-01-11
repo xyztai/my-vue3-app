@@ -32,6 +32,11 @@
       </el-tooltip> -->
       <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">算算看</el-button>
     </div>
+    <div>
+      warn:<br/>
+      B_O9_ETF:4、6、8<br/>
+      S_07_ETF:4、6、8、10、11
+    </div>
     <el-table
       empty-text="暂无数据"
       :data="tableData"
