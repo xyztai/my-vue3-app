@@ -31,11 +31,12 @@
         <el-input v-model="inputValue4" placeholder="1-QQ;2-东财" class="search-input" />
       </el-tooltip> -->
       <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">算算看</el-button>
-    </div>    
+    </div>
     <div class="text-container">
-      <p>warn,以下几个月要特别注意开仓:</p>
-      <p>B_O9_ETF:4、6、8</p>
-      <p>S_07_ETF:4、6、8、10、11</p>
+      <p>WARN:</p>
+      <p>这几个月不开仓:</p>
+      <p>B_09_ETF: 4、6、8</p>
+      <p>S_07_ETF: 4、6、8、10、11</p>
     </div>
     <el-table
       empty-text="暂无数据"

@@ -32,6 +32,12 @@
       </el-tooltip> -->
       <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">算算看</el-button>
     </div>
+    <div class="text-container">
+      <p>WARN:</p>
+      <p>这几个月不开仓:</p>
+      <p>B_09_ETF: 4、6、8</p>
+      <p>S_07_ETF: 4、6、8、10、11</p>
+    </div>
     <el-table
       empty-text="暂无数据"
       :data="tableData"
@@ -388,5 +394,12 @@ export default {
   background: #d5f1fd !important;
   color:brown;
   font-size: 16px;
+}
+
+.text-container p {
+  text-align: left; /* 或者使用 text-align: start; 根据需要 */
+  color:brown;
+  font-size: 10px;
+  line-height: 0.5; /* 调整行间距 */
 }
 </style>
