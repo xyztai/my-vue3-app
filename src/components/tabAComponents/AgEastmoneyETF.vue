@@ -397,5 +397,7 @@ export default {
 
 .text-container p {
   text-align: left; /* 或者使用 text-align: start; 根据需要 */
+  color:brown;
+  font-size: 10px;
 }
 </style>
