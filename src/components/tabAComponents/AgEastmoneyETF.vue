@@ -31,11 +31,11 @@
         <el-input v-model="inputValue4" placeholder="1-QQ;2-东财" class="search-input" />
       </el-tooltip> -->
       <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">算算看</el-button>
-    </div>
-    <div>
-      warn:<br/>
-      B_O9_ETF:4、6、8<br/>
-      S_07_ETF:4、6、8、10、11
+    </div>    
+    <div class="text-container">
+      <p>warn:</p>
+      <p>B_O9_ETF:4、6、8</p>
+      <p>S_07_ETF:4、6、8、10、11</p>
     </div>
     <el-table
       empty-text="暂无数据"
@@ -393,5 +393,9 @@ export default {
   background: #d5f1fd !important;
   color:brown;
   font-size: 16px;
+}
+
+.text-container p {
+  text-align: left; /* 或者使用 text-align: start; 根据需要 */
 }
 </style>
