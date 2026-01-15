@@ -344,7 +344,7 @@ export default {
     },
     handleRowClassName(row) {
       // console.log('handleRowClassName, ', row, row.rowIndex)
-      if (obj !== null && obj !== undefined && 
+      if (row.row.date !== null && row.row.date !== undefined && 
           (row.row.date.startsWith('T+') || row.row.date.startsWith('9999') 
              || row.row.ratioB.startsWith('B_09U') || row.row.ratioB.startsWith('S_07U'))) {
           return 'row-expect'
