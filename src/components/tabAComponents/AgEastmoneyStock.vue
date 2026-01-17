@@ -346,7 +346,9 @@ export default {
       // console.log('handleRowClassName, ', row, row.rowIndex)
       if (row.row.date !== null && row.row.date !== undefined && row.row.ratioB !== null && row.row.ratioB !== undefined &&
           (row.row.date.startsWith('T+') || row.row.date.startsWith('9999') 
-             || row.row.ratioB.startsWith('B_09U') || row.row.ratioB.startsWith('S_07U'))) {
+          || row.row.ratioB.startsWith('B_09U') || row.row.ratioB.startsWith('S_09U')
+          || row.row.ratioB.startsWith('B_06U') || row.row.ratioB.startsWith('S_06U')
+          )) {
           return 'row-expect'
       }
       if (row.rowIndex % 2 === 1) {
