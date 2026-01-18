@@ -70,7 +70,7 @@ export default {
     
     onMounted(() => {
       fetchData()
-      chartInstance = echarts.init(chartRef.value)
+      chartInstance = echarts.init(data.value)
 
       // 模拟数据
       // const data = [
