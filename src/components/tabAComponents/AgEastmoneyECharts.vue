@@ -11,7 +11,7 @@ export default {
   setup() {
     const chartRef = ref(null);
     let chartInstance = null;
-    const data = null;  
+    let data = null;  
     const error = ref(null)
     
     const fetchData = () => {
