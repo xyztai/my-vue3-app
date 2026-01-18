@@ -130,6 +130,7 @@ onMounted(async () => {
       }
     },
     legend: {
+        position: 'bottom',
         data: ['B_06','B_07','B_08','B_09']//图例
     },
     grid: {
