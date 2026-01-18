@@ -7,10 +7,11 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import * as echarts from 'echarts'
 import axios from 'axios'
 
+const chartRef = ref(null);
+let chartInstance = null;
+
 export default {
   setup() {
-    const chartRef = ref(null);
-    let chartInstance = null;
     let data = null;  
     const error = ref(null)
     
