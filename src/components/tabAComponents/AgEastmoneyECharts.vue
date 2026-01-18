@@ -8,21 +8,81 @@ import * as echarts from 'echarts'
 
 const chartRef = ref(null)
 let chartInstance = null
+const data = null;
 
 onMounted(() => {
   chartInstance = echarts.init(chartRef.value)
 
+  const fetchData = async() => {
+    try {
+      const method = 'special-care-days-eastmoney-1-top3';
+      const key = 'stock-' + method;
+      const myData = getCachedData(key);
+      if (!myData) {
+        // 从API获取数据并缓存
+        const response = await axios.get('/ag-eastmoney-stock/' + method )
+        console.log('response.data.data========', response.data.data)
+        // data = response.data.data
+        data = [
+                { name: '2026-01-11', value1: 100, value2: 2, value3: 3 },
+                { name: '2026-01-12', value1: 100, value2: 2, value3: 200 },
+                { name: '2026-01-13', value1: 100, value2: 2, value3: 150 },
+                { name: '2026-01-14', value1: 100, value2: 2, value3: 300 },
+                { name: '2026-01-15', value1: 100, value2: 2, value3: 88 },
+                { name: '2026-01-16', value1: 100, value2: 2, value3: 98 },
+                { name: '2026-01-17', value1: 100, value2: 2, value3: 123 },
+                { name: '2026-01-18', value1: 100, value2: 2, value3: 219 }
+              ]
+        // console.log('tableData.value========', tableData.value)          
+        cacheData(key, response.data.data)
+      } else {
+        // 使用缓存的数据
+        data = myData
+        // console.log('Using cached data:', myData);
+      }   
+    } catch (err) {
+      error.value = 'Error Fetching cnts: ' + err.message
+      console.error('Axios error:', err)
+    }
+  }
+
+  function cacheData(key, data, ttl = 900000) { // ttl为缓存时间，单位毫秒，这里设置为15分钟
+    const item = {
+      value: data,
+      expiry: Date.now() + ttl,
+    };
+    localStorage.setItem(key, JSON.stringify(item));
+  }
+
+  function getCachedData(key) {
+    const data = localStorage.getItem(key);
+    if (data) {
+      const item = JSON.parse(data);
+      if (Date.now() < item.expiry) {
+        return item.value;
+      } else {
+        // 过期，移除缓存
+        localStorage.removeItem(key);
+        return null;
+      }
+    }
+    return null;
+  }
+
+  fetchData()
+
+
   // 模拟数据
-  const data = [
-    { name: '2026-01-11', value1: 100, value2: 2, value3: 3 },
-    { name: '2026-01-12', value1: 100, value2: 2, value3: 200 },
-    { name: '2026-01-13', value1: 100, value2: 2, value3: 150 },
-    { name: '2026-01-14', value1: 100, value2: 2, value3: 300 },
-    { name: '2026-01-15', value1: 100, value2: 2, value3: 88 },
-    { name: '2026-01-16', value1: 100, value2: 2, value3: 98 },
-    { name: '2026-01-17', value1: 100, value2: 2, value3: 123 },
-    { name: '2026-01-18', value1: 100, value2: 2, value3: 219 }
-  ]
+  // const data = [
+  //   { name: '2026-01-11', value1: 100, value2: 2, value3: 3 },
+  //   { name: '2026-01-12', value1: 100, value2: 2, value3: 200 },
+  //   { name: '2026-01-13', value1: 100, value2: 2, value3: 150 },
+  //   { name: '2026-01-14', value1: 100, value2: 2, value3: 300 },
+  //   { name: '2026-01-15', value1: 100, value2: 2, value3: 88 },
+  //   { name: '2026-01-16', value1: 100, value2: 2, value3: 98 },
+  //   { name: '2026-01-17', value1: 100, value2: 2, value3: 123 },
+  //   { name: '2026-01-18', value1: 100, value2: 2, value3: 219 }
+  // ]
 
   // 配置项
   const options = {
@@ -166,7 +226,7 @@ onUnmounted(() => {
 
 <style scoped>
 .chart-container {
-  width: 500px;
+  width: 400px;
   height: 300px;
 }
 </style>
