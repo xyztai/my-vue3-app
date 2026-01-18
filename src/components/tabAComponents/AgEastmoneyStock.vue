@@ -388,11 +388,11 @@ export default {
 }
 
 .custom-dropdown .el-select-dropdown__wrap {
-  max-height: 200px; /* 根据需要调整高度 */
+  max-height: 250px; /* 根据需要调整高度 */
   overflow-y: auto;
 }
 .custom-dropdown .el-select-dropdown__list {
-  max-height: 200px; /* 根据需要调整高度 */
+  max-height: 250px; /* 根据需要调整高度 */
 }
 
 .search-input {
