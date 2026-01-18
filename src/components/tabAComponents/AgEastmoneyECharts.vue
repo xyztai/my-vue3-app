@@ -27,28 +27,28 @@ onMounted(() => {
   // 配置项
   const options = {
     xAxis: {
-      name: '(序号)',
+      // name: '(序号)',
       type: 'category',
       data: data.map((item) => item.name),
       axisTick: {
-        show: false, // 不显示刻度
+        show: true, // 不显示刻度
       },
-      // axisLabel: {
-      //   show: false // 不显示刻度标签,一般都是要显示的
-      // }
       axisLabel: {
-        interval: 1, // 每隔一个位置显示数值
-        // formatter: '{value} (刻)',
-      },
+        show: false // 不显示刻度标签,一般都是要显示的
+      }
+      // axisLabel: {
+      //   interval: 1, // 每隔一个位置显示数值
+      //   formatter: '{value} (刻)',
+      // },
     },
     yAxis: {
       name: '(次)',
       type: 'value',
-      axisLabel: {
-        formatter: function (value) {
-          return value + ' 个'
-        }
-      }
+      // axisLabel: {
+      //   formatter: function (value) {
+      //     return value + ' 个'
+      //   }
+      // }
     }, 
     tooltip: {
       trigger: 'item', // 触发类型为item，表示在圆点上触发显示
@@ -93,7 +93,7 @@ onUnmounted(() => {
 
 <style scoped>
 .chart-container {
-  width: 400px;
+  width: 500px;
   height: 300px;
 }
 </style>
