@@ -38,12 +38,12 @@ onMounted(async () => {
   // 初始化图表实例
   chartInstance = echarts.init(chartRef.value);
 
-  const method = 'special-care-days-eastmoney-1-top3';
-  const key = 'stock-' + method;
+  const method = 'b69';
+  const key = 'echarts-' + method;
   const myData = getCachedData(key);
   if (!myData) {
     // 从API获取数据并缓存
-    const response = await axios.get('/ag-eastmoney-stock/' + method);
+    const response = await axios.get('/ag-eastmoney-echarts/' + method);
     data = response.data.data; // 假设后端返回的数据格式是合适的，例如 { xAxis: [], series: [] }
     console.log('获取后端的数据:', data);     
     cacheData(key, response.data.data)
@@ -73,17 +73,17 @@ onMounted(async () => {
   //   { name: '2026-01-18', value1: 100, value2: 2, value3: 219 }
   // ]
 
-  data = [
-    { name: '2026-01-11', value1: 100, value2: 2, value3: 3 },
-    { name: '2026-01-12', value1: 100, value2: 2, value3: 200 },
-    { name: '2026-01-13', value1: 100, value2: 2, value3: 150 },
-    { name: '2026-01-14', value1: 100, value2: 2, value3: 300 },
-    { name: '2026-01-15', value1: 100, value2: 2, value3: 88 },
-    { name: '2026-01-16', value1: 100, value2: 2, value3: 98 },
-    { name: '2026-01-17', value1: 100, value2: 2, value3: 123 },
-    { name: '2026-01-18', value1: 100, value2: 2, value3: 219 }
-  ]
-  console.log('mock 后端数据:', data);
+  // data = [
+  //   { name: '2026-01-11', value1: 100, value2: 2, value3: 3 },
+  //   { name: '2026-01-12', value1: 100, value2: 2, value3: 200 },
+  //   { name: '2026-01-13', value1: 100, value2: 2, value3: 150 },
+  //   { name: '2026-01-14', value1: 100, value2: 2, value3: 300 },
+  //   { name: '2026-01-15', value1: 100, value2: 2, value3: 88 },
+  //   { name: '2026-01-16', value1: 100, value2: 2, value3: 98 },
+  //   { name: '2026-01-17', value1: 100, value2: 2, value3: 123 },
+  //   { name: '2026-01-18', value1: 100, value2: 2, value3: 219 }
+  // ]
+  // console.log('mock 后端数据:', data);
 
   // 配置项
   const options = {
