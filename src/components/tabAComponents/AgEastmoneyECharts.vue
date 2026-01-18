@@ -70,6 +70,7 @@ export default {
     
     onMounted(() => {
       fetchData()
+      console.log('onMounted fetchData data:', data);
       chartInstance = echarts.init(data.value)
 
       // 模拟数据
