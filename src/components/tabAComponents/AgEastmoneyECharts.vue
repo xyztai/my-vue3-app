@@ -42,11 +42,11 @@ onMounted(() => {
       data: data.map((item) => item.name),
       axisTick: {
         show: true,
-        alignWithLabel: false,
       },
       axisLabel: {
         show: false // 不显示刻度标签,一般都是要显示的
-      }
+      },
+      boundaryGap: false
       // axisLabel: {
       //   interval: 1, // 每隔一个位置显示数值
       //   formatter: '{value} (刻)',
