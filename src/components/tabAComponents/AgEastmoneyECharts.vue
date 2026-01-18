@@ -51,11 +51,22 @@ onMounted(() => {
       // }
     }, 
     tooltip: {
-      trigger: 'item', // 触发类型为item，表示在圆点上触发显示
+      trigger: 'axis', // 触发类型为item，表示在圆点上触发显示
       formatter: '{b}: {c}', // 显示的格式，{b}表示类目值，{c}表示数值
     },
     legend: {
         data: ['B_06','B_07','B_08']//图例
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
+    },
+    toolbox: {
+      feature: {
+        saveAsImage: {}
+      }
     },
     series: [
       {
