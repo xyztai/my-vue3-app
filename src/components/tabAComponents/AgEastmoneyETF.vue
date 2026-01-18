@@ -95,7 +95,6 @@ export default {
       { value: 6, label: '*9_zhuan_S' },
       { value: 2, label: '*top10-60' },
       { value: 1, label: 'top10-next' },
-      { value: 4, label: 'today-volume*2' },
       { value: 3, label: 'volume*2' },
       { value: 7, label: 'risk-ratio' },
       { value: 8, label: '今日数据' },
@@ -158,24 +157,6 @@ export default {
 
         if(selectedValue.value == 3) {
           const method = 'volumn-suddenly-rised';
-          const key = 'etf-' + method;
-          const myData = getCachedData(key);
-          if (!myData) {
-            // 从API获取数据并缓存
-            const response = await axios.get('/ag-eastmoney-etf/' + method )
-            // console.log('response.data.data========', response.data.data)
-            tableData.value = response.data.data
-            // console.log('tableData.value========', tableData.value)          
-            cacheData(key, response.data.data)
-          } else {
-            // 使用缓存的数据
-            tableData.value = myData
-            // console.log('Using cached data:', myData);
-          }
-        }
-
-        if(selectedValue.value == 4) {
-          const method = 'volumn-suddenly-rised-today';
           const key = 'etf-' + method;
           const myData = getCachedData(key);
           if (!myData) {
