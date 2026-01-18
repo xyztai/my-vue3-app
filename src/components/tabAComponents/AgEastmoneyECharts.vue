@@ -52,7 +52,10 @@ onMounted(() => {
     }, 
     tooltip: {
       trigger: 'axis', // 触发类型为item，表示在圆点上触发显示
-      formatter: '{b}<br/>{a0}: {c0}<br/>{b1}: {a1}<br/>{a2}: {c2}', // 显示的格式，{b}表示类目值，{c}表示数值
+      formatter: '{b}<br/>{a0}: {c0}<br/>{a1}: {c1}<br/>{a2}: {c2}', // 显示的格式，{b}表示类目值，{c}表示数值
+      textStyle:{
+        align:'left'
+      }
     },
     legend: {
         data: ['B_06','B_07','B_08']//图例
