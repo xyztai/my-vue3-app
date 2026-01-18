@@ -17,7 +17,7 @@ onMounted(async () => {
   // 从API获取数据并缓存
   const method = 'special-care-days-eastmoney-1-top3';
   const response = await axios.get('/ag-eastmoney-stock/' + method);
-  const data = response.data.data; // 假设后端返回的数据格式是合适的，例如 { xAxis: [], series: [] }
+  const data1 = response.data.data; // 假设后端返回的数据格式是合适的，例如 { xAxis: [], series: [] }
   console.log('获取后端的数据:', data);
 
   // 模拟数据
@@ -32,7 +32,7 @@ onMounted(async () => {
   //   { name: '2026-01-18', value1: 100, value2: 2, value3: 219 }
   // ]
 
-  data = [
+  const data = [
     { name: '2026-01-11', value1: 100, value2: 2, value3: 3 },
     { name: '2026-01-12', value1: 100, value2: 2, value3: 200 },
     { name: '2026-01-13', value1: 100, value2: 2, value3: 150 },
