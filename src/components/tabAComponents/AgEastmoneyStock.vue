@@ -348,7 +348,7 @@ export default {
           (row.row.date.startsWith('T+') || row.row.date.startsWith('9999') 
           || row.row.ratioB.startsWith('B_09U') || row.row.ratioB.startsWith('S_09U')
           || row.row.ratioB.startsWith('B_06U') || row.row.ratioB.startsWith('S_06U')
-          || row.row.ratioB.startsWith('B9')
+          || row.row.ratioB == 'B9'
           )) {
           return 'row-expect'
       }
