@@ -124,13 +124,13 @@ onMounted(async () => {
     }, 
     tooltip: {
       trigger: 'axis', // 触发类型为item，表示在圆点上触发显示
-      formatter: '{b}<br/>{a0}: {c0}<br/>{a1}: {c1}<br/>{a2}: {c2}', // 显示的格式，{b}表示类目值，{c}表示数值
+      formatter: '{b}<br/>{a0}: {c0}<br/>{a1}: {c1}<br/>{a2}: {c2}<br/>{a3}: {c3}', // 显示的格式，{b}表示类目值，{c}表示数值
       textStyle:{
         align:'left'
       }
     },
     legend: {
-        data: ['B_06','B_07','B_08']//图例
+        data: ['B_06','B_07','B_08','B_09']//图例
     },
     grid: {
       left: '3%',
@@ -183,7 +183,7 @@ onMounted(async () => {
             borderWidth: 6, // 边框宽度
             borderColor: '#0000FF', // 边框颜色
             shadowBlur: 10, // 阴影模糊度
-            shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
+            // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
         },
         smooth: true,
@@ -191,6 +191,28 @@ onMounted(async () => {
       {
         name: 'B_08',
         data: data.map((item) => item.value3),
+        type: 'line',
+        symbol: 'circle', // 设置为圆形
+        symbolSize: 8, // 设置圆形的大小
+        color: '#BCB8B3',//颜色
+        itemStyle: {
+          color: '#BCB8B3', // 设置圆形的填充颜色
+          borderColor: '#BCB8B3', // 设置圆形的边框颜色
+        },
+        emphasis: {
+          // 设置选中状态下的样式
+          itemStyle: {
+            borderWidth: 6, // 边框宽度
+            borderColor: '#BCB8B3', // 边框颜色
+            shadowBlur: 10, // 阴影模糊度
+            // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
+          }
+        },
+        smooth: true,
+      },
+      {
+        name: 'B_09',
+        data: data.map((item) => item.value4),
         type: 'line',
         symbol: 'circle', // 设置为圆形
         symbolSize: 8, // 设置圆形的大小
@@ -205,7 +227,7 @@ onMounted(async () => {
             borderWidth: 6, // 边框宽度
             borderColor: '#FF0000', // 边框颜色
             shadowBlur: 10, // 阴影模糊度
-            shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
+            // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
         },
         smooth: true,
