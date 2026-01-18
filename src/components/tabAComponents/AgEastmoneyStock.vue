@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="search-bolck">
-      <el-select v-model="selectedValue" placeholder="请选择" class="search-select" @change="fetchData">
+      <el-select v-model="selectedValue" placeholder="请选择" class="search-select" popper-class="custom-dropdown" @change="fetchData">
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -98,8 +98,8 @@ export default {
       { value: 4, label: 'today-volume*3' },
       { value: 3, label: 'volume*3' },
       { value: 7, label: 'risk-ratio' },
-      { value: 8, label: '今日数据' },
       { value: 9, label: 'S69+B9' },
+      { value: 8, label: '今日数据' },
       // { value: 4, label: '1.5%-2020' },
       // { value: 5, label: 'QQ-1.5%-2024919' }
     ])
@@ -361,7 +361,7 @@ export default {
       ) {
           return 'row-expect'
       }
-      
+
       if (row.rowIndex % 2 === 1) {
         // console.log(row.rowIndex, 'odd')
         return 'row-odd'
@@ -385,6 +385,14 @@ export default {
 .search-select {
   display: inline-block;
   width: 120px;
+}
+
+.custom-dropdown .el-select-dropdown__wrap {
+  max-height: 200px; /* 根据需要调整高度 */
+  overflow-y: auto;
+}
+.custom-dropdown .el-select-dropdown__list {
+  max-height: 200px; /* 根据需要调整高度 */
 }
 
 .search-input {
