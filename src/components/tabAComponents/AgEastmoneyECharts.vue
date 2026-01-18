@@ -54,6 +54,9 @@ onMounted(() => {
       trigger: 'item', // 触发类型为item，表示在圆点上触发显示
       formatter: '{b}: {c}', // 显示的格式，{b}表示类目值，{c}表示数值
     },
+    legend: {
+        data: ['B_06','B_07','B_08']//图例
+    },
     series: [
       {
         data: data.map((item) => item.value1),
