@@ -99,7 +99,7 @@ export default {
       { value: 3, label: 'volume*3' },
       { value: 7, label: 'risk-ratio' },
       { value: 8, label: '今日数据' },
-      { value: 9, label: '所有S6-S9' },
+      { value: 9, label: 'S69+B9' },
       // { value: 4, label: '1.5%-2020' },
       // { value: 5, label: 'QQ-1.5%-2024919' }
     ])
@@ -348,6 +348,7 @@ export default {
           (row.row.date.startsWith('T+') || row.row.date.startsWith('9999') 
           || row.row.ratioB.startsWith('B_09U') || row.row.ratioB.startsWith('S_09U')
           || row.row.ratioB.startsWith('B_06U') || row.row.ratioB.startsWith('S_06U')
+          || row.row.ratioB.startsWith('B9')
           )) {
           return 'row-expect'
       }
