@@ -88,8 +88,8 @@ onMounted(async () => {
   // 配置项
   const options = {
     title: {
-        text: 'B_06 ~ B_09 走势', // 图表的标题内容
-        subtext: '最近一个月', // 图表的副标题，可选
+        // text: 'B_06 ~ B_09 走势', // 图表的标题内容
+        subtext: 'B_06 ~ B_09 走势', // 图表的副标题，可选
         left: 'center', // 标题的位置，例如 'left', 'center', 'right' 或者具体像素值
         top: 'top', // 标题的垂直位置，例如 'top', 'middle', 'bottom' 或者具体像素值
         textStyle: { // 标题的文本样式
