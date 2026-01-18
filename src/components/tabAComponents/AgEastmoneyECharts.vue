@@ -39,7 +39,7 @@ export default {
         } else {
           // 使用缓存的数据
           data = myData
-          // console.log('Using cached data:', myData);
+          console.log('Using cached data:', myData);
         }   
       } catch (err) {
         error.value = 'Error Fetching cnts: ' + err.message
