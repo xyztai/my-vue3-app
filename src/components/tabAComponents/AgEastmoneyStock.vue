@@ -266,7 +266,7 @@ export default {
         }
 
         if(selectedValue.value == 9) {
-          const method = 'query9ZhuanSCodes';
+          const method = 'query9ZhuanCodes';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
