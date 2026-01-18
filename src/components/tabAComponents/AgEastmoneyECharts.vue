@@ -69,9 +69,9 @@ export default {
     }
     
     onMounted(() => {
+      fetchData()
       chartInstance = echarts.init(chartRef.value)
 
-      fetchData()
       // 模拟数据
       // const data = [
       //   { name: '2026-01-11', value1: 100, value2: 2, value3: 3 },
