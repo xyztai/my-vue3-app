@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="search-bolck">
-      <el-select v-model="selectedValue" placeholder="请选择" class="search-select" popper-class="custom-dropdown" @change="fetchData">
+      <el-select v-model="selectedValue" placeholder="请选择" class="search-select" @change="fetchData">
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -387,12 +387,8 @@ export default {
   width: 120px;
 }
 
-.custom-dropdown .el-select-dropdown__wrap {
-  max-height: 250px; /* 根据需要调整高度 */
-  overflow-y: auto;
-}
-.custom-dropdown .el-select-dropdown__list {
-  max-height: 250px; /* 根据需要调整高度 */
+.el-select-dropdown__wrap {
+  overflow: hidden !important; /* 禁用滚动 */
 }
 
 .search-input {
