@@ -5,12 +5,14 @@
 <script>
 import { ref, onMounted, onUnmounted } from 'vue'
 import * as echarts from 'echarts'
+import axios from 'axios'
 
 export default {
   setup() {
     const chartRef = ref(null);
     let chartInstance = null;
     const data = null;  
+    const error = ref(null)
     
     const fetchData = () => {
       try {
