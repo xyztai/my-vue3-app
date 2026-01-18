@@ -18,7 +18,7 @@ onMounted(async () => {
   const method = 'special-care-days-eastmoney-1-top3';
   const response = await axios.get('/ag-eastmoney-stock/' + method);
   const data1 = response.data.data; // 假设后端返回的数据格式是合适的，例如 { xAxis: [], series: [] }
-  console.log('获取后端的数据:', data);
+  console.log('获取后端的数据:', data1);
 
   // 模拟数据
   // const data = [
