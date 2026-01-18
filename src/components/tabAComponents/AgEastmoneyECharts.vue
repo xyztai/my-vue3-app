@@ -12,14 +12,14 @@ export default {
     let chartInstance = null;
     const data = null;  
     
-    const fetchData = async() => {
+    const fetchData = () => {
       try {
         const method = 'special-care-days-eastmoney-1-top3';
         const key = 'stock-' + method;
         const myData = getCachedData(key);
         if (!myData) {
           // 从API获取数据并缓存
-          const response = await axios.get('/ag-eastmoney-stock/' + method )
+          const response = axios.get('/ag-eastmoney-stock/' + method )
           console.log('response.data.data========', response.data.data)
           // data = response.data.data
           data = [
