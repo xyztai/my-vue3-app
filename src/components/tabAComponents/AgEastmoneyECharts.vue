@@ -14,24 +14,35 @@ onMounted(() => {
 
   // 模拟数据
   const data = [
-    { name: 'A', value1: 100, value2: 2, value3: 3 },
-    { name: 'B', value1: 100, value2: 2, value3: 200 },
-    { name: 'C', value1: 100, value2: 2, value3: 150 },
-    { name: 'D', value1: 100, value2: 2, value3: 300 },
-    { name: 'E', value1: 100, value2: 2, value3: 88 },
-    { name: 'F', value1: 100, value2: 2, value3: 98 },
-    { name: 'G', value1: 100, value2: 2, value3: 123 },
-    { name: 'H', value1: 100, value2: 2, value3: 219 }
+    { name: '2026-01-11', value1: 100, value2: 2, value3: 3 },
+    { name: '2026-01-12', value1: 100, value2: 2, value3: 200 },
+    { name: '2026-01-13', value1: 100, value2: 2, value3: 150 },
+    { name: '2026-01-14', value1: 100, value2: 2, value3: 300 },
+    { name: '2026-01-15', value1: 100, value2: 2, value3: 88 },
+    { name: '2026-01-16', value1: 100, value2: 2, value3: 98 },
+    { name: '2026-01-17', value1: 100, value2: 2, value3: 123 },
+    { name: '2026-01-18', value1: 100, value2: 2, value3: 219 }
   ]
 
   // 配置项
   const options = {
+    title: {
+        text: 'B_06 ~ B_09 走势', // 图表的标题内容
+        subtext: '最近一个月', // 图表的副标题，可选
+        left: 'center', // 标题的位置，例如 'left', 'center', 'right' 或者具体像素值
+        top: 'top', // 标题的垂直位置，例如 'top', 'middle', 'bottom' 或者具体像素值
+        textStyle: { // 标题的文本样式
+            color: '#333', // 字体颜色
+            fontSize: 18 // 字体大小
+        }
+    },
     xAxis: {
       // name: '(序号)',
       type: 'category',
       data: data.map((item) => item.name),
       axisTick: {
-        show: true, // 不显示刻度
+        show: true,
+        alignWithLabel: false,
       },
       axisLabel: {
         show: false // 不显示刻度标签,一般都是要显示的
