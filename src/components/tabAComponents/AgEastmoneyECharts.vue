@@ -51,21 +51,8 @@ onMounted(() => {
       // }
     }, 
     tooltip: {
-      trigger: 'axis',
-      formatter: function(params) {
-          var res = params.name+'<br/>';
-          var myseries = option.series;
-          for (var i = 0; i < myseries.length; i++) {
-              for(var j=0;j<myseries[i].data.length;j++){
-                  if(myseries[i].data[j].name==params.name){
-                      res+=myseries[i].name +' : '+myseries[i].data[j].value+'</br>';
-                  }
-              }
-          }
-          return res;
-      }
-      // trigger: 'axis', // 触发类型为item，表示在圆点上触发显示
-      // formatter: '{b}: {c}', // 显示的格式，{b}表示类目值，{c}表示数值
+      trigger: 'axis', // 触发类型为item，表示在圆点上触发显示
+      formatter: '{b}: {c[0]}', // 显示的格式，{b}表示类目值，{c}表示数值
     },
     legend: {
         data: ['B_06','B_07','B_08']//图例
