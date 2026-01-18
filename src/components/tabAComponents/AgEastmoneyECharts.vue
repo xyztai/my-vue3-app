@@ -53,7 +53,7 @@ onMounted(() => {
     tooltip: {
       trigger: 'axis', // 触发类型为item，表示在圆点上触发显示
       // formatter: '{b}: {c}', // 显示的格式，{b}表示类目值，{c}表示数值
-      formatter: '{b}:\r\n B_06: {this.point.myValue1}\r\n B_07: {this.point.myValue2}', // 显示的格式，{b}表示类目值，{c}表示数值
+      formatter: '{b}:\r\n B_06: {this.point.value1}\r\n B_07: {this.point.value2}', // 显示的格式，{b}表示类目值，{c}表示数值
     },
     legend: {
         data: ['B_06','B_07','B_08']//图例
