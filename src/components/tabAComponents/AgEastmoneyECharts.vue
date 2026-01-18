@@ -51,7 +51,7 @@ onMounted(() => {
       // }
     }, 
     tooltip: {
-      trigger: 'item',
+      trigger: 'axis',
       formatter: function(params) {
           var res = params.name+'<br/>';
           var myseries = option.series;
