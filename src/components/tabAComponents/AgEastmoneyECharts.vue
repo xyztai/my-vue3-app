@@ -94,6 +94,17 @@ export default {
       //   { name: '2026-01-18', value1: 100, value2: 2, value3: 219 }
       // ]
 
+      data = [
+        { name: '2026-01-11', value1: 100, value2: 2, value3: 3 },
+        { name: '2026-01-12', value1: 100, value2: 2, value3: 200 },
+        { name: '2026-01-13', value1: 100, value2: 2, value3: 150 },
+        { name: '2026-01-14', value1: 100, value2: 2, value3: 300 },
+        { name: '2026-01-15', value1: 100, value2: 2, value3: 88 },
+        { name: '2026-01-16', value1: 100, value2: 2, value3: 98 },
+        { name: '2026-01-17', value1: 100, value2: 2, value3: 123 },
+        { name: '2026-01-18', value1: 100, value2: 2, value3: 219 }
+      ]
+
       // 配置项
       const options = {
         title: {
