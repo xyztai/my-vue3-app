@@ -70,41 +70,43 @@ onMounted(() => {
     },
     series: [
       {
+        name: 'B_06',
         data: data.map((item) => item.value1),
         type: 'line',
         symbol: 'circle', // 设置为圆形
         symbolSize: 8, // 设置圆形的大小
-        color: '#ff0000',//颜色
+        color: '#00FF00',//颜色
         itemStyle: {
-          color: '#ff0000', // 设置圆形的填充颜色
-          borderColor: '#ff0000', // 设置圆形的边框颜色
+          color: '#00FF00', // 设置圆形的填充颜色
+          borderColor: '#00FF00', // 设置圆形的边框颜色
         },
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
             borderWidth: 6, // 边框宽度
-            borderColor: '#ff0000', // 边框颜色
+            borderColor: '#00FF00', // 边框颜色
             shadowBlur: 10, // 阴影模糊度
-            shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
+            // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
         },
         smooth: true,
       },
       {
+        name: 'B_07',
         data: data.map((item) => item.value2),
         type: 'line',
         symbol: 'circle', // 设置为圆形
         symbolSize: 8, // 设置圆形的大小
-        color: '#ff0000',//颜色
+        color: '#0000FF',//颜色
         itemStyle: {
-          color: '#ff0000', // 设置圆形的填充颜色
-          borderColor: '#ff0000', // 设置圆形的边框颜色
+          color: '#0000FF', // 设置圆形的填充颜色
+          borderColor: '#0000FF', // 设置圆形的边框颜色
         },
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
             borderWidth: 6, // 边框宽度
-            borderColor: '#ff0000', // 边框颜色
+            borderColor: '#0000FF', // 边框颜色
             shadowBlur: 10, // 阴影模糊度
             shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
@@ -112,20 +114,21 @@ onMounted(() => {
         smooth: true,
       },
       {
+        name: 'B_08',
         data: data.map((item) => item.value3),
         type: 'line',
         symbol: 'circle', // 设置为圆形
         symbolSize: 8, // 设置圆形的大小
-        color: '#ff0000',//颜色
+        color: '#FF0000',//颜色
         itemStyle: {
-          color: '#ff0000', // 设置圆形的填充颜色
-          borderColor: '#ff0000', // 设置圆形的边框颜色
+          color: '#FF0000', // 设置圆形的填充颜色
+          borderColor: '#FF0000', // 设置圆形的边框颜色
         },
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
             borderWidth: 6, // 边框宽度
-            borderColor: '#ff0000', // 边框颜色
+            borderColor: '#FF0000', // 边框颜色
             shadowBlur: 10, // 阴影模糊度
             shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
