@@ -344,14 +344,24 @@ export default {
     },
     handleRowClassName(row) {
       // console.log('handleRowClassName, ', row, row.rowIndex)
-      if (row.row.date !== null && row.row.date !== undefined && row.row.ratioB !== null && row.row.ratioB !== undefined &&
-          (row.row.date.startsWith('T+') || row.row.date.startsWith('9999') 
-          || row.row.ratioB.startsWith('B_09U') || row.row.ratioB.startsWith('S_09U')
-          || row.row.ratioB.startsWith('B_06U') || row.row.ratioB.startsWith('S_06U')
-          || row.row.ratioB == 'B9'
-          )) {
+      if (row.row.date !== null && row.row.date !== undefined &&
+          (
+            row.row.date.startsWith('T+') || row.row.date.startsWith('9999') 
+          )
+      ) {
           return 'row-expect'
       }
+
+      if (row.row.ratioB !== null && row.row.ratioB !== undefined &&
+          (
+            row.row.ratioB.startsWith('B_09U') || row.row.ratioB.startsWith('S_09U')
+          || row.row.ratioB.startsWith('B_06U') || row.row.ratioB.startsWith('S_06U')
+          || row.row.ratioB == 'B9'
+          )
+      ) {
+          return 'row-expect'
+      }
+      
       if (row.rowIndex % 2 === 1) {
         // console.log(row.rowIndex, 'odd')
         return 'row-odd'
