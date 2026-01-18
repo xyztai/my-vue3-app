@@ -91,8 +91,8 @@ export default {
     // const inputValue4 = ref(2)
     const selectedValue = ref(5) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
-      { value: 5, label: '*9_zhuan_B' },
       { value: 6, label: '*9_zhuan_S' },
+      { value: 5, label: '*9_zhuan_B' },
       { value: 2, label: '*top3-30' },
       { value: 1, label: 'top3-next' },
       { value: 3, label: 'volume*3' },
