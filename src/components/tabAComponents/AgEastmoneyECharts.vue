@@ -11,15 +11,55 @@ const chartRef = ref(null);
 let chartInstance = null;
 let data = null;
 
+function cacheData(key, data, ttl = 900000) { // ttl为缓存时间，单位毫秒，这里设置为15分钟
+  const item = {
+    value: data,
+    expiry: Date.now() + ttl,
+  };
+  localStorage.setItem(key, JSON.stringify(item));
+}
+
+function getCachedData(key) {
+  const data = localStorage.getItem(key);
+  if (data) {
+    const item = JSON.parse(data);
+    if (Date.now() < item.expiry) {
+      return item.value;
+    } else {
+      // 过期，移除缓存
+      localStorage.removeItem(key);
+      return null;
+    }
+  }
+  return null;
+}
+
 onMounted(async () => {
   // 初始化图表实例
   chartInstance = echarts.init(chartRef.value);
 
-  // 从API获取数据并缓存
   const method = 'special-care-days-eastmoney-1-top3';
-  const response = await axios.get('/ag-eastmoney-stock/' + method);
-  data = response.data.data; // 假设后端返回的数据格式是合适的，例如 { xAxis: [], series: [] }
-  console.log('获取后端的数据:', data);
+  const key = 'stock-' + method;
+  const myData = getCachedData(key);
+  if (!myData) {
+    // 从API获取数据并缓存
+    const response = await axios.get('/ag-eastmoney-stock/' + method);
+    data = response.data.data; // 假设后端返回的数据格式是合适的，例如 { xAxis: [], series: [] }
+    console.log('获取后端的数据:', data);     
+    cacheData(key, response.data.data)
+  } else {
+    // 使用缓存的数据
+    data = myData
+    console.log('Using cached data:', myData);
+  }   
+
+
+
+  // 从API获取数据并缓存
+  // const method = 'special-care-days-eastmoney-1-top3';
+  // const response = await axios.get('/ag-eastmoney-stock/' + method);
+  // data = response.data.data; // 假设后端返回的数据格式是合适的，例如 { xAxis: [], series: [] }
+  // console.log('获取后端的数据:', data);
 
   // 模拟数据
   // const data = [
