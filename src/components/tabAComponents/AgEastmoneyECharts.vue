@@ -14,14 +14,14 @@ onMounted(() => {
 
   // 模拟数据
   const data = [
-    { name: 'A', value: 100 },
-    { name: 'B', value: 200 },
-    { name: 'C', value: 150 },
-    { name: 'D', value: 300 },
-    { name: 'E', value: 88 },
-    { name: 'F', value: 98 },
-    { name: 'G', value: 123 },
-    { name: 'H', value: 219 }
+    { name: 'A', value1: 100, value2: 2, value3: 3 },
+    { name: 'B', value1: 100, value2: 2, value3: 200 },
+    { name: 'C', value1: 100, value2: 2, value3: 150 },
+    { name: 'D', value1: 100, value2: 2, value3: 300 },
+    { name: 'E', value1: 100, value2: 2, value3: 88 },
+    { name: 'F', value1: 100, value2: 2, value3: 98 },
+    { name: 'G', value1: 100, value2: 2, value3: 123 },
+    { name: 'H', value1: 100, value2: 2, value3: 219 }
   ]
 
   // 配置项
@@ -56,7 +56,49 @@ onMounted(() => {
     },
     series: [
       {
-        data: data.map((item) => item.value),
+        data: data.map((item) => item.value1),
+        type: 'line',
+        symbol: 'circle', // 设置为圆形
+        symbolSize: 8, // 设置圆形的大小
+        color: '#ff0000',//颜色
+        itemStyle: {
+          color: '#ff0000', // 设置圆形的填充颜色
+          borderColor: '#ff0000', // 设置圆形的边框颜色
+        },
+        emphasis: {
+          // 设置选中状态下的样式
+          itemStyle: {
+            borderWidth: 6, // 边框宽度
+            borderColor: '#ff0000', // 边框颜色
+            shadowBlur: 10, // 阴影模糊度
+            shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
+          }
+        },
+        smooth: true,
+      },
+      {
+        data: data.map((item) => item.value2),
+        type: 'line',
+        symbol: 'circle', // 设置为圆形
+        symbolSize: 8, // 设置圆形的大小
+        color: '#ff0000',//颜色
+        itemStyle: {
+          color: '#ff0000', // 设置圆形的填充颜色
+          borderColor: '#ff0000', // 设置圆形的边框颜色
+        },
+        emphasis: {
+          // 设置选中状态下的样式
+          itemStyle: {
+            borderWidth: 6, // 边框宽度
+            borderColor: '#ff0000', // 边框颜色
+            shadowBlur: 10, // 阴影模糊度
+            shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
+          }
+        },
+        smooth: true,
+      },
+      {
+        data: data.map((item) => item.value3),
         type: 'line',
         symbol: 'circle', // 设置为圆形
         symbolSize: 8, // 设置圆形的大小
