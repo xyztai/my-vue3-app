@@ -22,7 +22,7 @@ export default {
         if (!myData) {
           // 从API获取数据并缓存
           const response = axios.get('/ag-eastmoney-stock/' + method )
-          console.log('response.data.data========', response.data)
+          console.log('response.data.data========', response)
           // data = response.data.data
           data = [
                   { name: '2026-01-11', value1: 100, value2: 2, value3: 3 },
