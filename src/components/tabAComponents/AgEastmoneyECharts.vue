@@ -27,18 +27,56 @@ onMounted(() => {
   // 配置项
   const options = {
     xAxis: {
+      name: '(序号)',
       type: 'category',
-      data: data.map((item) => item.name)
+      data: data.map((item) => item.name),
+      axisTick: {
+        show: false, // 不显示刻度
+      },
+      // axisLabel: {
+      //   show: false // 不显示刻度标签,一般都是要显示的
+      // }
+      axisLabel: {
+        interval: 1, // 每隔一个位置显示数值
+        // formatter: '{value} (刻)',
+      },
     },
     yAxis: {
-      type: 'value'
+      name: '(次)',
+      type: 'value',
+      axisLabel: {
+        formatter: function (value) {
+          return value + ' 个'
+        }
+      }
+    }, 
+    tooltip: {
+      trigger: 'item', // 触发类型为item，表示在圆点上触发显示
+      formatter: '{b}: {c}', // 显示的格式，{b}表示类目值，{c}表示数值
     },
     series: [
       {
         data: data.map((item) => item.value),
-        type: 'line'
+        type: 'line',
+        symbol: 'circle', // 设置为圆形
+        symbolSize: 8, // 设置圆形的大小
+        color: '#ff0000',//颜色
+        itemStyle: {
+          color: '#ff0000', // 设置圆形的填充颜色
+          borderColor: '#ff0000', // 设置圆形的边框颜色
+        },
+        emphasis: {
+          // 设置选中状态下的样式
+          itemStyle: {
+            borderWidth: 6, // 边框宽度
+            borderColor: '#ff0000', // 边框颜色
+            shadowBlur: 10, // 阴影模糊度
+            shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
+          }
+        },
+        smooth: true,
       }
-    ]
+    ], 
   }
 
   // 设置图表配置项
