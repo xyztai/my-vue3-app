@@ -156,7 +156,7 @@ onMounted(async () => {
             ]
         },
         symbol: 'circle', // 设置为圆形
-        symbolSize: 8, // 设置圆形的大小
+        symbolSize: 6, // 设置圆形的大小
         color: '#00FF00',//颜色
         itemStyle: {
           color: '#00FF00', // 设置圆形的填充颜色
@@ -167,7 +167,7 @@ onMounted(async () => {
           itemStyle: {
             borderWidth: 6, // 边框宽度
             borderColor: '#00FF00', // 边框颜色
-            shadowBlur: 10, // 阴影模糊度
+            // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
         },
@@ -184,7 +184,7 @@ onMounted(async () => {
             ]
         },
         symbol: 'circle', // 设置为圆形
-        symbolSize: 8, // 设置圆形的大小
+        symbolSize: 6, // 设置圆形的大小
         color: '#0000FF',//颜色
         itemStyle: {
           color: '#0000FF', // 设置圆形的填充颜色
@@ -195,7 +195,7 @@ onMounted(async () => {
           itemStyle: {
             borderWidth: 6, // 边框宽度
             borderColor: '#0000FF', // 边框颜色
-            shadowBlur: 10, // 阴影模糊度
+            // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
         },
@@ -212,18 +212,18 @@ onMounted(async () => {
             ]
         },
         symbol: 'circle', // 设置为圆形
-        symbolSize: 8, // 设置圆形的大小
-        color: '#BCB8B3',//颜色
+        symbolSize: 6, // 设置圆形的大小
+        color: '#FFFF00',//颜色
         itemStyle: {
-          color: '#BCB8B3', // 设置圆形的填充颜色
-          borderColor: '#BCB8B3', // 设置圆形的边框颜色
+          color: '#FFFF00', // 设置圆形的填充颜色
+          borderColor: '#FFFF00', // 设置圆形的边框颜色
         },
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
             borderWidth: 6, // 边框宽度
-            borderColor: '#BCB8B3', // 边框颜色
-            shadowBlur: 10, // 阴影模糊度
+            borderColor: '#FFFF00', // 边框颜色
+            // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
         },
@@ -240,7 +240,7 @@ onMounted(async () => {
             ]
         },
         symbol: 'circle', // 设置为圆形
-        symbolSize: 8, // 设置圆形的大小
+        symbolSize: 6, // 设置圆形的大小
         color: '#FF0000',//颜色
         itemStyle: {
           color: '#FF0000', // 设置圆形的填充颜色
@@ -251,7 +251,7 @@ onMounted(async () => {
           itemStyle: {
             borderWidth: 6, // 边框宽度
             borderColor: '#FF0000', // 边框颜色
-            shadowBlur: 10, // 阴影模糊度
+            // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
         },
