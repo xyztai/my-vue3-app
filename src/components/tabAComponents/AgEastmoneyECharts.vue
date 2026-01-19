@@ -107,7 +107,7 @@ onMounted(async () => {
       axisLabel: {
         show: false // 不显示刻度标签,一般都是要显示的
       },
-      boundaryGap: false
+      boundaryGap: true
       // axisLabel: {
       //   interval: 1, // 每隔一个位置显示数值
       //   formatter: '{value} (刻)',
