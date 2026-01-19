@@ -149,6 +149,12 @@ onMounted(async () => {
         name: 'S_06',
         data: data.map((item) => item.value1),
         type: 'line',
+        markPoint: {
+            data: [
+                {type: 'max', name: '最大值'},
+                {type: 'min', name: '最小值'}
+            ]
+        },
         symbol: 'circle', // 设置为圆形
         symbolSize: 8, // 设置圆形的大小
         color: '#00FF00',//颜色
@@ -171,6 +177,12 @@ onMounted(async () => {
         name: 'S_07',
         data: data.map((item) => item.value2),
         type: 'line',
+        markPoint: {
+            data: [
+                {type: 'max', name: '最大值'},
+                {type: 'min', name: '最小值'}
+            ]
+        },
         symbol: 'circle', // 设置为圆形
         symbolSize: 8, // 设置圆形的大小
         color: '#0000FF',//颜色
@@ -193,6 +205,12 @@ onMounted(async () => {
         name: 'S_08',
         data: data.map((item) => item.value3),
         type: 'line',
+        markPoint: {
+            data: [
+                {type: 'max', name: '最大值'},
+                {type: 'min', name: '最小值'}
+            ]
+        },
         symbol: 'circle', // 设置为圆形
         symbolSize: 8, // 设置圆形的大小
         color: '#BCB8B3',//颜色
@@ -215,6 +233,12 @@ onMounted(async () => {
         name: 'S_09',
         data: data.map((item) => item.value4),
         type: 'line',
+        markPoint: {
+            data: [
+                {type: 'max', name: '最大值'},
+                {type: 'min', name: '最小值'}
+            ]
+        },
         symbol: 'circle', // 设置为圆形
         symbolSize: 8, // 设置圆形的大小
         color: '#FF0000',//颜色
