@@ -1,5 +1,5 @@
 <template>
-  <div ref="chartRef"></div>
+  <div class="chart-container" ref="chartRef"></div>
 </template>
 
 <script setup>
@@ -261,12 +261,7 @@ onMounted(async () => {
   }
 
   // 设置图表配置项
-  chartInstance.setOption(options);
-
-  // 添加窗口大小改变时的响应式处理
-  window.addEventListener('resize', function () {
-      chartInstance.resize();
-  });
+  chartInstance.setOption(options)
 })
 
 onUnmounted(() => {
