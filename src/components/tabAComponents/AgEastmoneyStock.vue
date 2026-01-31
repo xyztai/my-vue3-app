@@ -98,6 +98,7 @@ export default {
       { value: 3, label: 'volume*3' },
       // { value: 7, label: 'risk-ratio' },
       { value: 9, label: 'S69+B9' },
+      { value: 10, label: '90天内10倍' },
       { value: 8, label: '今日数据' },
       // { value: 4, label: '1.5%-2020' },
       // { value: 5, label: 'QQ-1.5%-2024919' }
@@ -248,6 +249,24 @@ export default {
 
         if(selectedValue.value == 9) {
           const method = 'query9ZhuanCodes';
+          const key = 'stock-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-stock/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
+        }
+
+        if(selectedValue.value == 10) {
+          const method = 'eastmoney-90-days';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
