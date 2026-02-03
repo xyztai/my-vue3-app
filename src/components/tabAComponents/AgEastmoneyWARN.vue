@@ -36,6 +36,6 @@ export default {
   text-align: left; /* 或者使用 text-align: start; 根据需要 */
   color:brown;
   font-size: 18px;
-  line-height: 0.5; /* 调整行间距 */
+  line-height: 0.75; /* 调整行间距 */
 }
 </style>

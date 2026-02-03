@@ -10,7 +10,7 @@
       <el-tab-pane :key="'2'" label="dc-echarts" name="third">
         <child3 v-if="isChildUpdate3" />
       </el-tab-pane>
-      <el-tab-pane :key="'3'" label="warn..." name="_4th">
+      <el-tab-pane :key="'3'" label="warn" name="_4th">
         <child4 v-if="isChildUpdate4" />
       </el-tab-pane>
     </el-tabs>
@@ -22,13 +22,13 @@ import { ref } from 'vue'
 import AgEastmoneyStock from './tabAComponents/AgEastmoneyStock.vue'
 import AgEastmoneyETF from './tabAComponents/AgEastmoneyETF.vue'
 import AgEastmoneyECharts from './tabAComponents/AgEastmoneyECharts.vue'
-import AgEastmoneyWARN from './tabAComponents/AgEastmoneyWARN.vue'
+import AgEastmoneyWarn from './tabAComponents/AgEastmoneyWarn.vue'
 export default {
   components: {
     child1: AgEastmoneyStock,
     child2: AgEastmoneyETF,
     child3: AgEastmoneyECharts,
-    child4: AgEastmoneyWARN,
+    child4: AgEastmoneyWarn,
   },
   setup() {
     const activeName = ref('first')

@@ -305,7 +305,7 @@ export default {
       }
     }
 
-    function cacheData(key, data, ttl = 900000) { // ttl为缓存时间，单位毫秒，这里设置为15分钟
+    function cacheData(key, data, ttl = 1800000) { // ttl为缓存时间，单位毫秒，这里设置为30分钟
       const item = {
         value: data,
         expiry: Date.now() + ttl,
