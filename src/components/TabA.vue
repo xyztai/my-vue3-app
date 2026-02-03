@@ -22,13 +22,13 @@ import { ref } from 'vue'
 import AgEastmoneyStock from './tabAComponents/AgEastmoneyStock.vue'
 import AgEastmoneyETF from './tabAComponents/AgEastmoneyETF.vue'
 import AgEastmoneyECharts from './tabAComponents/AgEastmoneyECharts.vue'
-import AgEastmoneyWarn from './tabAComponents/AgEastmoneyWarn.vue'
+import AgEastmoneyMust from './tabAComponents/AgEastmoneyMust.vue'
 export default {
   components: {
     child1: AgEastmoneyStock,
     child2: AgEastmoneyETF,
     child3: AgEastmoneyECharts,
-    child4: AgEastmoneyWarn,
+    child4: AgEastmoneyMust,
   },
   setup() {
     const activeName = ref('first')
