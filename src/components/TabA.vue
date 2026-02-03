@@ -10,7 +10,7 @@
       <el-tab-pane :key="'2'" label="dc-echarts" name="third">
         <child3 v-if="isChildUpdate3" />
       </el-tab-pane>
-      <el-tab-pane :key="'3'" label="warn" name="_4th">
+      <el-tab-pane :key="'3'" label="每日必看" name="_4th">
         <child4 v-if="isChildUpdate4" />
       </el-tab-pane>
     </el-tabs>
