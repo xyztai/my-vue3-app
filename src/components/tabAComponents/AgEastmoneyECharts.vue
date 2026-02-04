@@ -1,5 +1,7 @@
 <template>
   <div class="chart-container" ref="chartRef"></div>
+  <br/>
+  <div class="chart-container" ref="chartRef_2"></div>
 </template>
 
 <script setup>
@@ -8,7 +10,9 @@ import * as echarts from 'echarts'
 import axios from 'axios'
 
 const chartRef = ref(null);
+const chartRef_2 = ref(null);
 let chartInstance = null;
+let chartInstance_2 = null;
 let data = null;
 
 function cacheData(key, data, ttl = 1800000) { // ttl为缓存时间，单位毫秒，这里设置为30分钟
@@ -37,6 +41,7 @@ function getCachedData(key) {
 onMounted(async () => {
   // 初始化图表实例
   chartInstance = echarts.init(chartRef.value);
+  chartInstance_2 = echarts.init(chartRef_2.value);
 
   const method = 's69';
   const key = 'echarts-' + method;
@@ -262,12 +267,17 @@ onMounted(async () => {
 
   // 设置图表配置项
   chartInstance.setOption(options)
+  chartInstance_2.setOption(options)
 })
 
 onUnmounted(() => {
   if (chartInstance) {
     chartInstance.dispose()
     chartInstance = null
+  }
+  if (chartInstance_2) {
+    chartInstance_2.dispose()
+    chartInstance_2 = null
   }
 })
 
