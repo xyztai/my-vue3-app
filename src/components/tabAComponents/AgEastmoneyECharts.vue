@@ -137,7 +137,7 @@ onMounted(async () => {
       }
     },
     legend: {
-        top: '0%',
+        top: '-5%',
         data: ['S_06','S_07','S_08','S_09','S_69'],//图例
         selected: {
           'S_06': false,
@@ -347,7 +347,7 @@ onMounted(async () => {
       }
     },
     legend: {
-        top: '0%',
+        top: '-5%',
         data: ['B_06','B_07','B_08','B_09','B_69'],//图例
         selected: {
           'B_06': false,
