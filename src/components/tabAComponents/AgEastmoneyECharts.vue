@@ -1,6 +1,8 @@
 <template>
   <div class="chart-container" ref="chartRef"></div>
   <br/>
+  <br/>
+  <br/>
   <div class="chart-container" ref="chartRef_2"></div>
 </template>
 
