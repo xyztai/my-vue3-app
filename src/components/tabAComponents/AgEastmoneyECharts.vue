@@ -1,12 +1,8 @@
 <template>
-  <br/>
   <div>逢高-危险，需要减</div>
   <div class="chart-container" ref="chartRef"></div>
   <br/>
-  <br/>
-  <div>===========================</div>
-  <br/>
-  <br/>
+  <div>=======================================</div>
   <div>逢高-安全，可以加</div>
   <div class="chart-container" ref="chartRef_2"></div>
 </template>
