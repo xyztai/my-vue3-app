@@ -1,8 +1,13 @@
 <template>
+  <br/>
+  <div>逢高-危险，需要减</div>
   <div class="chart-container" ref="chartRef"></div>
   <br/>
   <br/>
+  <div>===========================</div>
   <br/>
+  <br/>
+  <div>逢高-安全，可以加</div>
   <div class="chart-container" ref="chartRef_2"></div>
 </template>
 
@@ -96,7 +101,7 @@ onMounted(async () => {
   const options = {
     title: {
         // text: 'S_06 ~ S_09 走势', // 图表的标题内容
-        subtext: '逢高减', // 图表的副标题，可选
+        // subtext: '逢高减', // 图表的副标题，可选
         left: 'center', // 标题的位置，例如 'left', 'center', 'right' 或者具体像素值
         top: 'top', // 标题的垂直位置，例如 'top', 'middle', 'bottom' 或者具体像素值
         textStyle: { // 标题的文本样式
@@ -137,7 +142,7 @@ onMounted(async () => {
       }
     },
     legend: {
-        top: '-5%',
+        top: '0%',
         data: ['S_06','S_07','S_08','S_09','S_69'],//图例
         selected: {
           'S_06': false,
@@ -306,7 +311,7 @@ onMounted(async () => {
   const options_2 = {
     title: {
         // text: 'B_06 ~ B_09 走势', // 图表的标题内容
-        subtext: '逢高加', // 图表的副标题，可选
+        // subtext: '逢高加', // 图表的副标题，可选
         left: 'center', // 标题的位置，例如 'left', 'center', 'right' 或者具体像素值
         top: 'top', // 标题的垂直位置，例如 'top', 'middle', 'bottom' 或者具体像素值
         textStyle: { // 标题的文本样式
@@ -347,7 +352,7 @@ onMounted(async () => {
       }
     },
     legend: {
-        top: '-5%',
+        top: '0%',
         data: ['B_06','B_07','B_08','B_09','B_69'],//图例
         selected: {
           'B_06': false,
