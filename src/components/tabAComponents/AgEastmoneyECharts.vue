@@ -346,7 +346,14 @@ onMounted(async () => {
     },
     legend: {
         top: '0%',
-        data: ['B_06','B_07','B_08','B_09']//图例
+        data: ['B_06','B_07','B_08','B_09','B_69'],//图例
+        selected: {
+          'B_06': false,
+          'B_07': false,
+          'B_08': false,
+          'B_09': false,
+          'B_69': true
+        }
     },
     grid: {
       left: '3%',
@@ -466,6 +473,34 @@ onMounted(async () => {
           itemStyle: {
             borderWidth: 6, // 边框宽度
             borderColor: '#FF0000', // 边框颜色
+            // shadowBlur: 10, // 阴影模糊度
+            // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
+          }
+        },
+        smooth: true,
+      },
+      {
+        name: 'B_69',
+        data: data.map((item) => item.value5 + item.value6 + item.value7 + item.value8),
+        type: 'line',
+        markPoint: {
+            data: [
+                {type: 'max', name: '最大值'},
+                {type: 'min', name: '最小值'}
+            ]
+        },
+        symbol: 'circle', // 设置为圆形
+        symbolSize: 6, // 设置圆形的大小
+        color: '#000000',//颜色
+        itemStyle: {
+          color: '#000000', // 设置圆形的填充颜色
+          borderColor: '#000000', // 设置圆形的边框颜色
+        },
+        emphasis: {
+          // 设置选中状态下的样式
+          itemStyle: {
+            borderWidth: 6, // 边框宽度
+            borderColor: '#000000', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
