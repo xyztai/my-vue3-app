@@ -169,16 +169,16 @@ onMounted(async () => {
         },
         symbol: 'circle', // 设置为圆形
         symbolSize: 6, // 设置圆形的大小
-        color: '#00FF00',//颜色
+        color: '#98FB98',//颜色
         itemStyle: {
-          color: '#00FF00', // 设置圆形的填充颜色
-          borderColor: '#00FF00', // 设置圆形的边框颜色
+          color: '#98FB98', // 设置圆形的填充颜色
+          borderColor: '#98FB98', // 设置圆形的边框颜色
         },
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
             borderWidth: 6, // 边框宽度
-            borderColor: '#00FF00', // 边框颜色
+            borderColor: '#98FB98', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
@@ -197,16 +197,16 @@ onMounted(async () => {
         },
         symbol: 'circle', // 设置为圆形
         symbolSize: 6, // 设置圆形的大小
-        color: '#0000FF',//颜色
+        color: '#87CEFA',//颜色
         itemStyle: {
-          color: '#0000FF', // 设置圆形的填充颜色
-          borderColor: '#0000FF', // 设置圆形的边框颜色
+          color: '#87CEFA', // 设置圆形的填充颜色
+          borderColor: '#87CEFA', // 设置圆形的边框颜色
         },
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
             borderWidth: 6, // 边框宽度
-            borderColor: '#0000FF', // 边框颜色
+            borderColor: '#87CEFA', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
@@ -225,16 +225,16 @@ onMounted(async () => {
         },
         symbol: 'circle', // 设置为圆形
         symbolSize: 6, // 设置圆形的大小
-        color: '#FFFF00',//颜色
+        color: '#EEE8AA',//颜色
         itemStyle: {
-          color: '#FFFF00', // 设置圆形的填充颜色
-          borderColor: '#FFFF00', // 设置圆形的边框颜色
+          color: '#EEE8AA', // 设置圆形的填充颜色
+          borderColor: '#EEE8AA', // 设置圆形的边框颜色
         },
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
             borderWidth: 6, // 边框宽度
-            borderColor: '#FFFF00', // 边框颜色
+            borderColor: '#EEE8AA', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
@@ -253,16 +253,16 @@ onMounted(async () => {
         },
         symbol: 'circle', // 设置为圆形
         symbolSize: 6, // 设置圆形的大小
-        color: '#FF0000',//颜色
+        color: '#FA8072',//颜色
         itemStyle: {
-          color: '#FF0000', // 设置圆形的填充颜色
-          borderColor: '#FF0000', // 设置圆形的边框颜色
+          color: '#FA8072', // 设置圆形的填充颜色
+          borderColor: '#FA8072', // 设置圆形的边框颜色
         },
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
             borderWidth: 6, // 边框宽度
-            borderColor: '#FF0000', // 边框颜色
+            borderColor: '#FA8072', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
@@ -281,16 +281,16 @@ onMounted(async () => {
         },
         symbol: 'circle', // 设置为圆形
         symbolSize: 6, // 设置圆形的大小
-        color: '#000000',//颜色
+        color: '#A9A9A9',//颜色
         itemStyle: {
-          color: '#000000', // 设置圆形的填充颜色
-          borderColor: '#000000', // 设置圆形的边框颜色
+          color: '#A9A9A9', // 设置圆形的填充颜色
+          borderColor: '#A9A9A9', // 设置圆形的边框颜色
         },
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
             borderWidth: 6, // 边框宽度
-            borderColor: '#000000', // 边框颜色
+            borderColor: '#A9A9A9', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
@@ -379,16 +379,16 @@ onMounted(async () => {
         },
         symbol: 'circle', // 设置为圆形
         symbolSize: 6, // 设置圆形的大小
-        color: '#00FF00',//颜色
+        color: '#98FB98',//颜色
         itemStyle: {
-          color: '#00FF00', // 设置圆形的填充颜色
-          borderColor: '#00FF00', // 设置圆形的边框颜色
+          color: '#98FB98', // 设置圆形的填充颜色
+          borderColor: '#98FB98', // 设置圆形的边框颜色
         },
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
             borderWidth: 6, // 边框宽度
-            borderColor: '#00FF00', // 边框颜色
+            borderColor: '#98FB98', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
@@ -407,16 +407,16 @@ onMounted(async () => {
         },
         symbol: 'circle', // 设置为圆形
         symbolSize: 6, // 设置圆形的大小
-        color: '#0000FF',//颜色
+        color: '#87CEFA',//颜色
         itemStyle: {
-          color: '#0000FF', // 设置圆形的填充颜色
-          borderColor: '#0000FF', // 设置圆形的边框颜色
+          color: '#87CEFA', // 设置圆形的填充颜色
+          borderColor: '#87CEFA', // 设置圆形的边框颜色
         },
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
             borderWidth: 6, // 边框宽度
-            borderColor: '#0000FF', // 边框颜色
+            borderColor: '#87CEFA', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
@@ -435,16 +435,16 @@ onMounted(async () => {
         },
         symbol: 'circle', // 设置为圆形
         symbolSize: 6, // 设置圆形的大小
-        color: '#FFFF00',//颜色
+        color: '#EEE8AA',//颜色
         itemStyle: {
-          color: '#FFFF00', // 设置圆形的填充颜色
-          borderColor: '#FFFF00', // 设置圆形的边框颜色
+          color: '#EEE8AA', // 设置圆形的填充颜色
+          borderColor: '#EEE8AA', // 设置圆形的边框颜色
         },
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
             borderWidth: 6, // 边框宽度
-            borderColor: '#FFFF00', // 边框颜色
+            borderColor: '#EEE8AA', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
@@ -463,16 +463,16 @@ onMounted(async () => {
         },
         symbol: 'circle', // 设置为圆形
         symbolSize: 6, // 设置圆形的大小
-        color: '#FF0000',//颜色
+        color: '#FA8072',//颜色
         itemStyle: {
-          color: '#FF0000', // 设置圆形的填充颜色
-          borderColor: '#FF0000', // 设置圆形的边框颜色
+          color: '#FA8072', // 设置圆形的填充颜色
+          borderColor: '#FA8072', // 设置圆形的边框颜色
         },
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
             borderWidth: 6, // 边框宽度
-            borderColor: '#FF0000', // 边框颜色
+            borderColor: '#FA8072', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
@@ -491,16 +491,16 @@ onMounted(async () => {
         },
         symbol: 'circle', // 设置为圆形
         symbolSize: 6, // 设置圆形的大小
-        color: '#000000',//颜色
+        color: '#A9A9A9',//颜色
         itemStyle: {
-          color: '#000000', // 设置圆形的填充颜色
-          borderColor: '#000000', // 设置圆形的边框颜色
+          color: '#A9A9A9', // 设置圆形的填充颜色
+          borderColor: '#A9A9A9', // 设置圆形的边框颜色
         },
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
             borderWidth: 6, // 边框宽度
-            borderColor: '#000000', // 边框颜色
+            borderColor: '#A9A9A9', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
