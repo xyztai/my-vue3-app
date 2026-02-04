@@ -268,8 +268,8 @@ onMounted(async () => {
   // 配置项
   const options_2 = {
     title: {
-        // text: 'S_06 ~ S_09 走势', // 图表的标题内容
-        // subtext: 'S_06 ~ S_09 走势', // 图表的副标题，可选
+        // text: 'B_06 ~ B_09 走势', // 图表的标题内容
+        // subtext: 'B_06 ~ B_09 走势', // 图表的副标题，可选
         left: 'center', // 标题的位置，例如 'left', 'center', 'right' 或者具体像素值
         top: 'top', // 标题的垂直位置，例如 'top', 'middle', 'bottom' 或者具体像素值
         textStyle: { // 标题的文本样式
@@ -311,7 +311,7 @@ onMounted(async () => {
     },
     legend: {
         top: '0%',
-        data: ['S_06','S_07','S_08','S_09']//图例
+        data: ['B_06','B_07','B_08','B_09']//图例
     },
     grid: {
       left: '3%',
@@ -326,8 +326,8 @@ onMounted(async () => {
     },
     series: [
       {
-        name: 'S_06',
-        data: data.map((item) => item.value1),
+        name: 'B_06',
+        data: data.map((item) => item.value5),
         type: 'line',
         markPoint: {
             data: [
@@ -354,8 +354,8 @@ onMounted(async () => {
         smooth: true,
       },
       {
-        name: 'S_07',
-        data: data.map((item) => item.value2),
+        name: 'B_07',
+        data: data.map((item) => item.value6),
         type: 'line',
         markPoint: {
             data: [
@@ -382,8 +382,8 @@ onMounted(async () => {
         smooth: true,
       },
       {
-        name: 'S_08',
-        data: data.map((item) => item.value3),
+        name: 'B_08',
+        data: data.map((item) => item.value7),
         type: 'line',
         markPoint: {
             data: [
@@ -410,8 +410,8 @@ onMounted(async () => {
         smooth: true,
       },
       {
-        name: 'S_09',
-        data: data.map((item) => item.value4),
+        name: 'B_09',
+        data: data.map((item) => item.value8),
         type: 'line',
         markPoint: {
             data: [
@@ -442,7 +442,7 @@ onMounted(async () => {
 
   // 设置图表配置项
   chartInstance.setOption(options)
-  chartInstance_2.setOption(options)
+  chartInstance_2.setOption(options_2)
 })
 
 onUnmounted(() => {
