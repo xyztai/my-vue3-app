@@ -94,6 +94,7 @@ export default {
       { value: 6, label: '*9_zhuan_S' },
       { value: 5, label: '*9_zhuan_B' },
       { value: 2, label: '*top3-30' },
+      { value: 11, label: '*avg20_avg60' },
       { value: 1, label: 'top3-next' },
       { value: 3, label: 'volume*3' },
       // { value: 7, label: 'risk-ratio' },
@@ -282,6 +283,25 @@ export default {
             // console.log('Using cached data:', myData);
           }
         }
+
+        if(selectedValue.value == 11) {
+          const method = 'eastmoney-avg-60';
+          const key = 'stock-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-stock/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
+        }
+        
 
         // if(selectedValue.value == 4) {
         //   const response = await axios.get('/ag-new/special-care-days-eastmoney'
