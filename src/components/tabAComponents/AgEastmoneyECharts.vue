@@ -194,8 +194,8 @@ onMounted(async () => {
       },
       {
         name: 'win-ratio(%)',
-        data: data.map((item) => item.value9 - 75),
-        type: 'line',
+        data: data.map((item) => item.value9),
+        type: 'scatter',
         markPoint: {
             data: [
                 {type: 'max', name: '最大值'},
