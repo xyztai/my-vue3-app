@@ -194,7 +194,7 @@ onMounted(async () => {
       },
       {
         name: 'win-ratio(%)',
-        data: data.map((item) => item.value9),
+        data: data.map((item) => item.value9 - 75),
         type: 'line',
         markPoint: {
             data: [
