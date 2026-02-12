@@ -9,10 +9,20 @@
   <div>=======================================</div>
   <div>逢高-安全，可以加</div>
   <div class="chart-container" ref="chartRef_2"></div>
+  <div>
+    <el-link type="primary">===== 我是底线 =====</el-link>
+  </div>
+  <div>
+    <el-link type="primary">===== 我是底线 =====</el-link>
+  </div>
+  <div>
+    <el-link type="primary">===== 我是底线 =====</el-link>
+  </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { ElLink } from 'element-plus'
 import * as echarts from 'echarts'
 import axios from 'axios'
 
