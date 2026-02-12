@@ -152,7 +152,7 @@ onMounted(async () => {
       position: function (point, params, dom, rect, size) {
           // point 为鼠标位置，size 为提示框大小
           // 将提示框固定在鼠标左侧，例如偏移 10px
-          console.log("xxxx:x=", point[0], ',y=', point[1])
+          console.log("xxxx-1:x=", point[0], ',y=', point[1])
           var x = 0; // x坐标位置
           var y = 0; // y坐标位置
           // 当前鼠标位置
@@ -179,6 +179,7 @@ onMounted(async () => {
             // 上边放得下
             y = pointY - boxHeight;
           }
+          console.log("xxxx-2:x=", point[0], ',y=', point[1])
           return [x, y];
           // return [point[0] - size.contentSize[0] - 120, point[1] + size.contentSize[1] / 2];
       },
