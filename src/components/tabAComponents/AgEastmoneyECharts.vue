@@ -146,10 +146,12 @@ onMounted(async () => {
     },
     legend: {
         top: '0%',
-        data: ['S_69-B_69','win-ratio(%)'],//图例
+        data: ['S_69-B_69','win-ratio(%)','S-top20%','B-top20%'],//图例
         selected: {
           'S_69-B_69': true,
           'win-ratio(%)': true,
+          'S-top20%': true,
+          'B-top20%': true,
         }
     },
     grid: {
@@ -166,7 +168,7 @@ onMounted(async () => {
     series: [
       {
         name: 'S_69-B_69',
-        data: data.map((item) => item.value1 + item.value2 + item.value3 + item.value4 - (item.value5 + item.value6 + item.value7 + item.value8)),
+        data: data.map((item) => item.value10),
         type: 'line',
         markPoint: {
             data: [
@@ -214,6 +216,62 @@ onMounted(async () => {
           itemStyle: {
             borderWidth: 6, // 边框宽度
             borderColor: '#87CEFA', // 边框颜色
+            // shadowBlur: 10, // 阴影模糊度
+            // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
+          }
+        },
+        smooth: true,
+      },
+      {
+        name: 'S-top20%',
+        data: data.map((item) => item.value12),
+        type: 'line',
+        markPoint: {
+            data: [
+                {type: 'max', name: '最大值'},
+                {type: 'min', name: '最小值'}
+            ]
+        },
+        symbol: 'circle', // 设置为圆形
+        symbolSize: 6, // 设置圆形的大小
+        color: '#808080',//颜色
+        itemStyle: {
+          color: '#808080', // 设置圆形的填充颜色
+          borderColor: '#808080', // 设置圆形的边框颜色
+        },
+        emphasis: {
+          // 设置选中状态下的样式
+          itemStyle: {
+            borderWidth: 6, // 边框宽度
+            borderColor: '#808080', // 边框颜色
+            // shadowBlur: 10, // 阴影模糊度
+            // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
+          }
+        },
+        smooth: true,
+      },
+      {
+        name: 'B-top20%',
+        data: data.map((item) => item.value11),
+        type: 'line',
+        markPoint: {
+            data: [
+                {type: 'max', name: '最大值'},
+                {type: 'min', name: '最小值'}
+            ]
+        },
+        symbol: 'circle', // 设置为圆形
+        symbolSize: 6, // 设置圆形的大小
+        color: '#808080',//颜色
+        itemStyle: {
+          color: '#808080', // 设置圆形的填充颜色
+          borderColor: '#808080', // 设置圆形的边框颜色
+        },
+        emphasis: {
+          // 设置选中状态下的样式
+          itemStyle: {
+            borderWidth: 6, // 边框宽度
+            borderColor: '#808080', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
