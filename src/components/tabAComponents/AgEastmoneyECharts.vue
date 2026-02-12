@@ -724,6 +724,25 @@ onMounted(async () => {
   chartInstance_0.setOption(options_0)
   chartInstance.setOption(options)
   chartInstance_2.setOption(options_2)
+
+  
+  // 2. 渲染完成后触发
+  this.$nextTick(() => {
+    const data = this.options_0.series[0].data; // 获取数据
+    if (data && data.length > 0) {
+      this.chartInstance_0.dispatchAction({
+        type: 'showTip', // 显示提示框
+        seriesIndex: 0,
+        dataIndex: data.length - 1, // 最后一组数据索引
+      });
+      // 可选：高亮最后一组
+      this.chartInstance_0.dispatchAction({
+        type: 'highlight',
+        seriesIndex: 0,
+        dataIndex: data.length - 1
+      });
+    }
+  });
 })
 
 onUnmounted(() => {
