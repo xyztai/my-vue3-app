@@ -152,7 +152,33 @@ onMounted(async () => {
       position: function (point, params, dom, rect, size) {
           // point 为鼠标位置，size 为提示框大小
           // 将提示框固定在鼠标左侧，例如偏移 10px
-          return [point[0] - size.contentSize[0] - 120, point[1] + size.contentSize[1] / 2];
+          console.log("xxxx:x=", point[0], ',y=', point[1])
+          var x = 0; // x坐标位置
+          var y = 0; // y坐标位置
+          // 当前鼠标位置
+          var pointX = point[0];
+          var pointY = point[1];
+          // 提示框大小
+          var boxWidth = size.contentSize[0];
+          var boxHeight = size.contentSize[1];
+
+          // boxWidth > pointX 说明鼠标左边放不下提示框
+          if (boxWidth > pointX) {
+            x = pointX + 10;
+          } else {
+            // 左边放的下
+            x = pointX - boxWidth + 100;
+          }
+
+          // boxHeight > pointY 说明鼠标上边放不下提示框
+          if (boxHeight > pointY) {
+            y = 5;
+          } else {
+            // 上边放得下
+            y = pointY - boxHeight;
+          }
+          return [x, y];
+          // return [point[0] - size.contentSize[0] - 120, point[1] + size.contentSize[1] / 2];
       },
       formatter: '{b}<br/>统计值: {c0}<br/>减点: {c2}<br/>加点: {c3}<br/>均线胜率%: {c1}', // 显示的格式，{b}表示类目值，{c}表示数值
       textStyle:{
