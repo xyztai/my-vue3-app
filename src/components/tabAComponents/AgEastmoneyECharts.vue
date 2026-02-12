@@ -290,9 +290,9 @@ onMounted(async () => {
       }
     ],
     dataZoom: [{
-        type: 'slider', // 这个 dataZoom 组件是 slider 类型的
-        start: 10,      // 左边在 10% 的位置
-        end: 60         // 右边在 60% 的位置
+        type: 'slider',  // 这个 dataZoom 组件是 slider 类型的
+        start: 90,       // 左边在 90% 的位置
+        end: 100         // 右边在 100% 的位置
     }]
   }
 
