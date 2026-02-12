@@ -148,7 +148,8 @@ onMounted(async () => {
       // }
     }, 
     tooltip: {
-      trigger: 'axis', // 触发类型为item，表示在圆点上触发显示
+      trigger: 'axis', // 触发类型为item，表示在圆点上触发显示,
+      confine: true, // 将此属性设置为 true
       formatter: '{b}<br/>统计值: {c0}<br/>减点: {c2}<br/>加点: {c3}<br/>均线胜率%: {c1}', // 显示的格式，{b}表示类目值，{c}表示数值
       textStyle:{
         align:'left'
