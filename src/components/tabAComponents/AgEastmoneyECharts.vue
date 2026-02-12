@@ -180,6 +180,11 @@ onMounted(async () => {
         name: 'S_69-B_69',
         data: data.map((item) => item.value10),
         type: 'line',
+        emphasis: {
+          itemStyle: {
+            color: '#FF0000' // 高亮颜色，例如红色
+          }
+        },
         markPoint: {
             data: [
                 {type: 'max', name: '最大值'},
