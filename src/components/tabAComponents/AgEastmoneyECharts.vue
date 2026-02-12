@@ -149,7 +149,11 @@ onMounted(async () => {
     }, 
     tooltip: {
       trigger: 'axis', // 触发类型为item，表示在圆点上触发显示,
-      confine: true, // 将此属性设置为 true
+      position: function (point, params, dom, rect, size) {
+          // point 为鼠标位置，size 为提示框大小
+          // 将提示框固定在鼠标左侧，例如偏移 10px
+          return [point[0] - size.contentSize[0] - 10, point[1] - size.contentSize[1] / 2];
+      },
       formatter: '{b}<br/>统计值: {c0}<br/>减点: {c2}<br/>加点: {c3}<br/>均线胜率%: {c1}', // 显示的格式，{b}表示类目值，{c}表示数值
       textStyle:{
         align:'left'
