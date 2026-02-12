@@ -179,7 +179,7 @@ onMounted(async () => {
             // 上边放得下
             y = pointY - boxHeight;
           }
-          console.log("xxxx-2:x=", point[0], ',y=', point[1])
+          console.log("xxxx-2:x=", point[0], ',y=', point[1], ',boxWidth=', boxWidth, ',boxHeight=', boxHeight)
           return [x, y];
           // return [point[0] - size.contentSize[0] - 120, point[1] + size.contentSize[1] / 2];
       },
