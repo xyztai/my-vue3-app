@@ -738,7 +738,12 @@ onMounted(async () => {
   chartInstance_0.dispatchAction({
       type: 'showTip', // 显示提示框
       seriesIndex: 0,  // 系列索引
-      dataIndex: dataIndex // 最后一组数据的索引
+      dataIndex: dataIndex, // 最后一组数据的索引
+      position: function (point, params, dom, rect, size) {
+          // point 为鼠标位置，size 为提示框大小
+          // 将提示框固定在鼠标左侧，例如偏移 10px
+          return [point[0] - size.contentSize[0] - 10, point[1] - size.contentSize[1] / 2];
+      },
   });
 
 })
