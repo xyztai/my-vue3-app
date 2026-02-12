@@ -162,6 +162,14 @@ onMounted(async () => {
           var boxWidth = size.contentSize[0];
           var boxHeight = size.contentSize[1];
 
+          if (boxWidth == 0) {
+            boxWidth = 114;
+          }
+          
+          if (boxHeight == 0) {
+            boxHeight = 127;
+          }
+
           // boxWidth > pointX 说明鼠标左边放不下提示框
           if (boxWidth > pointX) {
             x = pointX + 10;
