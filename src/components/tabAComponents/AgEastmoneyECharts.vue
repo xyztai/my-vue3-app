@@ -288,7 +288,12 @@ onMounted(async () => {
         },
         smooth: true,
       }
-    ], 
+    ],
+    dataZoom: [{
+        type: 'slider', // 这个 dataZoom 组件是 slider 类型的
+        start: 10,      // 左边在 10% 的位置
+        end: 60         // 右边在 60% 的位置
+    }]
   }
 
   const options = {
