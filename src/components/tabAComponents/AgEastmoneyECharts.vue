@@ -165,6 +165,8 @@ onMounted(async () => {
           // boxWidth > pointX 说明鼠标左边放不下提示框
           if (boxWidth > pointX) {
             x = pointX + 10;
+          } else if (pointX > 300) {
+            x = pointX - boxWidth;
           } else {
             // 左边放的下
             x = pointX - boxWidth + 100;
