@@ -149,7 +149,7 @@ onMounted(async () => {
     }, 
     tooltip: {
       trigger: 'axis', // 触发类型为item，表示在圆点上触发显示
-      formatter: '{b}<br/>{a0}: {c0}<br/>{a1}: {c1}', // 显示的格式，{b}表示类目值，{c}表示数值
+      formatter: '{b}<br/>{a0}: {c0}<br/>{a0}: {c0}<br/>减点: {c2}<br/>加点: {c3}', // 显示的格式，{b}表示类目值，{c}表示数值
       textStyle:{
         align:'left'
       }
@@ -202,7 +202,7 @@ onMounted(async () => {
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
         },
-        smooth: true,
+        smooth: false,
       },
       {
         name: 'win-ratio(%)',
@@ -230,7 +230,7 @@ onMounted(async () => {
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
         },
-        smooth: true,
+        smooth: false,
       },
       {
         name: 'S-top20%',
@@ -258,7 +258,7 @@ onMounted(async () => {
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
         },
-        smooth: true,
+        smooth: false,
       },
       {
         name: 'B-top20%',
@@ -286,7 +286,7 @@ onMounted(async () => {
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
           }
         },
-        smooth: true,
+        smooth: false,
       }
     ],
     dataZoom: [{
