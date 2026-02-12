@@ -726,23 +726,16 @@ onMounted(async () => {
   chartInstance_2.setOption(options_2)
 
   
-  // 2. 渲染完成后触发
-  this.$nextTick(() => {
-    const data = this.options_0.series[0].data; // 获取数据
-    if (data && data.length > 0) {
-      this.chartInstance_0.dispatchAction({
-        type: 'showTip', // 显示提示框
-        seriesIndex: 0,
-        dataIndex: data.length - 1, // 最后一组数据索引
-      });
-      // 可选：高亮最后一组
-      this.chartInstance_0.dispatchAction({
-        type: 'highlight',
-        seriesIndex: 0,
-        dataIndex: data.length - 1
-      });
-    }
+  // 关键步骤：在数据更新后触发 tooltip
+  // 假设数据条数为 data.length
+  const dataIndex = options_0.series[0].data.length - 1; 
+
+  chartInstance_0.dispatchAction({
+      type: 'showTip', // 显示提示框
+      seriesIndex: 0,  // 系列索引
+      dataIndex: dataIndex // 最后一组数据的索引
   });
+
 })
 
 onUnmounted(() => {
