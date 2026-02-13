@@ -229,8 +229,18 @@ onMounted(async () => {
         },
         markPoint: {
             data: [
-                {type: 'max', name: '最大值', symbolSize: 25},
-                {type: 'min', name: '最小值', symbolSize: 25}
+                {type: 'max', name: '最大值', symbolSize: 25,
+                  label: {
+                    show: true, // 显示标签
+                    fontSize: 25, // 设置字体大小
+                  }
+                },
+                {type: 'min', name: '最小值', symbolSize: 25,
+                  label: {
+                    show: true, // 显示标签
+                    fontSize: 25, // 设置字体大小
+                  }
+                },
             ]
         },
         symbol: 'circle', // 设置为圆形
