@@ -234,7 +234,7 @@ onMounted(async () => {
             ]
         },
         symbol: 'circle', // 设置为圆形
-        symbolSize: 3, // 设置圆形的大小
+        symbolSize: 6, // 设置圆形的大小
         color: '#000000',//颜色
         itemStyle: {
           color: '#000000', // 设置圆形的填充颜色
@@ -243,7 +243,7 @@ onMounted(async () => {
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
-            borderWidth: 3, // 边框宽度
+            borderWidth: 6, // 边框宽度
             borderColor: '#000000', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
@@ -262,7 +262,7 @@ onMounted(async () => {
             ]
         },
         symbol: 'circle', // 设置为圆形
-        symbolSize: 3, // 设置圆形的大小
+        symbolSize: 6, // 设置圆形的大小
         color: '#87CEFA',//颜色
         itemStyle: {
           color: '#87CEFA', // 设置圆形的填充颜色
@@ -271,7 +271,7 @@ onMounted(async () => {
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
-            borderWidth: 3, // 边框宽度
+            borderWidth: 6, // 边框宽度
             borderColor: '#87CEFA', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
@@ -290,7 +290,7 @@ onMounted(async () => {
             ]
         },
         symbol: 'circle', // 设置为圆形
-        symbolSize: 3, // 设置圆形的大小
+        symbolSize: 6, // 设置圆形的大小
         color: '#808080',//颜色
         itemStyle: {
           color: '#808080', // 设置圆形的填充颜色
@@ -299,7 +299,7 @@ onMounted(async () => {
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
-            borderWidth: 3, // 边框宽度
+            borderWidth: 6, // 边框宽度
             borderColor: '#808080', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
@@ -318,7 +318,7 @@ onMounted(async () => {
             ]
         },
         symbol: 'circle', // 设置为圆形
-        symbolSize: 3, // 设置圆形的大小
+        symbolSize: 6, // 设置圆形的大小
         color: '#808080',//颜色
         itemStyle: {
           color: '#808080', // 设置圆形的填充颜色
@@ -327,7 +327,7 @@ onMounted(async () => {
         emphasis: {
           // 设置选中状态下的样式
           itemStyle: {
-            borderWidth: 3, // 边框宽度
+            borderWidth: 6, // 边框宽度
             borderColor: '#808080', // 边框颜色
             // shadowBlur: 10, // 阴影模糊度
             // shadowColor: 'rgba(0, 0, 0, 0.3)' // 阴影颜色
