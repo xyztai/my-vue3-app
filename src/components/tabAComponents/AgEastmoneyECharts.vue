@@ -232,13 +232,13 @@ onMounted(async () => {
                 {type: 'max', name: '最大值', symbolSize: 25,
                   label: {
                     show: true, // 显示标签
-                    fontSize: 25, // 设置字体大小
+                    fontSize: 5, // 设置字体大小
                   }
                 },
                 {type: 'min', name: '最小值', symbolSize: 25,
                   label: {
                     show: true, // 显示标签
-                    fontSize: 25, // 设置字体大小
+                    fontSize: 5, // 设置字体大小
                   }
                 },
             ]
