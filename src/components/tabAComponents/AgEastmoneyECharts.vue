@@ -229,8 +229,8 @@ onMounted(async () => {
         },
         markPoint: {
             data: [
-                {type: 'max', name: '最大值'},
-                {type: 'min', name: '最小值'}
+                {type: 'max', name: '最大值', symbolSize: 25},
+                {type: 'min', name: '最小值', symbolSize: 25}
             ]
         },
         symbol: 'circle', // 设置为圆形
@@ -258,7 +258,7 @@ onMounted(async () => {
         markPoint: {
             data: [
                 {type: 'max', name: '最大值', symbolSize: 25},
-                // {type: 'min', name: '最小值'}
+                {type: 'min', name: '最小值', symbolSize: 25}
             ]
         },
         symbol: 'circle', // 设置为圆形
@@ -285,8 +285,8 @@ onMounted(async () => {
         type: 'line',
         markPoint: {
             data: [
-                {type: 'max', name: '最大值'},
-                {type: 'min', name: '最小值'}
+                {type: 'max', name: '最大值', symbolSize: 25},
+                {type: 'min', name: '最小值', symbolSize: 25}
             ]
         },
         symbol: 'circle', // 设置为圆形
@@ -313,8 +313,8 @@ onMounted(async () => {
         type: 'line',
         markPoint: {
             data: [
-                {type: 'max', name: '最大值'},
-                {type: 'min', name: '最小值'}
+                {type: 'max', name: '最大值', symbolSize: 25},
+                {type: 'min', name: '最小值', symbolSize: 25}
             ]
         },
         symbol: 'circle', // 设置为圆形
