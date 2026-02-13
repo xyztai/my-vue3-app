@@ -257,7 +257,7 @@ onMounted(async () => {
         type: 'bar',
         markPoint: {
             data: [
-                {type: 'max', name: '最大值', symbolSize: 12},
+                {type: 'max', name: '最大值', symbolSize: 25},
                 // {type: 'min', name: '最小值'}
             ]
         },
