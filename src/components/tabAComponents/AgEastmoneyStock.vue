@@ -90,7 +90,7 @@ export default {
     const inputValue2 = ref('-1')
     const inputValue3 = ref('300')
     // const inputValue4 = ref(2)
-    const selectedValue = ref(6) // 下拉框选中的值
+    const selectedValue = ref(0) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
       { value: 0, label: '便于截图' },
       { value: 1, label: 'top3-next' },
@@ -302,7 +302,7 @@ export default {
             // console.log('Using cached data:', myData);
           }
         }
-                
+
         // if(selectedValue.value == 4) {
         //   const response = await axios.get('/ag-new/special-care-days-eastmoney'
         //   )
