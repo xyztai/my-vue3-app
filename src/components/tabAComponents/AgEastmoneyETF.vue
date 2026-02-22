@@ -18,7 +18,7 @@
       <el-switch
         v-model="value5"
         inline-prompt
-        active-text="前-缓存15m"
+        active-text="前-缓存30m"
         inactive-text="前-清除缓存"
       />
       <el-switch
