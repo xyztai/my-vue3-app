@@ -89,16 +89,16 @@ export default {
     const inputValue2 = ref('-1')
     const inputValue3 = ref('300')
     // const inputValue4 = ref(2)
-    const selectedValue = ref(6) // 下拉框选中的值
+    const selectedValue = ref(1) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
-      { value: 6, label: '9_zhuan_S' },
-      { value: 5, label: '9_zhuan_B' },
-      { value: 2, label: 'top10-60' },
       { value: 1, label: 'top10-next' },
+      { value: 2, label: 'top10-60' },
       { value: 3, label: 'volume*2' },
+      { value: 5, label: '9_zhuan_S' },
+      { value: 6, label: '9_zhuan_B' },
       // { value: 7, label: 'risk-ratio' },
       { value: 10, label: '90天内10倍' },
-      { value: 8, label: '今日数据' },
+      { value: 99, label: '今日数据' },
       // { value: 4, label: '1.5%-2020' },
       // { value: 5, label: 'QQ-1.5%-2024919' }
     ])
@@ -175,7 +175,7 @@ export default {
         }
 
         if(selectedValue.value == 5) {
-          const method = 'queryEtf9ZhuanB';
+          const method = 'queryEtf9ZhuanS';
           const key = 'etf-' + method;
           const myData = getCachedData(key);
           if (!myData) {
@@ -193,7 +193,7 @@ export default {
         }
 
         if(selectedValue.value == 6) {
-          const method = 'queryEtf9ZhuanS';
+          const method = 'queryEtf9ZhuanB';
           const key = 'etf-' + method;
           const myData = getCachedData(key);
           if (!myData) {
@@ -228,8 +228,8 @@ export default {
         //   }
         // }
 
-        if(selectedValue.value == 8) {
-          const method = 'eastmoney-latest-info';
+        if(selectedValue.value == 10) {
+          const method = 'etf-90-days';
           const key = 'etf-' + method;
           const myData = getCachedData(key);
           if (!myData) {
@@ -246,8 +246,8 @@ export default {
           }
         }
 
-        if(selectedValue.value == 10) {
-          const method = 'etf-90-days';
+        if(selectedValue.value == 99) {
+          const method = 'eastmoney-latest-info';
           const key = 'etf-' + method;
           const myData = getCachedData(key);
           if (!myData) {
