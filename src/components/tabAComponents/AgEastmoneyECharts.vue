@@ -235,7 +235,7 @@ onMounted(async () => {
                     fontSize: 5, // 设置字体大小
                   }
                 },
-                {type: 'min', name: '最小值', symbolSize: 25,
+                {type: 'min', name: '最小值', symbolSize: 25, symbol:'arrow',
                   label: {
                     show: true, // 显示标签
                     fontSize: 5, // 设置字体大小
