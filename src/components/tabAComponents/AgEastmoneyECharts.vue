@@ -267,8 +267,8 @@ onMounted(async () => {
         type: 'bar',
         markPoint: {
             data: [
-                {type: 'max', name: '最大值', symbolSize: 25},
-                {type: 'min', name: '最小值', symbolSize: 25}
+                {type: 'max', name: '最大值', symbolSize: 25, symbol:'arrow'},
+                {type: 'min', name: '最小值', symbolSize: 25, symbol:'arrow'}
             ]
         },
         symbol: 'circle', // 设置为圆形
