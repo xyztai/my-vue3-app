@@ -92,7 +92,7 @@ export default {
     // const inputValue4 = ref(2)
     const selectedValue = ref(0) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
-      { value: 0, label: '截图' },
+      { value: 0, label: '截图-avg' },
       { value: 1, label: 'top3-next' },
       { value: 2, label: 'top3-30' },
       { value: 3, label: 'volume*3' },
