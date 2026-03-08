@@ -92,7 +92,7 @@ export default {
     const selectedValue = ref(0) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
       { value: 0, label: '*chg-top3' },
-      { value: 0.1, label: 'chg-top3-history' },
+      { value: 11, label: 'chg-top3-history' },
       { value: 1, label: 'top10-next' },
       { value: 2, label: 'top10-60' },
       { value: 3, label: 'volume*2' },
@@ -122,7 +122,7 @@ export default {
           const responseFirstApi = await axios.get('/ag-new/invalidateAll');
         }
 
-        if(selectedValue.value == 0.1) {
+        if(selectedValue.value == 11) {
           const method = 'etf-chg-top3-history';
           const key = 'etf-' + method;
           const myData = getCachedData(key);
