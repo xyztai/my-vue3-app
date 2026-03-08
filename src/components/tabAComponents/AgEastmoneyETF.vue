@@ -89,7 +89,7 @@ export default {
     const inputValue2 = ref('-1')
     const inputValue3 = ref('300')
     // const inputValue4 = ref(2)
-    const selectedValue = ref(0) // 下拉框选中的值
+    const selectedValue = ref(11) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
       { value: 11, label: '*chg-top3' },
       { value: 12, label: 'chg-top3-history' },
