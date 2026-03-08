@@ -122,8 +122,8 @@ export default {
           const responseFirstApi = await axios.get('/ag-new/invalidateAll');
         }
 
-        if(selectedValue.value == 11) {
-          const method = 'etf-chg-top3-history';
+        if(selectedValue.value == 0) {
+          const method = 'etf-chg-top3';
           const key = 'etf-' + method;
           const myData = getCachedData(key);
           if (!myData) {
@@ -140,8 +140,8 @@ export default {
           }          
         }
 
-        if(selectedValue.value == 0) {
-          const method = 'etf-chg-top3';
+        if(selectedValue.value == 11) {
+          const method = 'etf-chg-top3-history';
           const key = 'etf-' + method;
           const myData = getCachedData(key);
           if (!myData) {
