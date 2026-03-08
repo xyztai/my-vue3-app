@@ -38,6 +38,14 @@
       <p>B_09_ETF: 4、6、8</p>
       <p>S_07_ETF: 4、6、8、10、11</p>
     </div>
+    <div class="text-container" v-if="selectedValue==11">
+      <p>*chg-top3: </p>
+      <p>1)当天前三;</p>
+      <p>2)当天chg>2%;</p>
+      <p>3)相较于前一天,放量25%~100%;</p>
+      <p>4)前一天的chg < 2%;</p>
+      <p>5)前一天不在前三；</p>
+    </div>
     <el-table
       empty-text="暂无数据"
       :data="tableData"
