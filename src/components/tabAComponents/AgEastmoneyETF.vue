@@ -92,6 +92,7 @@ export default {
     const selectedValue = ref(0) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
       { value: 0, label: '*chg-top3' },
+      { value: 0.1, label: 'chg-top3-history' },
       { value: 1, label: 'top10-next' },
       { value: 2, label: 'top10-60' },
       { value: 3, label: 'volume*2' },
@@ -119,6 +120,24 @@ export default {
         if(value6.value == false) {
           console.log('call invalidateAll...')
           const responseFirstApi = await axios.get('/ag-new/invalidateAll');
+        }
+
+        if(selectedValue.value == 0.1) {
+          const method = 'etf-chg-top3-history';
+          const key = 'etf-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-etf/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }          
         }
 
         if(selectedValue.value == 0) {
