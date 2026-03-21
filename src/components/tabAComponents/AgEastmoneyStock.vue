@@ -90,8 +90,9 @@ export default {
     const inputValue2 = ref('-1')
     const inputValue3 = ref('300')
     // const inputValue4 = ref(2)
-    const selectedValue = ref(0) // 下拉框选中的值
+    const selectedValue = ref(12) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
+      { value: 12, label: '*截图-limit' },
       { value: 0, label: '*截图-avg' },
       { value: 1, label: 'top3-next' },
       { value: 2, label: 'top3-30' },
@@ -269,6 +270,24 @@ export default {
 
         if(selectedValue.value == 11) {
           const method = 'eastmoney-avg-60';
+          const key = 'stock-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-stock/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
+        }
+
+        if(selectedValue.value == 12) {
+          const method = 'eastmoney-latest-rise-limit';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
