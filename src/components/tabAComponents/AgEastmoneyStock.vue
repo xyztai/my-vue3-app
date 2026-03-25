@@ -323,9 +323,9 @@ export default {
             // console.log('Using cached data:', myData);
           }
         }
-        
+
         if(selectedValue.value == 14) {
-          const method = 'eastmoney-queryBigSwing';
+          const method = 'eastmoney-queryBigSwingAndLowestVol';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
