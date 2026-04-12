@@ -50,9 +50,10 @@
     >
       <el-table-column type="index" label="No" align="center" width="50" fixed />
       <el-table-column prop="date" label="日期" align="center" width="100" sortable label-class-name="time" fixed />
-      <el-table-column prop="stockCode" label="名称" align="left" width="115" sortable fixed />
+      <el-table-column prop="stockCode" label="名称" align="left" width="80" sortable fixed />
+      <!-- <el-table-column prop="stockCode" label="名称" align="left" width="115" sortable fixed /> -->
       <el-table-column prop="last" :label="'cp\nchg'" align="center" min-width="65" width="auto" :formatter="formatAmount" />
-      <el-table-column prop="ratioB" :label="'e5\ne10'" align="center" min-width="10" width="auto" :formatter="formatAmount" />
+      <!-- <el-table-column prop="ratioB" :label="'e5\ne10'" align="center" min-width="65" width="auto" :formatter="formatAmount" /> -->
       <!-- <el-table-column prop="ratioS" label="卖(<0.25)" align="center" sortable min-width="120" width="auto" :formatter="formatAmount" /> -->
     </el-table>
     <div>
