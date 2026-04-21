@@ -92,8 +92,9 @@ export default {
     const inputValue2 = ref('-1')
     const inputValue3 = ref('300')
     // const inputValue4 = ref(2)
-    const selectedValue = ref(21) // 下拉框选中的值
+    const selectedValue = ref(22) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
+      { value: 22, label: '*必买-down5-当天close<open-且chg<0' },
       { value: 21, label: '*必买-分5次加-每次1w' },
       { value: 20, label: '*ssp-最近10个交易日有冲高-然后均线粘结' },
       { value: 19, label: '*跳空高开，等回落' },
@@ -461,6 +462,24 @@ export default {
 
         if(selectedValue.value == 21) {
           const method = 'eastmoney-considerAll';
+          const key = 'stock-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-stock/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
+        }
+
+        if(selectedValue.value == 22) {
+          const method = 'eastmoney-down5';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
