@@ -106,7 +106,7 @@ export default {
       { value: 13, label: '*截图-big-swing' },
       { value: 12, label: '*截图-最近有冲顶' },
       { value: 0, label: '*截图-avg' },
-      { value: 1, label: 'top3-next' },
+      { value: 1, label: '左侧-clac_expma_10/clac_expma_5，找出低点TOP3' },
       { value: 2, label: 'top3-30' },
       { value: 3, label: 'volume*3' },
       { value: 5, label: '9_zhuan_S' },
@@ -155,7 +155,7 @@ export default {
         }
 
         if(selectedValue.value == 1) {
-          const method = 'special-care-days-eastmoney-365-top3';
+          const method = 'get-left-side-expma10-expma5-top3';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
