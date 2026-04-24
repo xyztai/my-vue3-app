@@ -106,12 +106,12 @@ export default {
       { value: 13, label: '*截图-big-swing' },
       { value: 12, label: '*截图-最近有冲顶' },
       { value: 0, label: '*截图-avg' },
-      { value: 1, label: '左侧-clac_expma_10/clac_expma_5，找出低点TOP3' },
-      { value: 2, label: 'top3-30' },
+      { value: 1, label: '左侧-clac_expma_10/clac_expma_5-找出低点TOP3' },
+      { value: 2, label: '左侧-clac_expma_10/clac_expma_5-找出低点TOP3-历史30天记录' },
       { value: 3, label: 'volume*3' },
+      { value: 4, label: '90天内9倍' },
       { value: 5, label: '9_zhuan_S' },
       { value: 6, label: '9_zhuan_B' },
-      { value: 10, label: '90天内9倍' },
       { value: 11, label: 'avg20_avg60' },
       // { value: 7, label: 'risk-ratio' },
       { value: 99, label: '今日数据' },
@@ -173,7 +173,7 @@ export default {
         }
 
         if(selectedValue.value == 2) {
-          const method = 'special-care-days-eastmoney-30-top3';
+          const method = 'get-left-side-expma10-expma5-top3-history-30days';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
@@ -191,7 +191,25 @@ export default {
         }
 
         if(selectedValue.value == 3) {
-          const method = 'volumn-suddenly-rised-tiple';
+          const method = 'volumn-suddenly-rised-tiple-next-day';
+          const key = 'stock-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-stock/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
+        }
+
+        if(selectedValue.value == 4) {
+          const method = 'volumn-rised-9x-in-past-90-days';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
@@ -262,26 +280,8 @@ export default {
         //   }
         // }
 
-        if(selectedValue.value == 10) {
-          const method = 'eastmoney-9-vol-in-90-days';
-          const key = 'stock-' + method;
-          const myData = getCachedData(key);
-          if (!myData) {
-            // 从API获取数据并缓存
-            const response = await axios.get('/ag-eastmoney-stock/' + method )
-            // console.log('response.data.data========', response.data.data)
-            tableData.value = response.data.data
-            // console.log('tableData.value========', tableData.value)          
-            cacheData(key, response.data.data)
-          } else {
-            // 使用缓存的数据
-            tableData.value = myData
-            // console.log('Using cached data:', myData);
-          }
-        }
-
         if(selectedValue.value == 11) {
-          const method = 'eastmoney-avg-60';
+          const method = 'get-right-side-avg20-or-avg60';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
@@ -299,7 +299,7 @@ export default {
         }
 
         if(selectedValue.value == 12) {
-          const method = 'eastmoney-latest-rise-limit';
+          const method = 'get-right-side-latest-rise-limit';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
@@ -317,7 +317,7 @@ export default {
         }
 
         if(selectedValue.value == 13) {
-          const method = 'eastmoney-queryBigSwing';
+          const method = 'get-right-side-big-swing';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
@@ -335,7 +335,7 @@ export default {
         }
 
         if(selectedValue.value == 14) {
-          const method = 'eastmoney-queryBigSwingAndLowestVol';
+          const method = 'get-right-side-big-swing-and-lowest-vol';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
@@ -353,7 +353,7 @@ export default {
         }
 
         if(selectedValue.value == 15) {
-          const method = 'eastmoney-queryDuoTou';
+          const method = 'get-right-side-duo-tou';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
@@ -371,7 +371,7 @@ export default {
         }
 
         if(selectedValue.value == 16) {
-          const method = 'eastmoney-queryDuoTouMA';
+          const method = 'get-right-side-duo-tou-ma';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
@@ -389,7 +389,7 @@ export default {
         }
 
         if(selectedValue.value == 17) {
-          const method = 'eastmoney-queryUp5Lian';
+          const method = 'get-right-side-up-5-lian';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
@@ -407,7 +407,7 @@ export default {
         }
 
         if(selectedValue.value == 18) {
-          const method = 'eastmoney-queryOnlyThem';
+          const method = 'get-right-side-up-fast';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
@@ -425,7 +425,7 @@ export default {
         }
 
         if(selectedValue.value == 19) {
-          const method = 'eastmoney-jumpAndWait';
+          const method = 'get-right-side-up-jump-and-wait';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
@@ -443,7 +443,7 @@ export default {
         }
 
         if(selectedValue.value == 20) {
-          const method = 'eastmoney-MA20maSSP';
+          const method = 'get-right-side-ma-duo-tou-ma-5-10-20';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
