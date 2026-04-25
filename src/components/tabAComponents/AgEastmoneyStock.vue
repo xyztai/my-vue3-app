@@ -97,6 +97,8 @@ export default {
       { value: 0, label: '*左-截图' },
       { value: 1, label: '*右-截图' },
 
+      { value: 555, label: '=== 我是分割线 ===' },
+
       { value: 221, label: '右-01-4连涨-AND-站上MA5-AND-无长上引线' },
       { value: 222, label: '右-02-最近10个交易日有冲高-然后MA20多头' },
       { value: 223, label: '右-03-最近有冲顶' },
