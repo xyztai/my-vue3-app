@@ -92,31 +92,32 @@ export default {
     const inputValue2 = ref('-1')
     const inputValue3 = ref('300')
     // const inputValue4 = ref(2)
-    const selectedValue = ref(221) // 下拉框选中的值
+    const selectedValue = ref(1) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
-      // { value: 0, label: '*截图-avg' },
+      { value: 0, label: '*左-截图' },
+      { value: 1, label: '*右-截图' },
 
-      { value: 221, label: '右-4连涨-AND-站上MA5-AND-无长上引线' },
-      { value: 222, label: '右-最近10个交易日有冲高-然后MA20多头' },
-      { value: 223, label: '右-最近有冲顶' },
-      { value: 224, label: '右-大波动-AND-低量' },
-      { value: 225, label: '右-大波动' },
-      { value: 226, label: '右-T+1-vol*3-AND-上涨3%以上' },
-      { value: 227, label: '右-3月内-vol*9-AND-上涨1%以上' },
-      { value: 228, label: '右-跳空高开' },
-      { value: 229, label: '右-快速上涨' },
-      { value: 230, label: '右-5连UP' },
-      { value: 231, label: '右-上涨9转' },
-      { value: 232, label: '右-MA-多头' },
-      { value: 233, label: '右-近几天-多头占多' },
-      { value: 234, label: '右-20均-OR-60均' },
+      { value: 221, label: '右-01-4连涨-AND-站上MA5-AND-无长上引线' },
+      { value: 222, label: '右-02-最近10个交易日有冲高-然后MA20多头' },
+      { value: 223, label: '右-03-最近有冲顶' },
+      { value: 224, label: '右-04-大波动-AND-低量' },
+      { value: 225, label: '右-05-大波动' },
+      { value: 226, label: '右-06-T+1-vol*3-AND-上涨3%以上' },
+      { value: 227, label: '右-07-3月内-vol*9-AND-上涨1%以上' },
+      { value: 228, label: '右-08-跳空高开' },
+      { value: 229, label: '右-09-快速上涨' },
+      { value: 230, label: '右-10-5连UP' },
+      { value: 231, label: '右-11-上涨9转' },
+      { value: 232, label: '右-12-MA-多头' },
+      { value: 233, label: '右-13-近几天-多头占多' },
+      { value: 234, label: '右-14-20均-OR-60均' },
 
       { value: 555, label: '=== 我是分割线 ===' },
 
-      { value: 101, label: '左-5连跌-若当天close<open-且chg<0，购入-T+1必卖' },
-      { value: 102, label: '左-下跌9转' },
-      { value: 103, label: '左-expma_10/expma_5-低点TOP3' },
-      { value: 104, label: '左-expma_10/expma_5-低点TOP3-历史30天' },
+      { value: 101, label: '左-01-5连跌-若当天close<open-且chg<0，购入-T+1必卖' },
+      { value: 102, label: '左-02-下跌9转' },
+      { value: 103, label: '左-03-expma_10/expma_5-低点TOP3' },
+      { value: 104, label: '左-04-expma_10/expma_5-低点TOP3-历史30天' },
 
       { value: 555, label: '=== 我是分割线 ===' },
 
@@ -145,7 +146,25 @@ export default {
         }
 
         if(selectedValue.value == 0) {
-          const method = 'easy-snapshot';
+          const method = 'easy-snapshot-left';
+          const key = 'stock-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-stock/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
+        }
+
+        if(selectedValue.value == 1) {
+          const method = 'easy-snapshot-right';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
