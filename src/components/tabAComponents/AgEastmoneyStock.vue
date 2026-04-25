@@ -118,6 +118,8 @@ export default {
       { value: 103, label: '左-expma_10/expma_5-低点TOP3' },
       { value: 104, label: '左-expma_10/expma_5-低点TOP3-历史30天' },
 
+      { value: 555, label: '=== 我是分割线 ===' },
+
       { value: 999, label: '今日数据' },
 
       // { value: 7, label: 'risk-ratio' },
