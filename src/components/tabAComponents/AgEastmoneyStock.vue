@@ -92,16 +92,9 @@ export default {
     const inputValue2 = ref('-1')
     const inputValue3 = ref('300')
     // const inputValue4 = ref(2)
-    const selectedValue = ref(22) // 下拉框选中的值
+    const selectedValue = ref(221) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
       // { value: 0, label: '*截图-avg' },
-
-      { value: 101, label: '左-5连跌-若当天close<open-且chg<0，购入-T+1必卖' },
-      { value: 102, label: '左-下跌9转' },
-      { value: 103, label: '左-expma_10/expma_5-低点TOP3' },
-      { value: 104, label: '左-expma_10/expma_5-低点TOP3-历史30天' },
-
-      { value: 555, label: '=== 我是分割线 ===' },
 
       { value: 221, label: '右-4连涨-AND-站上MA5-AND-无长上引线' },
       { value: 222, label: '右-最近10个交易日有冲高-然后MA20多头' },
@@ -117,6 +110,13 @@ export default {
       { value: 232, label: '右-MA-多头' },
       { value: 233, label: '右-近几天-多头占多' },
       { value: 234, label: '右-20均-OR-60均' },
+
+      { value: 555, label: '=== 我是分割线 ===' },
+
+      { value: 101, label: '左-5连跌-若当天close<open-且chg<0，购入-T+1必卖' },
+      { value: 102, label: '左-下跌9转' },
+      { value: 103, label: '左-expma_10/expma_5-低点TOP3' },
+      { value: 104, label: '左-expma_10/expma_5-低点TOP3-历史30天' },
 
       { value: 999, label: '今日数据' },
 
