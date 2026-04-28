@@ -120,6 +120,7 @@ export default {
       { value: 102, label: '左-102-下跌9转' },
       { value: 103, label: '左-103-expma_10/expma_5-低点TOP3' },
       { value: 104, label: '左-104-expma_10/expma_5-低点TOP3-历史30天' },
+      { value: 105, label: '左-105-主要指数1年内的TOP12低' },
 
       { value: 555, label: '=== 我是分割线 ===' },
 
@@ -239,6 +240,24 @@ export default {
 
         if(selectedValue.value == 104) {
           const method = 'get-left-side-expma10-expma5-top3-history-30days';
+          const key = 'stock-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-stock/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
+        }
+
+        if(selectedValue.value == 105) {
+          const method = 'get-left-side-index-top12-1-year';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
