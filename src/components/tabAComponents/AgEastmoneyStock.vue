@@ -114,6 +114,7 @@ export default {
       { value: 233, label: '右-233-近几天-多头占多' },
       { value: 234, label: '右-234-20均-OR-60均' },
       { value: 235, label: '右-235-低CCI-低vol-高振幅' },
+      { value: 236, label: '右-236-近5最低vol-高振幅' },
 
       { value: 555, label: '=== 我是分割线 ===' },
 
@@ -545,6 +546,24 @@ export default {
           }
         }
 
+        if(selectedValue.value == 236) {
+          const method = 'get-right-side-big-swing-and-lowest-vol-2';
+          const key = 'stock-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-stock/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
+        }
+
         if(selectedValue.value == 999) {
           const method = 'eastmoney-latest-info';
           const key = 'stock-' + method;
@@ -636,7 +655,9 @@ export default {
           (
             row.row.ratioB.startsWith('B_09U') || row.row.ratioB.startsWith('S_09U')
           || row.row.ratioB.startsWith('B_06U') || row.row.ratioB.startsWith('S_06U')
+          || row.row.ratioB.includes('_224')
           || row.row.ratioB.includes('_235')
+          || row.row.ratioB.includes('_236')
           || row.row.ratioB == 'B9' || row.row.ratioB.startsWith('慎重') || row.row.ratioB.startsWith('*')
           )
       ) {
