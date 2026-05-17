@@ -126,8 +126,8 @@ export default {
 
       { value: 555, label: '=== 我是分割线 ===' },
 
-      { value: 998, label: '查询每天的数据量' },
-      { value: 999, label: '查询今日数据' },
+      { value: 998, label: '查询每日数据量' },
+      { value: 999, label: '查询今日明细数据' },
 
       // { value: 7, label: 'risk-ratio' },
       // { value: 4, label: '1.5%-2020' },
