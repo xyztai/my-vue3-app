@@ -126,7 +126,8 @@ export default {
 
       { value: 555, label: '=== 我是分割线 ===' },
 
-      { value: 999, label: '今日数据' },
+      { value: 998, label: '查询每天的数据量' },
+      { value: 999, label: '查询今日数据' },
 
       // { value: 7, label: 'risk-ratio' },
       // { value: 4, label: '1.5%-2020' },
@@ -548,6 +549,24 @@ export default {
 
         if(selectedValue.value == 236) {
           const method = 'get-right-side-big-swing-and-lowest-vol-2';
+          const key = 'stock-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-stock/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
+        }
+
+        if(selectedValue.value == 998) {
+          const method = 'eastmoney-daily-cnt';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
