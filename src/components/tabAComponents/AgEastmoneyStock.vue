@@ -126,6 +126,7 @@ export default {
 
       { value: 555, label: '=== 我是分割线 ===' },
 
+      { value: 997, label: '查询上证大跌排名' },
       { value: 998, label: '查询每日数据量' },
       { value: 999, label: '查询今日明细数据' },
 
@@ -549,6 +550,24 @@ export default {
 
         if(selectedValue.value == 236) {
           const method = 'get-right-side-big-swing-and-lowest-vol-2';
+          const key = 'stock-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-stock/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
+        }
+
+        if(selectedValue.value == 997) {
+          const method = 'eastmoney-get_000001_lowest';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
