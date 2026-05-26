@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div>
+      <img :src="Img001" alt="实例-百度">
+    </div>
     <div class="text-container">
       <p>最重要:</p>
       <p>禁止考虑沉没成本,没到预期点位禁止出手</p>
@@ -40,6 +43,7 @@
 <script>
 import { ref } from 'vue'
 import 'element-plus/dist/index.css'
+import Img001 from "@/assets/baidu.png"
 
 export default {
 }
