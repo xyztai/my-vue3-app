@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <img src="/baidu.png" alt="实例-百度">
+      <img src="/baidu.png"  width="410" alt="实例-百度">
     </div>
     <div class="text-container">
       <p>最重要:</p>
