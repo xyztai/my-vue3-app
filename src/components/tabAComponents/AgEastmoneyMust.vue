@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <img :src="Img001" alt="实例-百度">
+      <img :src="img01" alt="实例-百度">
     </div>
     <div class="text-container">
       <p>最重要:</p>
@@ -43,9 +43,11 @@
 <script>
 import { ref } from 'vue'
 import 'element-plus/dist/index.css'
-import Img001 from "@/assets/baidu.png"
 
 export default {
+  data () {
+    img01: require('@/assets/baidu.png')
+  }
 }
 </script>
 
