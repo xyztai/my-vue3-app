@@ -1,10 +1,17 @@
 <template>
   <div>
+    <p>买:</p>    
+    <p>boll下轨 + KDJ底背离、金叉 + 最好缩量</p>
     <div>
-      <img src="/baidu.png" width="410" alt="实例-百度">
+      <img src="/buy-01.PNG" width="410" alt="实例-百度">
     </div>
     <div>
-      <img src="/baidu.png" width="410" alt="实例-百度">
+      <img src="/buy-02.PNG" width="410" alt="实例-百度">
+    </div>
+    <p>卖:</p>    
+    <p>boll上轨 + KDJ顶背离、死叉</p>
+    <div>
+      <img src="/sell-01.PNG" width="410" alt="实例-百度">
     </div>
     <div class="text-container">
       <p>最重要:</p>
