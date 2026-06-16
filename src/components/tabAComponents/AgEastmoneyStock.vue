@@ -693,7 +693,7 @@ export default {
           (
             row.row.ratioB.startsWith('B_09U') || row.row.ratioB.startsWith('S_09U')
           || row.row.ratioB.startsWith('B_06U') || row.row.ratioB.startsWith('S_06U')
-          || row.row.ratioB.includes('_224')
+          || row.row.ratioB.includes('224')
           // || row.row.ratioB.includes('_235')
           // || row.row.ratioB.includes('_236')
           || row.row.ratioB == 'B9' || row.row.ratioB.startsWith('慎重') || row.row.ratioB.startsWith('*')
