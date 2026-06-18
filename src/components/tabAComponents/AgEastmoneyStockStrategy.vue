@@ -247,7 +247,7 @@ export default {
 :deep(.row-expect-1) {
   background: #FAFAD2 !important;
   color:blue;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
 }
 
