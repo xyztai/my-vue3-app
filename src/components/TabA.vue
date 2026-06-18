@@ -1,16 +1,19 @@
 <template>
   <div class="tabA">
     <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane :key="'0'" label="dc-stock" name="first">
+      <el-tab-pane :key="'0'" label="strategy" name="zero">
+        <child1 v-if="isChildUpdate0" />
+      </el-tab-pane>
+      <el-tab-pane :key="'1'" label="stock" name="first">
         <child1 v-if="isChildUpdate1" />
       </el-tab-pane>
-      <el-tab-pane :key="'1'" label="dc-etf" name="second">
+      <el-tab-pane :key="'2'" label="etf" name="second">
         <child2 v-if="isChildUpdate2" />
       </el-tab-pane>
-      <el-tab-pane :key="'2'" label="dc-echarts" name="third">
+      <el-tab-pane :key="'3'" label="echarts" name="third">
         <child3 v-if="isChildUpdate3" />
       </el-tab-pane>
-      <el-tab-pane :key="'3'" label="每日必看" name="_4th">
+      <el-tab-pane :key="'4'" label="必看" name="_4th">
         <child4 v-if="isChildUpdate4" />
       </el-tab-pane>
     </el-tabs>
@@ -19,31 +22,43 @@
 
 <script>
 import { ref } from 'vue'
+import AgEastmoneyStockStrategy from './tabAComponents/AgEastmoneyStockStrategy.vue'
 import AgEastmoneyStock from './tabAComponents/AgEastmoneyStock.vue'
 import AgEastmoneyETF from './tabAComponents/AgEastmoneyETF.vue'
 import AgEastmoneyECharts from './tabAComponents/AgEastmoneyECharts.vue'
 import AgEastmoneyMust from './tabAComponents/AgEastmoneyMust.vue'
 export default {
   components: {
+    child0: AgEastmoneyStockStrategy,
     child1: AgEastmoneyStock,
     child2: AgEastmoneyETF,
     child3: AgEastmoneyECharts,
     child4: AgEastmoneyMust,
   },
   setup() {
-    const activeName = ref('first')
-    const isChildUpdate1 = ref(true)
+    const activeName = ref('zero')
+    const isChildUpdate0 = ref(true)
+    const isChildUpdate1 = ref(false)
     const isChildUpdate2 = ref(false)
     const isChildUpdate3 = ref(false)
     const isChildUpdate4 = ref(false)
-    return { activeName, isChildUpdate1, isChildUpdate2, isChildUpdate3, isChildUpdate4}
+    return { activeName, isChildUpdate0, isChildUpdate1, isChildUpdate2, isChildUpdate3, isChildUpdate4}
   },
   methods: {
     handleClick(tab) {
       console.log('tab=', tab)
-      if (tab.paneName === 'first') {
+      if (tab.paneName === 'zero') {
+        console.log('tab-zero')
+        this.activeName = 'zero'
+        this.isChildUpdate0 = true
+        this.isChildUpdate1 = false
+        this.isChildUpdate2 = false
+        this.isChildUpdate3 = false
+        this.isChildUpdate4 = false
+      } else if (tab.paneName === 'first') {
         console.log('tab-first')
         this.activeName = 'first'
+        this.isChildUpdate0 = false
         this.isChildUpdate1 = true
         this.isChildUpdate2 = false
         this.isChildUpdate3 = false
@@ -51,6 +66,7 @@ export default {
       } else if (tab.paneName === 'second') {
         console.log('tab-second')
         this.activeName = 'second'
+        this.isChildUpdate0 = false
         this.isChildUpdate1 = false
         this.isChildUpdate2 = true
         this.isChildUpdate3 = false
@@ -58,6 +74,7 @@ export default {
       } else if (tab.paneName === 'third') {
         console.log('tab-third')
         this.activeName = 'third'
+        this.isChildUpdate0 = false
         this.isChildUpdate1 = false
         this.isChildUpdate2 = false
         this.isChildUpdate3 = true
@@ -65,6 +82,7 @@ export default {
       } else if (tab.paneName === '_4th') {
         console.log('tab-_4th')
         this.activeName = '_4th'
+        this.isChildUpdate0 = false
         this.isChildUpdate1 = false
         this.isChildUpdate2 = false
         this.isChildUpdate3 = false
