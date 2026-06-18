@@ -177,21 +177,23 @@ export default {
     },
     handleRowClassName(row) {
       // console.log('handleRowClassName, ', row, row.rowIndex)
+
       if (row.row.date !== null && row.row.date !== undefined &&
           (
-            row.row.date.startsWith('T+') || row.row.date.startsWith('9999') 
+            row.row.date.includes('**')
+          || row.row.date.includes('**2026')
           )
       ) {
-          return 'row-expect'
+          return 'row-expect-2'
       }
 
       if (row.row.date !== null && row.row.date !== undefined &&
           (
-            row.row.date.startsWith('*')
-          || row.row.date.startsWith('*2026')
+            row.row.date.includes('*')
+          || row.row.date.includes('*2026')
           )
       ) {
-          return 'row-expect'
+          return 'row-expect-1'
       }
 
       if (row.rowIndex % 2 === 1) {
@@ -242,6 +244,20 @@ export default {
   height: auto;
 }
 
+:deep(.row-expect-1) {
+  background: #FAFAD2 !important;
+  color:blue;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+:deep(.row-expect-2) {
+  background: #FAFAD2 !important;
+  color:rgb(253, 3, 3);
+  font-size: 12px;
+  font-weight: bold;
+}
+
 :deep(.row-expect) {
   background: #FAFAD2 !important;
   color:rgb(253, 3, 3);
@@ -268,8 +284,8 @@ export default {
 
 .text-container p {
   text-align: left; /* 或者使用 text-align: start; 根据需要 */
-  color:brown;
-  font-size: 10px;
+  color:blue;
+  font-size: 12px;
   line-height: 0.5; /* 调整行间距 */
 }
 </style>
