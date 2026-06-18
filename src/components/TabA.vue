@@ -2,7 +2,7 @@
   <div class="tabA">
     <el-tabs v-model="activeName" @tab-click="handleClick">
       <el-tab-pane :key="'0'" label="strategy" name="zero">
-        <child1 v-if="isChildUpdate0" />
+        <child0 v-if="isChildUpdate0" />
       </el-tab-pane>
       <el-tab-pane :key="'1'" label="stock" name="first">
         <child1 v-if="isChildUpdate1" />
