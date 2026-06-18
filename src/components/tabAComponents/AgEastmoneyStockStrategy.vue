@@ -35,8 +35,8 @@
     <div class="text-container">
       <p>策略1：</p>
       <p>T日(2026-06-11)出现buy点，看T+1日(2026-06-12)</p>
-      <p>1).若T+1的chg<-5%,则在T+2,以(T+1)的收盘价*(1-4%)来buy</p>
-      <p>2).若T+1的chg>-5%,则在尾盘以close价格buy</p>
+      <p>1.若T+1的chg>-5%,则在尾盘以close价格buy</p>
+      <p>2.若T+1的chg<-5%,则在T+2,以(T+1)的收盘价*(1-4%)来buy</p>
       <p>持有最多3天</p>
     </div>
     <el-table
@@ -285,7 +285,7 @@ export default {
 .text-container p {
   text-align: left; /* 或者使用 text-align: start; 根据需要 */
   color:blue;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 0.5; /* 调整行间距 */
 }
 </style>
