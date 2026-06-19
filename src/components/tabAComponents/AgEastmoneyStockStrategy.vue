@@ -57,8 +57,11 @@
         <template #default="scope">
           <span>should_win_chg=</span>
           <!-- 通过 style="background-color: yellow;" 设置黄色底 -->
-          <span style="background-color: yellow; color: red; font-size: 15px; font-weight: bold; align: right; width: 200px;">
-            {{ getMidString(scope.row.ratioB) }}
+          <span style="background-color: yellow; padding: 1px 1px; color: red; font-size: 15px; font-weight: bold; align: right; width: 200px;">
+            {{ getMidString1(scope.row.ratioB) }}
+          </span>
+          <span style="background-color: yellow; padding: 1px 1px; color: green; font-size: 15px; font-weight: bold; align: right; width: 200px;">
+            {{ getMidString2(scope.row.ratioB) }}
           </span>
           <span>{{ getEndString(scope.row.ratioB) }}</span>
         </template>
@@ -177,8 +180,15 @@ export default {
     }
   },
   methods: {
-    getMidString(str) {
-      return str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last="));
+    // 正值
+    getMidString1(str) {
+      return str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last=")).startsWith("-") ? 
+      '' : str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last="));
+    },
+    // 负值
+    getMidString2(str) {
+      return str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last=")).startsWith("-") ? 
+      str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last=")) : '';
     },
     getEndString(str) {
       return str.slice(str.indexOf("; last="));
