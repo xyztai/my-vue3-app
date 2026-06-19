@@ -53,7 +53,11 @@
       <el-table-column prop="stockCode" label="code" align="left" width="80" sortable fixed />
       <!-- <el-table-column prop="stockCode" label="名称" align="left" width="115" sortable fixed /> -->
       <el-table-column prop="last" :label="'名称'" align="left" min-width="200" sortable width="auto" :formatter="formatAmount" />
-      <el-table-column prop="ratioB" :label="'说明'" align="left" min-width="1000" sortable width="auto" :formatter="formatAmount" />
+      <el-table-column prop="ratioB" :label="'说明'" align="left" min-width="1000" sortable width="auto" >
+          <template slot-scope="scope">
+            <div v-html="formatAmount(scope.row, {property: 'ratioB'})"></div>
+          </template>
+      </el-table-column>
       <!-- <el-table-column prop="ratioB" :label="'e5\ne10'" align="center" min-width="65" width="auto" :formatter="formatAmount" /> -->
       <!-- <el-table-column prop="ratioS" label="卖(<0.25)" align="center" sortable min-width="120" width="auto" :formatter="formatAmount" /> -->
     </el-table>
@@ -168,6 +172,13 @@ export default {
     }
   },
   methods: {
+    formatAmount(row, column) {
+      // 检查特定字符串并返回带有样式的HTML
+      if (row[column.property] === 'should_win_chg=11.5; last=97; chg=-5.3; chg_next_1=2.4; chg_next_2=8.3; chg_next_3=3.3; chg_next_4=0; info=221_222_223_225_228_231_232_233_235_236') {
+        return `<span style="background-color: yellow;">should_win_chg=11.5; last=97; chg=-5.3; chg_next_1=2.4; chg_next_2=8.3; chg_next_3=3.3; chg_next_4=0; info=221_222_223_225_228_231_232_233_235_236</span>`;
+      }
+      return row[column.property];
+    },
     handleHeaderCellClassName(obj) {
       // console.log('column.label-1=', obj)
       if (obj.column.label !== '日期') {
