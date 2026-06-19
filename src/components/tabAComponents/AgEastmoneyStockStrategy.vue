@@ -57,7 +57,7 @@
         <template #default="scope">
           <span>should_win_chg=</span>
           <!-- 通过 style="background-color: yellow;" 设置黄色底 -->
-          <span style="background-color: yellow; padding: 2px 4px; color: red; font-size: 15px; font-weight: bold; align: right; width: 20px">
+          <span style="background-color: yellow; padding: 2px 4px; color: red; font-size: 15px; font-weight: bold; align: right; width: 50px">
             {{ getMidString(scope.row.ratioB) }}
           </span>
           <span>{{ getEndString(scope.row.ratioB) }}</span>
