@@ -60,7 +60,7 @@
           <span style="background-color: yellow; padding: 1px 1px; color: red; font-size: 15px; font-weight: bold; align: right; width: 200px;">
             {{ getMidString1(scope.row.ratioB) }}
           </span>
-          <span style="background-color: yellow; padding: 1px 1px; color: green; font-size: 15px; font-weight: bold; align: right; width: 200px;">
+          <span style="background-color: yellow; padding: 1px 1px; color: green; font-size: 20px; font-weight: bold; align: right; width: 200px;">
             {{ getMidString2(scope.row.ratioB) }}
           </span>
           <span>{{ getEndString(scope.row.ratioB) }}</span>
