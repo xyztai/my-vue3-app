@@ -57,10 +57,12 @@
         <template #default="scope">
           <span>should_win_chg=</span>
           <!-- 通过 style="background-color: yellow;" 设置黄色底 -->
-          <span style="background-color: yellow; padding: 1px 1px; color: red; font-size: 15px; font-weight: bold; align: right; width: 200px;">
+          <!-- 正值 -->
+          <span style="background-color: rgb(255, 235, 205); padding: 1px 1px; color: red; font-size: 15px; font-weight: bold; align: right; width: 200px;">
             {{ getMidString1(scope.row.ratioB) }}
           </span>
-          <span style="background-color: yellow; padding: 1px 1px; color: green; font-size: 20px; font-weight: bold; align: right; width: 200px;">
+          <!-- 负值 -->
+          <span style="background-color: rgb(255, 255, 255); padding: 1px 1px; color: green; font-size: 20px; font-weight: bold; align: right; width: 200px;">
             {{ getMidString2(scope.row.ratioB) }}
           </span>
           <span>{{ getEndString(scope.row.ratioB) }}</span>
