@@ -55,12 +55,12 @@
       <el-table-column prop="last" :label="'名称'" align="left" min-width="200" sortable width="auto" :formatter="formatAmount" />
       <el-table-column prop="ratioB" :label="'说明'" align="left" min-width="1000" sortable width="auto" >
         <template #default="scope">
-          <span>前段文字</span>
+          <span>should_win_chg=</span>
           <!-- 通过 style="background-color: yellow;" 设置黄色底 -->
           <span style="background-color: yellow; padding: 2px 4px;">
-            {{ scope.row.ratioB }}
+            {{ getMidString(scope.row.ratioB) }}
           </span>
-          <span>后段文字</span>
+          <span>{{ getEndString(scope.row.ratioB) }}</span>
         </template>
       </el-table-column>
       <!-- <el-table-column prop="ratioB" :label="'e5\ne10'" align="center" min-width="65" width="auto" :formatter="formatAmount" /> -->
@@ -177,6 +177,12 @@ export default {
     }
   },
   methods: {
+    getMidString(str) {
+      return str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last="));
+    },
+    getEndString(str) {
+      return str.slice(str.indexOf("; last="));
+    },
     handleHeaderCellClassName(obj) {
       // console.log('column.label-1=', obj)
       if (obj.column.label !== '日期') {
