@@ -113,7 +113,7 @@ export default {
       { value: 232, label: '右-232-MA-多头' },
       { value: 233, label: '右-233-近几天-多头占多' },
       { value: 234, label: '右-234-20均-OR-60均' },
-      { value: 235, label: '右-235-低CCI-低vol-高振幅' },
+      // { value: 235, label: '右-235-低CCI-低vol-高振幅' },
       { value: 236, label: '右-236-近5最低vol-高振幅' },
 
       { value: 555, label: '=== 我是分割线 ===' },
