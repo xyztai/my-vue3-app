@@ -49,7 +49,7 @@
       :row-class-name="handleRowClassName"
     >
       <el-table-column type="index" label="No" align="center" width="50" fixed />
-      <el-table-column prop="date" label="日期" align="center" width="100" sortable label-class-name="time" />
+      <el-table-column prop="date" label="日期" align="center" width="110" sortable label-class-name="time" />
       <el-table-column prop="stockCode" label="code" align="left" width="80" sortable fixed />
       <!-- <el-table-column prop="stockCode" label="名称" align="left" width="115" sortable fixed /> -->
       <el-table-column prop="last" :label="'名称'" align="left" min-width="200" sortable width="auto" :formatter="formatAmount" />
