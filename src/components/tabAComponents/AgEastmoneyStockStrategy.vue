@@ -203,8 +203,8 @@ export default {
   methods: {
     // 正值
     getMidString1(str) {
-      if (str !== null && str !== undefined) {
-        return ''
+      if (str == null && str == undefined) {
+        return 'NULL'
       }
 
       return str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last=")).startsWith("-") ? 
@@ -212,7 +212,7 @@ export default {
     },
     // 负值
     getMidString2(str) {
-      if (str !== null && str !== undefined) {
+      if (str == null && str == undefined) {
         return ''
       }
 
@@ -220,10 +220,10 @@ export default {
       str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last=")) : '';
     },
     getEndString(str) {
-      if (str !== null && str !== undefined) {
+      if (str == null && str == undefined) {
         return ''
       }
-      
+
       return str.slice(str.indexOf("; last="));
     },
     handleHeaderCellClassName(obj) {
