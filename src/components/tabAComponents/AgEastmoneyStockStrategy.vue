@@ -203,15 +203,27 @@ export default {
   methods: {
     // 正值
     getMidString1(str) {
+      if (str !== null && str !== undefined) {
+        return ''
+      }
+
       return str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last=")).startsWith("-") ? 
       '' : str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last="));
     },
     // 负值
     getMidString2(str) {
+      if (str !== null && str !== undefined) {
+        return ''
+      }
+
       return str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last=")).startsWith("-") ? 
       str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last=")) : '';
     },
     getEndString(str) {
+      if (str !== null && str !== undefined) {
+        return ''
+      }
+      
       return str.slice(str.indexOf("; last="));
     },
     handleHeaderCellClassName(obj) {
