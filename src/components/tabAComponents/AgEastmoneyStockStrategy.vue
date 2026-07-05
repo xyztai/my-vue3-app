@@ -35,8 +35,9 @@
     <div class="text-container">
       <p>策略1：</p>
       <p>T日(2026-06-11)出现buy点，看T+1日(2026-06-12)</p>
-      <p>1.若T+1的chg>-5%,则在尾盘以close价格buy</p>
-      <p>2.若T+1的chg<-5%,则在T+2,以(T+1)的收盘价*(1-4%)来buy</p>
+      <p>1.若T+1的chg>5%,则当天要谨慎buy</p>
+      <p>2.若T+1的chg>-5%,则在尾盘以close价格buy</p>
+      <p>3.若T+1的chg<-5%,则在T+2,以(T+1)的收盘价*(1-4%)来buy</p>
       <p>持有最多3天</p>
     </div>
     <el-table
@@ -106,9 +107,10 @@ export default {
     const inputValue2 = ref('-1')
     const inputValue3 = ref('300')
     // const inputValue4 = ref(2)
-    const selectedValue = ref(1) // 下拉框选中的值
+    const selectedValue = ref(2) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
       { value: 1, label: '策略1' },
+      { value: 2, label: '策略2-bbi-多头-放量' },
     ])
     const value5 = ref(true)
     const value6 = ref(true)
@@ -146,6 +148,23 @@ export default {
           }
         }
 
+        if(selectedValue.value == 2) {
+          const method = 'strategy_2';
+          const key = 'stock-strategy-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-stock-strategy/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
+        }
       } catch (err) {
         error.value = 'Error Fetching cnts: ' + err.message
         console.error('Axios error:', err)
