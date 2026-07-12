@@ -56,7 +56,7 @@
       <el-table-column prop="last" :label="'名称'" align="left" min-width="200" sortable width="auto" :formatter="formatAmount" />
       <el-table-column prop="ratioB" :label="'说明'" align="left" min-width="1000" sortable width="auto" >
         <template #default="scope">
-          <span>should_win_chg=</span>
+          <span>{{ getStartString(scope.row.ratioB) }}</span>
           <!-- 通过 style="background-color: yellow;" 设置黄色底 -->
           <!-- 正值 -->
           <span style="background-color: rgb(255, 235, 205); padding: 1px 1px; color: red; font-size: 15px; font-weight: bold; align: right; width: 200px;">
@@ -224,14 +224,39 @@ export default {
     }
   },
   methods: {
-    // 正值
-    getMidString1(str) {
+    // 获得开始
+    getStartString(str) {
       if (str == null && str == undefined) {
         return 'NULL'
       }
 
-      return str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last=")).startsWith("-") ? 
-      '' : str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last="));
+      if(str.startsWith("should_win_chg")) {
+        return 'should_win_chg=';
+      }
+
+      if(str.startsWith("当天chg=")) {
+        return '当天chg=';
+      }
+
+      return str;
+    },
+    // 正值
+    getMidString1(str) {
+      if (str == null && str == undefined) {
+        return ''
+      }
+
+      if(str.startsWith("should_win_chg")) {
+        return str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last=")).startsWith("-") ? 
+        '' : str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last="));
+      }
+
+      if(str.startsWith("当天chg=")) {
+        return str.slice(str.indexOf("当天chg=") + "当天chg=".length, str.indexOf("; 板块avg")).startsWith("-") ? 
+        '' : str.slice(str.indexOf("当天chg=") + "当天chg=".length, str.indexOf("; 板块avg"));
+      }
+
+      return '';
     },
     // 负值
     getMidString2(str) {
@@ -239,15 +264,32 @@ export default {
         return ''
       }
 
-      return str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last=")).startsWith("-") ? 
-      str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last=")) : '';
+      if(str.startsWith("should_win_chg")) {
+        return str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last=")).startsWith("-") ? 
+        str.slice(str.indexOf("should_win_chg=") + "should_win_chg=".length, str.indexOf("; last=")) : '';
+      }
+
+      if(str.startsWith("当天chg=")) {
+        return str.slice(str.indexOf("当天chg=") + "当天chg=".length, str.indexOf("; 板块avg")).startsWith("-") ? 
+        str.slice(str.indexOf("当天chg=") + "当天chg=".length, str.indexOf("; 板块avg")) : '';
+      }
+      
+      return '';
     },
     getEndString(str) {
       if (str == null && str == undefined) {
         return ''
       }
 
-      return str.slice(str.indexOf("; last="));
+      if(str.startsWith("should_win_chg")) {
+        return str.slice(str.indexOf("; last="));
+      }
+
+      if(str.startsWith("当天chg=")) {
+        return str.slice(str.indexOf("; 板块avg"));
+      }
+      
+      return '';
     },
     handleHeaderCellClassName(obj) {
       // console.log('column.label-1=', obj)
