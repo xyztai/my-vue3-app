@@ -107,11 +107,12 @@ export default {
     const inputValue2 = ref('-1')
     const inputValue3 = ref('300')
     // const inputValue4 = ref(2)
-    const selectedValue = ref(3) // 下拉框选中的值
+    const selectedValue = ref(5) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
       { value: 1, label: '策略1' },
       { value: 2, label: '策略2-bbi-多头-放量' },
       { value: 3, label: '策略3-只看行业龙头' },
+      { value: 5, label: '策略5-缩量严重，且没有暴跌过' },
     ])
     const value5 = ref(true)
     const value6 = ref(true)
@@ -185,6 +186,23 @@ export default {
           }
         }
 
+        if(selectedValue.value == 5) {
+          const method = 'strategy_5';
+          const key = 'stock-strategy-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-stock-strategy/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
+        }
 
 
 
