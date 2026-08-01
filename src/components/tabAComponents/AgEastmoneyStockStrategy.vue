@@ -112,7 +112,7 @@ export default {
       { value: 1, label: '策略1' },
       { value: 2, label: '策略2-bbi-多头-放量' },
       { value: 3, label: '策略3-只看行业龙头' },
-      { value: 5, label: '策略5-缩量严重，且没有暴跌过' },
+      { value: 5, label: '策略5-多头、缩量严重、最近无暴跌、无长上引' },
     ])
     const value5 = ref(true)
     const value6 = ref(true)
