@@ -109,7 +109,7 @@ export default {
     // const inputValue4 = ref(2)
     const selectedValue = ref(5) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
-      { value: 1, label: '策略1' },
+      { value: 1, label: '策略1-多头、大波动' },
       { value: 2, label: '策略2-bbi-多头-放量' },
       { value: 3, label: '策略3-只看行业龙头' },
       { value: 5, label: '策略5-多头、缩量严重、最近无暴跌、无长上引' },
