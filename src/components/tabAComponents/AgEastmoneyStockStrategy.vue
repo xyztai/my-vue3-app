@@ -56,7 +56,7 @@
       <el-table-column prop="last" :label="'名称'" align="left" min-width="200" sortable width="auto" :formatter="formatAmount" />
       <el-table-column prop="ratioB" :label="'说明'" align="left" min-width="1000" sortable width="auto" >
         <template #default="scope">
-          <span>{{ getStartString(scope.row.ratioB) }}</span>
+          {{ getStartString(scope.row.ratioB) }}
           <!-- 通过 style="background-color: yellow;" 设置黄色底 -->
           <!-- 正值 -->
           <span style="background-color: rgb(255, 235, 205); padding: 1px 1px; color: red; font-size: 15px; font-weight: bold; align: right; width: 200px;">
