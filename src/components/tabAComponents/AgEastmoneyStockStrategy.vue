@@ -257,7 +257,8 @@ export default {
       }
       if (!str) return str;
 
-      const reg = new RegExp('---', 'g')
+      const targetWord = '---' // 需要变绿的字符串
+      const reg = new RegExp(targetWord, 'g')
       return str.replace(reg, `<span style="color: green;">${targetWord}</span>`);
       // return str;
     },
