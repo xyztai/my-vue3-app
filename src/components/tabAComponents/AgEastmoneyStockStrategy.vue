@@ -255,8 +255,8 @@ export default {
       if(str.startsWith("当天chg=")) {
         return '当天chg=';
       }
-      const reg = new RegExp(targetWord, 'g')
-      return originalText.value.replace(reg, `<span style="color: green;">${targetWord}</span>`);
+      const reg = new RegExp('---', 'g')
+      return str.value.replace(reg, `<span style="color: green;">${targetWord}</span>`);
       // return str;
     },
     // 正值
