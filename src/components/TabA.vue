@@ -37,8 +37,8 @@ export default {
   },
   setup() {
     const activeName = ref('zero')
-    const isChildUpdate0 = ref(true)
-    const isChildUpdate1 = ref(false)
+    const isChildUpdate0 = ref(false)
+    const isChildUpdate1 = ref(true)
     const isChildUpdate2 = ref(false)
     const isChildUpdate3 = ref(false)
     const isChildUpdate4 = ref(false)
