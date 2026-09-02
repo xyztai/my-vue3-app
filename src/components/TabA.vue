@@ -36,7 +36,7 @@ export default {
     child4: AgEastmoneyMust,
   },
   setup() {
-    const activeName = ref('zero')
+    const activeName = ref('first')
     const isChildUpdate0 = ref(false)
     const isChildUpdate1 = ref(true)
     const isChildUpdate2 = ref(false)
