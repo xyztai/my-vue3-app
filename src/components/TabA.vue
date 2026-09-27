@@ -10,9 +10,9 @@
       <el-tab-pane :key="'2'" label="etf" name="second">
         <child2 v-if="isChildUpdate2" />
       </el-tab-pane>
-      <el-tab-pane :key="'3'" label="echarts" name="third">
+      <!-- <el-tab-pane :key="'3'" label="echarts" name="third">
         <child3 v-if="isChildUpdate3" />
-      </el-tab-pane>
+      </el-tab-pane> -->
       <el-tab-pane :key="'4'" label="必看" name="_4th">
         <child4 v-if="isChildUpdate4" />
       </el-tab-pane>
