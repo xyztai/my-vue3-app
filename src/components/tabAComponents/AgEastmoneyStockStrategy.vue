@@ -109,7 +109,6 @@ export default {
     // const inputValue4 = ref(2)
     const selectedValue = ref(5) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
-      { value: 1, label: '策略1-多头、大波动' },
       { value: 2, label: '策略2-bbi-多头-放量' },
       { value: 3, label: '策略3-只看行业龙头' },
       { value: 5, label: '策略5-多头、缩量严重、最近无暴跌、无长上引' },
@@ -130,24 +129,6 @@ export default {
         if(value6.value == false) {
           console.log('call invalidateAll...')
           const responseFirstApi = await axios.get('/ag-today/invalidateAll');
-        }
-
-        if(selectedValue.value == 1) {
-          const method = 'strategy_1';
-          const key = 'stock-strategy-' + method;
-          const myData = getCachedData(key);
-          if (!myData) {
-            // 从API获取数据并缓存
-            const response = await axios.get('/ag-eastmoney-stock-strategy/' + method )
-            // console.log('response.data.data========', response.data.data)
-            tableData.value = response.data.data
-            // console.log('tableData.value========', tableData.value)          
-            cacheData(key, response.data.data)
-          } else {
-            // 使用缓存的数据
-            tableData.value = myData
-            // console.log('Using cached data:', myData);
-          }
         }
 
         if(selectedValue.value == 2) {
