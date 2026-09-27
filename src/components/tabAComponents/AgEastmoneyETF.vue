@@ -96,21 +96,10 @@ export default {
     const date = ref(new Date())
     const inputValue2 = ref('-1')
     const inputValue3 = ref('300')
-    // const inputValue4 = ref(2)
-    const selectedValue = ref(11) // 下拉框选中的值
+    const selectedValue = ref(101) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
-      { value: 11, label: '*chg-top3' },
-      { value: 12, label: 'chg-top3-history' },
-      { value: 1, label: 'top10-next' },
-      { value: 2, label: 'top10-60' },
-      { value: 3, label: 'volume*2' },
-      { value: 5, label: '9_zhuan_S' },
-      { value: 6, label: '9_zhuan_B' },
-      // { value: 7, label: 'risk-ratio' },
-      { value: 10, label: '90天内10倍' },
-      { value: 99, label: '今日数据' },
-      // { value: 4, label: '1.5%-2020' },
-      // { value: 5, label: 'QQ-1.5%-2024919' }
+      { value: 101, label: '*chg-top3' },
+      { value: 201, label: 'chg-top3-history' },
     ])
     const value5 = ref(true)
     const value6 = ref(true)
@@ -127,7 +116,7 @@ export default {
         console.log('value6', value6.value)
         if(value6.value == false) {
           console.log('call invalidateAll...')
-          const responseFirstApi = await axios.get('/ag-new/invalidateAll');
+          const responseFirstApi = await axios.get('/ag-today/invalidateAll');
         }
 
         if(selectedValue.value == 11) {
@@ -166,166 +155,7 @@ export default {
           }          
         }
 
-        if(selectedValue.value == 1) {
-          const method = 'special-care-days-eastmoney-1-top10';
-          const key = 'etf-' + method;
-          const myData = getCachedData(key);
-          if (!myData) {
-            // 从API获取数据并缓存
-            const response = await axios.get('/ag-eastmoney-etf/' + method )
-            // console.log('response.data.data========', response.data.data)
-            tableData.value = response.data.data
-            // console.log('tableData.value========', tableData.value)          
-            cacheData(key, response.data.data)
-          } else {
-            // 使用缓存的数据
-            tableData.value = myData
-            // console.log('Using cached data:', myData);
-          }          
-        }
 
-        if(selectedValue.value == 2) {
-          const method = 'special-care-days-eastmoney-60-top10';
-          const key = 'etf-' + method;
-          const myData = getCachedData(key);
-          if (!myData) {
-            // 从API获取数据并缓存
-            const response = await axios.get('/ag-eastmoney-etf/' + method )
-            // console.log('response.data.data========', response.data.data)
-            tableData.value = response.data.data
-            // console.log('tableData.value========', tableData.value)          
-            cacheData(key, response.data.data)
-          } else {
-            // 使用缓存的数据
-            tableData.value = myData
-            // console.log('Using cached data:', myData);
-          }
-        }
-
-        if(selectedValue.value == 3) {
-          const method = 'volumn-suddenly-rised';
-          const key = 'etf-' + method;
-          const myData = getCachedData(key);
-          if (!myData) {
-            // 从API获取数据并缓存
-            const response = await axios.get('/ag-eastmoney-etf/' + method )
-            // console.log('response.data.data========', response.data.data)
-            tableData.value = response.data.data
-            // console.log('tableData.value========', tableData.value)          
-            cacheData(key, response.data.data)
-          } else {
-            // 使用缓存的数据
-            tableData.value = myData
-            // console.log('Using cached data:', myData);
-          }
-        }
-
-        if(selectedValue.value == 5) {
-          const method = 'queryEtf9ZhuanS';
-          const key = 'etf-' + method;
-          const myData = getCachedData(key);
-          if (!myData) {
-            // 从API获取数据并缓存
-            const response = await axios.get('/ag-eastmoney-etf/' + method )
-            // console.log('response.data.data========', response.data.data)
-            tableData.value = response.data.data
-            // console.log('tableData.value========', tableData.value)          
-            cacheData(key, response.data.data)
-          } else {
-            // 使用缓存的数据
-            tableData.value = myData
-            // console.log('Using cached data:', myData);
-          }
-        }
-
-        if(selectedValue.value == 6) {
-          const method = 'queryEtf9ZhuanB';
-          const key = 'etf-' + method;
-          const myData = getCachedData(key);
-          if (!myData) {
-            // 从API获取数据并缓存
-            const response = await axios.get('/ag-eastmoney-etf/' + method )
-            // console.log('response.data.data========', response.data.data)
-            tableData.value = response.data.data
-            // console.log('tableData.value========', tableData.value)          
-            cacheData(key, response.data.data)
-          } else {
-            // 使用缓存的数据
-            tableData.value = myData
-            // console.log('Using cached data:', myData);
-          }
-        }
-
-        // if(selectedValue.value == 7) {
-        //   const method = 'queryWinRatios';
-        //   const key = 'etf-' + method;
-        //   const myData = getCachedData(key);
-        //   if (!myData) {
-        //     // 从API获取数据并缓存
-        //     const response = await axios.get('/ag-eastmoney-etf/' + method )
-        //     // console.log('response.data.data========', response.data.data)
-        //     tableData.value = response.data.data
-        //     // console.log('tableData.value========', tableData.value)          
-        //     cacheData(key, response.data.data)
-        //   } else {
-        //     // 使用缓存的数据
-        //     tableData.value = myData
-        //     // console.log('Using cached data:', myData);
-        //   }
-        // }
-
-        if(selectedValue.value == 10) {
-          const method = 'etf-90-days';
-          const key = 'etf-' + method;
-          const myData = getCachedData(key);
-          if (!myData) {
-            // 从API获取数据并缓存
-            const response = await axios.get('/ag-eastmoney-etf/' + method )
-            // console.log('response.data.data========', response.data.data)
-            tableData.value = response.data.data
-            // console.log('tableData.value========', tableData.value)          
-            cacheData(key, response.data.data)
-          } else {
-            // 使用缓存的数据
-            tableData.value = myData
-            // console.log('Using cached data:', myData);
-          }
-        }
-
-        if(selectedValue.value == 99) {
-          const method = 'eastmoney-latest-info';
-          const key = 'etf-' + method;
-          const myData = getCachedData(key);
-          if (!myData) {
-            // 从API获取数据并缓存
-            const response = await axios.get('/ag-eastmoney-etf/' + method )
-            // console.log('response.data.data========', response.data.data)
-            tableData.value = response.data.data
-            // console.log('tableData.value========', tableData.value)          
-            cacheData(key, response.data.data)
-          } else {
-            // 使用缓存的数据
-            tableData.value = myData
-            // console.log('Using cached data:', myData);
-          }
-        }
-
-        // if(selectedValue.value == 4) {
-        //   const response = await axios.get('/ag-new/special-care-days-eastmoney'
-        //   )
-        //   console.log('response.data.data========', response.data.data)
-        //   tableData.value = response.data.data
-        //   console.log('tableData.value========', tableData.value)
-        // }
-        // if(selectedValue.value == 5) {
-        //   const response = await axios.get('/ag-new/special-care-days/'
-        //     + (inputValue2.value === null || inputValue2.value === undefined || Object.keys(inputValue2.value).length === 0 ? '-1' : inputValue2.value) 
-        //     + '/' + (inputValue3.value === null || inputValue3.value === undefined || Object.keys(inputValue3.value).length === 0 ? '300' : inputValue3.value) 
-        //   )
-        //   console.log('response.data.data========', response.data.data)
-        //   tableData.value = response.data.data
-        //   console.log('tableData.value========', tableData.value)
-        // }
       } catch (err) {
         error.value = 'Error Fetching cnts: ' + err.message
         console.error('Axios error:', err)

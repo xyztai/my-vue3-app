@@ -149,7 +149,7 @@ export default {
         console.log('value6', value6.value)
         if(value6.value == false) {
           console.log('call invalidateAll...')
-          const responseFirstApi = await axios.get('/ag-new/invalidateAll');
+          const responseFirstApi = await axios.get('/ag-today/invalidateAll');
         }
 
         if(selectedValue.value == 0) {

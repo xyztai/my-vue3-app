@@ -94,7 +94,7 @@ export default {
         console.log('value5', value5.value)
         if(value5.value == false) {
           console.log('call invalidateAll...')
-          const responseFirstApi = await axios.get('/ag-new/invalidateAll');
+          const responseFirstApi = await axios.get('/ag-today/invalidateAll');
         }
         if(selectedValue.value == 1) {
           const response = await axios.get('/ag-eastmoney-stock/special-care-days-eastmoney-1-top3'
