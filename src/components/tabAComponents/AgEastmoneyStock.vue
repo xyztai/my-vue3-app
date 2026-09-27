@@ -94,11 +94,6 @@ export default {
     // const inputValue4 = ref(2)
     const selectedValue = ref(998) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
-      { value: 0, label: '*左-截图' },
-      { value: 1, label: '*右-截图' },
-
-      { value: 555, label: '=== 我是分割线 ===' },
-
       { value: 221, label: '右-221-4连涨-AND-站上MA5-AND-无长上引线' },
       { value: 222, label: '右-222-最近10个交易日有冲高-然后MA20多头' },
       { value: 223, label: '右-223-最近有冲顶' },
@@ -110,9 +105,8 @@ export default {
       { value: 229, label: '右-229-快速上涨' },
       { value: 230, label: '右-230-5连UP' },
       { value: 231, label: '右-231-上涨9转' },
+      
       { value: 232, label: '右-232-MA-多头' },
-      { value: 233, label: '右-233-近几天-多头占多' },
-      { value: 234, label: '右-234-20均-OR-60均' },
       // { value: 235, label: '右-235-低CCI-低vol-高振幅' },
       { value: 236, label: '右-236-近5最低vol-高振幅' },
 
@@ -150,42 +144,6 @@ export default {
         if(value6.value == false) {
           console.log('call invalidateAll...')
           const responseFirstApi = await axios.get('/ag-today/invalidateAll');
-        }
-
-        if(selectedValue.value == 0) {
-          const method = 'easy-snapshot-left';
-          const key = 'stock-' + method;
-          const myData = getCachedData(key);
-          if (!myData) {
-            // 从API获取数据并缓存
-            const response = await axios.get('/ag-eastmoney-stock/' + method )
-            // console.log('response.data.data========', response.data.data)
-            tableData.value = response.data.data
-            // console.log('tableData.value========', tableData.value)          
-            cacheData(key, response.data.data)
-          } else {
-            // 使用缓存的数据
-            tableData.value = myData
-            // console.log('Using cached data:', myData);
-          }
-        }
-
-        if(selectedValue.value == 1) {
-          const method = 'easy-snapshot-right';
-          const key = 'stock-' + method;
-          const myData = getCachedData(key);
-          if (!myData) {
-            // 从API获取数据并缓存
-            const response = await axios.get('/ag-eastmoney-stock/' + method )
-            // console.log('response.data.data========', response.data.data)
-            tableData.value = response.data.data
-            // console.log('tableData.value========', tableData.value)          
-            cacheData(key, response.data.data)
-          } else {
-            // 使用缓存的数据
-            tableData.value = myData
-            // console.log('Using cached data:', myData);
-          }
         }
 
         if(selectedValue.value == 101) {
@@ -478,42 +436,6 @@ export default {
 
         if(selectedValue.value == 232) {
           const method = 'get-right-side-duo-tou-ma';
-          const key = 'stock-' + method;
-          const myData = getCachedData(key);
-          if (!myData) {
-            // 从API获取数据并缓存
-            const response = await axios.get('/ag-eastmoney-stock/' + method )
-            // console.log('response.data.data========', response.data.data)
-            tableData.value = response.data.data
-            // console.log('tableData.value========', tableData.value)          
-            cacheData(key, response.data.data)
-          } else {
-            // 使用缓存的数据
-            tableData.value = myData
-            // console.log('Using cached data:', myData);
-          }
-        }
-
-        if(selectedValue.value == 233) {
-          const method = 'get-right-side-duo-tou';
-          const key = 'stock-' + method;
-          const myData = getCachedData(key);
-          if (!myData) {
-            // 从API获取数据并缓存
-            const response = await axios.get('/ag-eastmoney-stock/' + method )
-            // console.log('response.data.data========', response.data.data)
-            tableData.value = response.data.data
-            // console.log('tableData.value========', tableData.value)          
-            cacheData(key, response.data.data)
-          } else {
-            // 使用缓存的数据
-            tableData.value = myData
-            // console.log('Using cached data:', myData);
-          }
-        }
-
-        if(selectedValue.value == 234) {
-          const method = 'get-right-side-avg20-or-avg60';
           const key = 'stock-' + method;
           const myData = getCachedData(key);
           if (!myData) {
