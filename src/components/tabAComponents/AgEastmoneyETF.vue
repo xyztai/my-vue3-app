@@ -202,7 +202,7 @@ export default {
     highlightHyphen(text) {
       if (!text) return ''
       // 使用全局替换，把所有的 "-" 变成绿色的 "-"
-      return text.replace(/-/g, '<span style="color: #67C23A; font-weight: bold;">-</span>')
+      return text.replace(/-/g, '<span style="color: #55fa03; font-weight: bold; font-size: 16px;">-</span>')
     },
     handleHeaderCellClassName(obj) {
       // console.log('column.label-1=', obj)
