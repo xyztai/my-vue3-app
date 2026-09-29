@@ -60,6 +60,12 @@
       <el-table-column prop="stockCode" label="名称" align="left" width="115" sortable fixed />
       <el-table-column prop="last" :label="'cp\nchg'" align="left" min-width="65" width="auto" :formatter="formatAmount" />
       <el-table-column prop="ratioB" :label="'e5\ne10'" align="left" min-width="65" width="auto" :formatter="formatAmount" />
+      <el-table-column prop="ratioB" :label="'测试-变色'" align="left" min-width="65" width="auto" :formatter="formatAmount">
+        <template #default="scope">
+          <!-- 使用 v-html 渲染高亮后的文本 -->
+          <span v-html="highlightHyphen(scope.row.ratioB)"></span>
+        </template>
+      </el-table-column>
       <!-- <el-table-column prop="ratioS" label="卖(<0.25)" align="center" sortable min-width="120" width="auto" :formatter="formatAmount" /> -->
     </el-table>
     <div>
@@ -103,6 +109,13 @@ export default {
     ])
     const value5 = ref(true)
     const value6 = ref(true)
+
+    // 核心处理函数：将 "-" 替换为带有绿色样式的 span 标签
+    const highlightHyphen = (text) => {
+      if (!text) return ''
+      // 使用全局替换，把所有的 "-" 变成绿色的 "-"
+      return text.replace(/-/g, '<span style="color: #67C23A; font-weight: bold;">-</span>')
+    }
 
     const fetchData = async() => {
       try {
