@@ -54,7 +54,7 @@
       <el-table-column prop="stockCode" label="code" align="left" width="100" sortable fixed />
       <!-- <el-table-column prop="stockCode" label="名称" align="left" width="115" sortable fixed /> -->
       <el-table-column prop="last" :label="'名称'" align="left" min-width="200" sortable width="auto" :formatter="formatAmount" />
-      <el-table-column prop="ratioB" :label="'说明'" align="left" min-width="1000" sortable width="auto" >
+      <el-table-column prop="ratioB" :label="'说明'" align="left" min-width="1000" sortable width="auto" v-if="false" >
         <template #default="scope">
           <span>{{ getStartString(scope.row.ratioB) }}</span>
           <!-- 通过 style="background-color: yellow;" 设置黄色底 -->
@@ -69,7 +69,7 @@
           <span>{{ getEndString(scope.row.ratioB) }}</span>
         </template>
       </el-table-column>
-      <el-table-column prop="ratioB" :label="'测试-变色'" align="left" min-width="1000" width="auto" :formatter="formatAmount">
+      <el-table-column prop="ratioB" :label="'说明'" align="left" min-width="1000" sortable width="auto" :formatter="formatAmount">
         <template #default="scope">
           <!-- 使用 v-html 渲染高亮后的文本 -->
           <span v-html="highlightHyphen(scope.row.ratioB)"></span>
