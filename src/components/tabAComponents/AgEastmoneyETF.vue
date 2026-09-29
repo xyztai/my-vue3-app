@@ -110,13 +110,6 @@ export default {
     const value5 = ref(true)
     const value6 = ref(true)
 
-    // 核心处理函数：将 "-" 替换为带有绿色样式的 span 标签
-    const highlightHyphen = (text) => {
-      if (!text) return ''
-      // 使用全局替换，把所有的 "-" 变成绿色的 "-"
-      return text.replace(/-/g, '<span style="color: #67C23A; font-weight: bold;">-</span>')
-    }
-
     const fetchData = async() => {
       try {
         tableData.value = []
@@ -205,6 +198,12 @@ export default {
     }
   },
   methods: {
+    // 核心处理函数：将 "-" 替换为带有绿色样式的 span 标签
+    highlightHyphen(text) {
+      if (!text) return ''
+      // 使用全局替换，把所有的 "-" 变成绿色的 "-"
+      return text.replace(/-/g, '<span style="color: #67C23A; font-weight: bold;">-</span>')
+    },
     handleHeaderCellClassName(obj) {
       // console.log('column.label-1=', obj)
       if (obj.column.label !== '日期') {
