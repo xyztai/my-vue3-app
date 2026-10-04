@@ -113,11 +113,13 @@ export default {
     const inputValue2 = ref('-1')
     const inputValue3 = ref('300')
     // const inputValue4 = ref(2)
-    const selectedValue = ref(5) // 下拉框选中的值
+    const selectedValue = ref(7) // 下拉框选中的值
     const options = ref([ // 下拉框选项数据
       { value: 2, label: '策略2-bbi-多头-放量' },
       { value: 3, label: '策略3-只看行业龙头' },
       { value: 5, label: '策略5-多头、缩量严重、最近无暴跌、无长上引' },
+      { value: 6, label: '策略6-stock-cci 底背离，买入' },
+      { value: 7, label: '策略7-etf-cci 底背离，买入' },
     ])
     const value5 = ref(true)
     const value6 = ref(true)
@@ -175,6 +177,42 @@ export default {
 
         if(selectedValue.value == 5) {
           const method = 'strategy_5';
+          const key = 'stock-strategy-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-stock-strategy/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
+        }
+
+        if(selectedValue.value == 6) {
+          const method = 'strategy_stock_101';
+          const key = 'stock-strategy-' + method;
+          const myData = getCachedData(key);
+          if (!myData) {
+            // 从API获取数据并缓存
+            const response = await axios.get('/ag-eastmoney-stock-strategy/' + method )
+            // console.log('response.data.data========', response.data.data)
+            tableData.value = response.data.data
+            // console.log('tableData.value========', tableData.value)          
+            cacheData(key, response.data.data)
+          } else {
+            // 使用缓存的数据
+            tableData.value = myData
+            // console.log('Using cached data:', myData);
+          }
+        }
+
+        if(selectedValue.value == 7) {
+          const method = 'strategy_etf_101';
           const key = 'stock-strategy-' + method;
           const myData = getCachedData(key);
           if (!myData) {
