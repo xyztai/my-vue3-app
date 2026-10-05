@@ -118,8 +118,8 @@ export default {
       { value: 2, label: '策略2-bbi-多头-放量' },
       { value: 3, label: '策略3-只看行业龙头' },
       { value: 5, label: '策略5-多头、缩量严重、最近无暴跌、无长上引' },
-      { value: 6, label: '策略6-stock-cci 底背离，买入' },
-      { value: 7, label: '策略7-etf-cci 底背离，买入' },
+      { value: 6, label: '策略6-stock-cci20底背离，买入' },
+      { value: 7, label: '策略7-etf-cci20底背离，买入' },
     ])
     const value5 = ref(true)
     const value6 = ref(true)
