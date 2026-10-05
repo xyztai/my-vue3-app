@@ -271,7 +271,9 @@ export default {
     highlightHyphen(text) {
       if (!text) return ''
       // 使用全局替换，把所有的 "-----" 变成绿底的 "-----"
-      return text.replace(/-----/g, '<span style="background-color: #55fa03; color: #000000; font-weight: bold; font-size: 16px;">-----</span>')
+      return text
+      .replace(/-----/g, '<span style="background-color: #55fa03; color: #000000; font-weight: bold; font-size: 16px;">-----</span>')
+      .replace(/符合MACD/g, '<span style="background-color: #FF0000; color: #000000; font-weight: bold; font-size: 16px;">符合MACD</span>')
     },
     // 获得开始
     getStartString(str) {
