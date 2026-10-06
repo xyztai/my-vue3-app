@@ -32,15 +32,15 @@
       </el-tooltip> -->
       <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">算算看</el-button>
     </div>
-    <div class="text-container" v-if="[6, 7].includes(selectedValue)">
-      <!--
+    <div class="text-container" v-if="[2, 3, 5].includes(selectedValue)">
       <p>策略1：</p>
       <p>T日(2026-06-11)出现buy点，看T+1日(2026-06-12)</p>
       <p>1.若T+1的chg>5%,则当天要谨慎buy</p>
       <p>2.若T+1的chg>-5%,则在尾盘以close价格buy</p>
       <p>3.若T+1的chg<-5%,则在T+2,以(T+1)的收盘价*(1-4%)来buy</p>
       <p>持有最多3天</p>
-      -->
+    </div>
+    <div class="text-container" v-if="[6, 7].includes(selectedValue)">
       <p>策略6、7:</p>
       <p>1.cci20底背离，买入，当天的数据纳入观察，只有cci20下探又上升接近-100的时候，还是底背离，则可以考虑购入</p>
       <p>2.需要再考虑macd是否反转</p>
