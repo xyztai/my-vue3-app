@@ -32,7 +32,7 @@
       </el-tooltip> -->
       <el-button class="search-button" style="background: #67a3d7" type="primary" @click="fetchData">算算看</el-button>
     </div>
-    <div class="text-container">
+    <div class="text-container" v-if="[6, 7].includes(selectedValue)">
       <!--
       <p>策略1：</p>
       <p>T日(2026-06-11)出现buy点，看T+1日(2026-06-12)</p>
