@@ -60,7 +60,7 @@
       <el-table-column prop="date" label="日期" align="center" width="110" sortable label-class-name="time" />
       <el-table-column prop="stockCode" label="code" align="left" width="100" sortable fixed />
       <!-- <el-table-column prop="stockCode" label="名称" align="left" width="115" sortable fixed /> -->
-      <el-table-column prop="last" :label="'名称'" align="left" min-width="200" sortable width="auto" :formatter="formatAmount" />
+      <el-table-column prop="last" :label="'名称'" align="left" min-width="1000" sortable width="auto" :formatter="formatAmount" />
       <el-table-column prop="ratioB" :label="'说明'" align="left" min-width="1000" sortable width="auto" v-if="false" >
         <template #default="scope">
           <span>{{ getStartString(scope.row.ratioB) }}</span>
@@ -472,6 +472,6 @@ export default {
   text-align: left; /* 或者使用 text-align: start; 根据需要 */
   color:blue;
   font-size: 15px;
-  line-height: 1; /* 调整行间距 */
+  line-height: 1.6; /* 调整行间距 */
 }
 </style>
