@@ -43,8 +43,9 @@
     <div class="text-container" v-if="[6, 7].includes(selectedValue)">
       <p>策略6、7:</p>
       <p>1.cci20底背离，买入，当天的数据纳入观察，只有cci20下探又上升接近-100的时候，还是底背离，则可以考虑购入</p>
-      <p>2.需要再考虑macd是否反转</p>
-      <p>3.gain 2%后，可以考虑卖出一半</p>
+      <p>2.观察当天哪些板块涨的好，且涨停较多</p>
+      <p>3.需要再考虑macd是否反转</p>
+      <p>4.gain 2%后，可以考虑卖出一半</p>
     </div>
     <el-table
       empty-text="暂无数据"
@@ -471,6 +472,6 @@ export default {
   text-align: left; /* 或者使用 text-align: start; 根据需要 */
   color:blue;
   font-size: 15px;
-  line-height: 0.5; /* 调整行间距 */
+  line-height: 1; /* 调整行间距 */
 }
 </style>
